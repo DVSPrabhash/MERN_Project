@@ -26,6 +26,15 @@ import { cartReducer } from './reducers/cartReducer';
 import { allEmployeesReducer,newEmployeeReducer,employeeReducer, employeeDetailsReducer } from './reducers/employeeReducers'//tharusha
 
 
+// Thiran
+import { suppliedItemReducers, changeSuppliedItemReducers, newSuppliedItemReducers, singleSuppliedItemReducers } from './reducers/suppliedItemReducers'
+
+import { changeSupplierReducers, supplierReducers, newSupplierReducers, singleSupplierReducers } from './reducers/supplierReducers'
+
+import { supplyReducers, changeSupplyReducers, newSupplyReducers } from './reducers/supplyReducers'
+// Thiran
+
+
 const reducer = combineReducers({
     auth: authReducer,
     user: userReducer,
@@ -64,7 +73,24 @@ const reducer = combineReducers({
     allEmployees : allEmployeesReducer,// 19 folder
     employee :newEmployeeReducer,
     emp:employeeReducer,
-    employeeDetails: employeeDetailsReducer
+    employeeDetails: employeeDetailsReducer,
+
+
+    //Thiran
+    supplied_items: suppliedItemReducers,
+    change_supplied_items: changeSuppliedItemReducers,
+    new_supplied_items: newSuppliedItemReducers,
+    single_supplied_item: singleSuppliedItemReducers,
+
+    suppliers: supplierReducers,
+    change_suppliers: changeSupplierReducers,
+    newSuppliers: newSupplierReducers,
+    supplierDetails: singleSupplierReducers,
+
+    supplies: supplyReducers,
+    change_supplies: changeSupplyReducers,
+    newSupplies: newSupplyReducers
+    //Thiran
 
 })
 

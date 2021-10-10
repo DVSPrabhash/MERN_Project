@@ -80,6 +80,55 @@ class APIFeatures {
         this.query = this.query.find ({...keyword});
         return this;
     }
+
+
+    //Thiran
+    search1() {
+        const keyword = this.queryStr.keyword ? {
+            s_item_name: {
+                $regex: this.queryStr.keyword,
+                $options: 'i'
+            }
+            
+        } : {}
+
+        console.log(keyword);
+        
+        this.query = this.query.find({ ...keyword });
+        return this;
+    }
+
+    search2() {
+        const keyword = this.queryStr.keyword ? {
+            supplier_name: {
+                $regex: this.queryStr.keyword,
+                $options: 'i'
+            }
+            
+        } : {}
+
+        console.log(keyword);
+        
+        this.query = this.query.find({ ...keyword });
+        return this;
+    }
+
+    search3() {
+        const keyword = this.queryStr.keyword ? {
+            supplier_id: {
+                $regex: this.queryStr.keyword,
+                $options: 'i'
+            }
+            
+        } : {}
+
+        console.log(keyword);
+        
+        this.query = this.query.find({ ...keyword });
+        return this;
+    }
+
+
 }
 
 module.exports = APIFeatures

@@ -76,11 +76,28 @@ import UpdateEmployee from './components/admin/UpdateEmployee';
 import maintrtk from './components/admin/maintrtk';
 
 
-
-
 import ProtectedRoute from './components/route/ProtectedRoute';
 import{ loadUser, updatePassword } from './actions/userActions'
 import store from './store'
+
+
+//Thiran
+import './App.css';
+// import Header from './components/layout/Header';
+import { Home } from './components/inventory_manager/Home';
+import { RegisterSupplier } from './components/inventory_manager/RegisterSupplier';
+import  { RegisterSuppliedItem }  from './components/inventory_manager/RegisterSuppliedItem';
+import { RegisterSupply } from './components/inventory_manager/RegisterSupply';
+import { UpdateSuppliedItem } from './components/inventory_manager/UpdateSuppliedItem';
+import { UpdateSupplier } from './components/inventory_manager/UpdateSupplier';
+import { UpdateSupply } from './components/inventory_manager/UpdateSupply';
+// import Footer from './components/inventory_manager/Footer';
+// import Admin_nav from './components/inventory_manager/AdminNav';
+import { AllSuppliedItems } from './components/inventory_manager/AllSuppliedItems'
+import { AllSuppliers } from './components/inventory_manager/AllSuppliers'
+import { AllSupplies } from './components/inventory_manager/AllSupplies'
+
+
 
 
 //import { Router } from 'express';
@@ -166,11 +183,44 @@ function App() {
           <Route path ="/admin/employee/:id"  component = {UpdateEmployee} exact/>
           <Route path ="/main_emp_page"  component = {maintrtk} exact/>
 
+
+
+
+
+          {/* Thiran */}
+          <div className="App">
+            {/* <Header /> */}
+
+            <br /><br />
+
+            {/* Routes */}
+            <Route path = "/inventory_manager_home" component={Home} exact />
+            <Route path = "/register_supplied_item" component={RegisterSuppliedItem} exact />
+            <Route path = "/register_supplier" component={RegisterSupplier} exact />
+            <Route path = "/register_supply" component={RegisterSupply} exact />
+            <Route path = "/update_supplied_item/update/:id" component={UpdateSuppliedItem} exact />
+            <Route path = "/update_supplier/update/:id" component={UpdateSupplier} exact />
+            <Route path = "/update_supply" component={UpdateSupply} exact />
+            <Route path = "/all_supplied_items" component={AllSuppliedItems} exact />
+            <Route path = "/all_suppliers" component={AllSuppliers} exact />
+            {/* <Route path = "/all_suppliers/search/:keyword" component={AllSuppliers} exact /> */}
+            <Route path = "/all_supplies" component={AllSupplies} exact />
+            {/* <Route path = "/all_supplies/search/:keyword" component={AllSupplies} exact /> */}
+            <Route path = "/all_supplied_items/:keyword" component={AllSuppliedItems} exact />
+            <Route path = "/all_suppliers/:keyword2" component={AllSuppliers} exact />
+            <Route path = "/all_supplies/:keyword3" component={AllSupplies} exact />
+            <Route path = "/all_suppliers/after_deletion" component={AllSuppliers} exact />
+
+            {/* <Footer /> */}
           </div>
+          {/* Thiran */}
 
 
-      {/*</div>*/}
-      
+
+
+          {/* </div> */}
+      </div>
+
     </Router>
   );
 }
