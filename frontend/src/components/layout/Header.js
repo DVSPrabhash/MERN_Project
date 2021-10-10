@@ -31,8 +31,8 @@ const Header = () => {
                 <div className="navbar">
                     <nav>
                         <ul >
-                            <li><a href="">HOME</a></li>
-                            <li><a href="">MENU</a></li>
+                            <li><Link to="/">HOME</Link></li>
+                            <li><Link to="/offers">OFFERS</Link></li>
                             <img src="/images/cupcakes_(2).gif" className="logoheader"></img>
                             <li><a href="">REVIEWS</a></li>
                             <li><Link to="/me">PROFILE</Link></li>

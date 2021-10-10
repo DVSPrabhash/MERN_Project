@@ -41,6 +41,22 @@ const Profile = () => {
                                 {user.role !== 'user' && (
                                     <Link to="/admin/users" className="spd1 spd">Admin Dashboard</Link>
                                 )}
+                                <br/><br/>
+                                {user.role !== 'user' && (
+                                    <Link to="/admin/product" className="spd1 spd">AddProducts</Link>
+                                )}
+                                <br/>
+                                 {user.role !== 'user' && (
+                                    <Link to="/admin/offer" className="spd1 spd">AddOfferes</Link>
+                                )}
+                                <br/><br/>
+                                 {user.role !== 'user' && (
+                                    <Link to="/admin/products" className="spd1 spd">ViewProducts</Link>
+                                )}
+                                <br/>
+                                 {user.role !== 'user' && (
+                                    <Link to="/admin/offers" className="spd1 spd">ViewOffers</Link>
+                                )}
 
                         
                                 <br/><br/><br/><br/><br/><br/><br/><br/>

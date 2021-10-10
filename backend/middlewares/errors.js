@@ -42,6 +42,20 @@ module.exports = (err, req, res, next) => {
 
         //methnin iwry mn aluthin dapu tika 13 weni ekt adlwa
 
+        //anukgen start
+        if (err.name === 'CastError'){
+            const message = `Resourse not found. Invalid: ${err.path}`
+            error = new ErrorHandler(message, 400)
+        }
+
+        // Handling Mongoose Validation Error
+        if(err.name === 'ValidationError') {
+            const message = Object.values(err.errors).map(value => value.message);
+            error = new ErrorHandler(message, 400)
+        }
+
+
+        //anukagen end
 
 
         res.status(err.statusCode).json({
