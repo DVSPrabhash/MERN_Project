@@ -69,18 +69,18 @@ import adminDash from './components/admin/adminDash/adminDash';
 import adminOrder from './components/admin/adminDash/adminDash';
 
 
-//reports
-import report from './components/admin/adminDash/report'
-import salesReport from './components/report/salesReport'
-import feedbackReport from './components/report/feedbackReport'
+//tharusha 
+import NewEmployee from './components/admin/addemp';
+import EmployeesList from './components/admin/EmployeesList';
+import UpdateEmployee from './components/admin/UpdateEmployee';
+import maintrtk from './components/admin/maintrtk';
+
 
 
 
 import ProtectedRoute from './components/route/ProtectedRoute';
 import{ loadUser, updatePassword } from './actions/userActions'
 import store from './store'
-
-
 
 
 //import { Router } from 'express';
@@ -153,12 +153,19 @@ function App() {
 
           <ProtectedRoute path="/admin/Dashboard" isAdmin={true} component={adminDash} exact/>
           <ProtectedRoute path="/admin/Admin_Order" isAdmin={true} component={adminOrder} exact/>
-
-
-          <Route path = "/admin/report" component={report} exact/>
-          <Route path = "/admin/report/salesReport" component={salesReport} exact/>
-          <Route path = "/admin/report/FeedbackReport" component={feedbackReport} exact/>
           
+          
+
+
+          {/*tharusha*/}
+          <Route path ="/new"  component = {NewEmployee} exact/>
+          <div className = "container_emplist">  
+            <Route path ="/emplist"  component = {EmployeesList} exact/>
+          </div> 
+
+          <Route path ="/admin/employee/:id"  component = {UpdateEmployee} exact/>
+          <Route path ="/main_emp_page"  component = {maintrtk} exact/>
+
           </div>
 
 

@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
 
 /*login ekata  line no 77 dakwa*/
 
@@ -9,10 +10,8 @@
 
 .body{
   font-family: "Open Sans";
-  color: #fff;
   font-weight: bold;
   font-style: oblique;
-  
  
 }
 
@@ -20,34 +19,37 @@
   position: relative;
   height: 100vh;
   width: 100%;
-  background: url("login.jpg");
   background-size: cover;
   background-position: center center;
   /*me deka gehuwe header eke awula hdanan thiran kiyapu nisa*/
   margin-top: 80px;
   margin-bottom: -60px;
-  box-shadow: 7px 7px 60px #000;
+  color: black;
+
 }
 
 .form-container{
+  width:30%;
   position: absolute;
-  top: 20%;
-  left: 40%;
+  top: 10%;
+  left: 35%;
   transform: 50%;
-  background: linear-gradient(rgba(0, 0, 0, 0.3),(rgba(0, 0, 0, 0.3)));
-  width: 380px;
-  padding: 50px 30px;
+  background: rgb(89,92,235);
+background: linear-gradient(177deg, rgba(89,92,235,1) 0%, rgba(150,158,228,1) 52%, rgba(7,162,241,1) 100%);
+  padding:30px;
   border-radius: 10px;
   box-shadow: 7px 7px 60px #000;
+  color: black;
 }
 
 
 
-.h1{
+.form-container .h1{
   text-transform: uppercase;
-  font-size: 2em;
+  font-size: 3em;
   text-align: center;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  font-family: 'Fjalla One', sans-serif;
 }
 
 .control input{
@@ -74,7 +76,7 @@
 }
 .link a{
   text-decoration: none;
-  color: #fff;
+  color: rgb(0, 0, 0);
   opacity: .7;
   transition: opacity .3s ease;
 }
@@ -109,7 +111,7 @@ body{
   width: 70%;
   height: 70%;
   display: flex;
-  box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
+
 }
 
 .wrapperDV .left{
@@ -195,7 +197,7 @@ body{
   border-radius: 4px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.16);
   width: 120px;
-  height: 50px;
+  height: auto;
   margin: 1em 0;
   padding: auto;
   
@@ -205,13 +207,12 @@ body{
   position: relative;
   height: 100vh;
   width: 100%;
-  background: url("myprofile2.jpg");
   background-size: cover;
   background-position: center center;
   /*me deka gehuwe header eke awula hdanan thiran kiyapu nisa*/
-  margin-top: 80px;
+
   margin-bottom: -60px;
-  box-shadow: 7px 7px 60px #000;
+
 }
 
 
@@ -394,8 +395,7 @@ form .user-details .input-box{
   transform: 50%;
   background: linear-gradient(rgba(0, 0, 0, 0.3),(rgba(0, 0, 0, 0.3)));
   width: 80%;
-  height: 92%;
-  padding: 50px 30px;
+  height: 90%;
   border-radius: 10px;
   box-shadow: 7px 7px 60px #000;
 
@@ -512,9 +512,8 @@ form .user-details .input-box{
   justify-content: space-between;
   margin: 20px 0 12px 0;
   margin-left: 18px;
-  margin-top: 10%;
   list-style: none;
-     text-align: center;
+  text-align: center;
 
 }
 

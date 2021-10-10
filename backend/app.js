@@ -28,6 +28,7 @@ const auth = require('./routes/auth');
 const order = require('./routes/order');
 const feedback = require('./routes/feedbackroute');
 const count = require('./routes/adminDashRoute');
+const employees = require('./routes/employee');//tharusha
 
 const bodyParser = require('body-parser');
 
@@ -37,6 +38,7 @@ app.use('/api/v1', auth)
 app.use('/api/v1', order)
 app.use('/api/v1', feedback)
 app.use('/api/v1', count)
+app.use('/api/v1', employees) //tharusha
 
 //middleware 2 handling error
 app.use(errorMiddleware);

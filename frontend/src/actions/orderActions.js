@@ -74,30 +74,6 @@ export const getAllorders = (keyword ='' , pStatus, oStatus, dStatus) => async (
 
 }
 
-export const getorders = () => async (dispatch) => {
-    try{
-        dispatch({type:ALL_ORDERS_REQUEST})
-
-        const {data} = await axios.get(`/admin/orders/`)
-        
-        dispatch({
-            type:ALL_ORDERS_SUCCESS,
-            payload: data
-        })
-
-
-    }
-    catch(error){
-        dispatch({
-            type: ALL_ORDERS_FAIL,
-            payload: error.response.data.message
-        })
-
-    }
-
-
-}
-
 
 
 

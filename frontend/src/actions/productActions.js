@@ -75,6 +75,7 @@ export const newProduct = (productData) => async (dispatch) => {
     }
 }
 
+
 export const deleteProduct = (id) => async (dispatch) => {
     try {
 

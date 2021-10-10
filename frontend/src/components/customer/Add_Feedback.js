@@ -100,7 +100,6 @@ const Add_Feedback = ({match, history }) => {
                             aria-required="true" 
                             aria-invalid="false" 
                             placeholder="Enter Your Name"
-                            pattern="[a-zA-Z][a-zA-Z ]{2,}"
                             required/>
                         </span>
                         </p>

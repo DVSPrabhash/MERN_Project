@@ -74,35 +74,3 @@ exports.productCount = catchAsyncErrors ( async (req, res, next) => {
     })
 
 })
-
-
-exports.count = catchAsyncErrors ( async (req, res, next) => {
-
-
-    const usersCount = await User.countDocuments()
-    const feedbacksCount = await feedback.countDocuments();
-    const offersCount = await Offer.countDocuments();
-    const productsCount = await Product.countDocuments()
-    const apiFeatures = new API_FEATURES(Order.find().sort('-createdAt'), req.query)
-
-        const orders = await apiFeatures.query;
-        const odersCount = await Order.countDocuments();
-        let totalAmount = 0;
-
-        orders.forEach(order =>{
-            totalAmount += order.totPrice
-        })
-        
-
-    res.status(200).json({
-        success: true,
-        productsCount,
-        usersCount,
-        feedbacksCount,
-        offersCount,
-        odersCount,
-        totalAmount,
-        
-    })
-
-})

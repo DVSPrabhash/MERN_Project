@@ -29,7 +29,6 @@ const AdminAllOrders = ({match}) => {
   const [oStatus, setOStatus] = useState('')
   const [dStatus, setDStatus] = useState('')
 
-
   
   
   useEffect(() => {

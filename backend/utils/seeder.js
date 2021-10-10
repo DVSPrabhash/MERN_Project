@@ -1,8 +1,12 @@
 const Product = require('../models/product');
+
+const Employee = require('../models/employee');      // import employee tharusha
+
 const dotenv = require('dotenv');
 const connectDatabase = require('../config/database');
 
 const products = require('../data/products');
+const employees = require('../data/employees'); //matin
 
 // Setting dotenv file
 dotenv.config({ path: 'backend/config/config.env'})
@@ -26,3 +30,23 @@ const seedProducts = async () => {
 }
 
 seedProducts()
+
+//tharusha
+const seedEmployees = async () => {
+    try{
+
+        await Employee.deleteMany(); //delete all the e
+        console.log('Employees are deleted');
+
+        await Employee.insertMany(employees)
+        console.log('All Employees are added')
+
+        process.exit();
+
+    }catch (error) {
+        console.log(error.message);
+        process.exit();
+    }
+}
+
+seedEmployees()

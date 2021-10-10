@@ -12,17 +12,6 @@
     z-index: 99;
     font-family: 'Cinzel', serif;
 }
-.container553546553555{
-    margin-top: 30px;
-    margin-left: 30px;
-    right:0;
-    height: auto;
-    width:95%;
-    padding: 6px 6px;
-    transition:all 0.8s ease;
-    z-index: 99;
-    font-family: 'Cinzel', serif;
-}
 .container555424255{
     margin-top: 30px;
     float: right;
@@ -60,8 +49,9 @@
 .card1012 .card-body{
     display: inline-block;
     font-family: 'Rokkitt', serif;
-    background: rgb(15,1,245);
-    background: linear-gradient(90deg, rgba(15,1,245,1) 0%, rgba(97,97,236,1) 35%, rgba(0,212,255,1) 100%);
+    background: rgb(242,103,91);
+    background: linear-gradient(90deg, rgba(242,103,91,1) 1%, rgba(227,39,58,1) 55%, rgba(187,11,112,1) 90%);
+    color:#fff;
     margin: 10px;
     padding:20px;
     width:250px;
@@ -76,7 +66,6 @@
     float:right;
 }
 .card1012 .card-body .float-left h3{
-    color:#f7fba9 ;
     margin-top:15px;
     margin-bottom:5px;
 }
@@ -85,8 +74,7 @@
     font-weight:500;
 }
 .card1012 .card-body .float-left p{
-    color:#f7fba9 ;
-    font-size:24px;
+    font-size:16px;
     margin-top:0;
     word-wrap:break-word
 }

@@ -10,6 +10,7 @@ class APIFeatures {
                 $regex: this.queryStr.keyword,
                 $options: 'i'           //desabaling case sensitivity
             }
+
         } : {}
 
         this.query = this.query.find({ ...keyword });
@@ -61,6 +62,22 @@ class APIFeatures {
         } : {}
 
         this.query = this.query.find({ ...keyword });
+        return this;
+    }
+
+
+    //tharusha
+    emp_search() {
+        const keyword = this.queryStr.keyword ? {
+            First_Name: {
+                $regex: this.queryStr.keyword,
+                $options: 'i'
+            }
+        }:{}
+
+        console.log(keyword);
+
+        this.query = this.query.find ({...keyword});
         return this;
     }
 }

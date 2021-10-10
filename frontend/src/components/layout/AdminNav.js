@@ -94,7 +94,7 @@ const Admin_nav = () => {
                     <span className="tooltips">Customer</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/main_emp_page">
                     <div className="i">
                     <FontAwesomeIcon icon={faUserTie}></FontAwesomeIcon></div>
                 
@@ -148,7 +148,7 @@ const Admin_nav = () => {
                     <span className="tooltips">Quotations</span>
                 </li>
                 <li>
-                    <a href="/admin/report">
+                    <a href="#">
                     <div className="i">
                     <FontAwesomeIcon icon={faPrint}></FontAwesomeIcon></div>
                

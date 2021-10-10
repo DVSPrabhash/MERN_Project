@@ -126,31 +126,55 @@
     
 }
 
-select {
-    -webkit-appearance:none;
-    -moz-appearance:none;
-    -ms-appearance:none;
-    appearance:none;
-    outline:0;
-    box-shadow:none;
-    border:0!important;
-    background: pink;
-    background-image: none;
-    flex: 1;
-    height:45px;
-    width:170px;
-    text-align:center;
-    padding: 0 .5em;
-    color:black;
-    cursor:pointer;
-    font-size: 1em;
-    border-radius:20px;
-    font-family: 'Open Sans', sans-serif;
- }
- select:hover{
-    background-color: rgb(255, 169, 169);
-    transition: 0.4s;
- }
+select[name="PS"] {
+
+  -webkit-appearance:none;
+
+  -moz-appearance:none;
+
+  -ms-appearance:none;
+
+  appearance:none;
+
+  outline:0;
+
+  box-shadow:none;
+
+  border:0!important;
+
+  background: pink;
+
+  background-image: none;
+
+  flex: 1;
+
+  height:45px;
+
+  width:170px;
+
+  text-align:center;
+
+  padding: 0 .5em;
+
+  color:black;
+
+  cursor:pointer;
+
+  font-size: 1em;
+
+  border-radius:20px;
+
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+select[name="PS"]:hover{
+
+  background-color: rgb(255, 169, 169);
+
+  transition: 0.4s;
+
+}
  /**************************************************************/
 
  .sbmtbutton {

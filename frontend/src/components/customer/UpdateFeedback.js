@@ -16,13 +16,13 @@ import { UPDATE_FEEDBACKS_RESET } from '../../constants/feedbackConstants'
 const UpdateFeedback = ({match,history}) => {
 
     const [name, setName] = useState('');
-    const [rating, setRating] = useState('');
+    const [rating, setRating] = useState(0);
     const [description, setDescription] = useState('');
 
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { error, feedback } = useSelector(state => state.singlefeedback)
+    const { error, feedback } = useSelector(state => state.customerFeedback)
     const { loading, error: updateError, isUpdated } = useSelector(state => state.updateFeedback);
 
     const feedbackId = match.params.id;
@@ -36,9 +36,6 @@ const UpdateFeedback = ({match,history}) => {
             setRating(feedback.rating);
             setDescription(feedback.description);
         }
-        
-    
-       
 
         if(error){
             alert.error(error);
@@ -49,7 +46,7 @@ const UpdateFeedback = ({match,history}) => {
             dispatch(clearErrors())
         }
         if(isUpdated) {
-            history.push('/Customer_Feedback');
+            history.pushState('/Customer_Feedback');
             alert.success('Feedback updated successfully');
             dispatch({ type: UPDATE_FEEDBACKS_RESET})
         }
@@ -135,7 +132,7 @@ const UpdateFeedback = ({match,history}) => {
                         
                         <input 
                         type="submit" 
-                        value="Update" 
+                        value="Submit" 
                         disabled={ loading ? true:false }
                         className="wpcf7-form-control wpcf7-submit btn0001"/>
                     

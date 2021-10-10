@@ -8,14 +8,9 @@ import { productsReducer, newProductReducer, productReducer, productDetailsReduc
 import { offersReducer, newOfferReducer, offerReducer, offerDetailsReducer } from './reducers/offerReducers';
 
 import {feedbackReducers,feedbackAdminDeleteReducer, } from './reducers/feedbackReducers';
-import {
-    feedbackCreateReducers,
-    feedbackCustomerReducers,
-    feedbackCustomerDeleteReducer,
-    feedbackCustomerUpdateReducer,
-    SinglefeedbackCustomerReducers } from './reducers/feedbackCreateReducer';   
+import {feedbackCreateReducers,feedbackCustomerReducers,feedbackCustomerDeleteReducer,feedbackCustomerUpdateReducer } from './reducers/feedbackCreateReducer';   
 
-import {countReducers,allCountReducers} from './reducers/adminDashReducer';
+import {countReducers} from './reducers/adminDashReducer';
 
 import {
     newOrderReducer,
@@ -27,6 +22,8 @@ import {
 } from './reducers/orderReducers'
 
 import { cartReducer } from './reducers/cartReducer';
+
+import { allEmployeesReducer,newEmployeeReducer,employeeReducer, employeeDetailsReducer } from './reducers/employeeReducers'//tharusha
 
 
 const reducer = combineReducers({
@@ -59,10 +56,16 @@ const reducer = combineReducers({
     customerDelete: feedbackCustomerDeleteReducer,
     customerFeedback: feedbackCustomerReducers,
     updateFeedback: feedbackCustomerUpdateReducer,
-    singlefeedback: SinglefeedbackCustomerReducers,
 
     count:countReducers,
-    allCount: allCountReducers
+
+
+    //tharusha
+    allEmployees : allEmployeesReducer,// 19 folder
+    employee :newEmployeeReducer,
+    emp:employeeReducer,
+    employeeDetails: employeeDetailsReducer
+
 })
 
 
