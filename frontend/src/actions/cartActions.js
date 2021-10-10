@@ -23,6 +23,29 @@ export const addItemToCart = (id,quantity,size,topping,price) => async (dispatch
     localStorage.setItem('cartItem', JSON.stringify(getState().cart.cartItems))
 }
 
+//for offer------------------------------------------------------------------
+export const addOfferItemToCart = (id,quantity,size,topping,price) => async (dispatch,getState) => {
+    const {data} = await axios.get(`/api/v1/offer/${id}`)
+    
+
+    dispatch({
+        type: ADD_TO_CART,
+        payload:{
+            product:data.offer._id,
+            name:"Limited Offer Item",
+            image: data.offer.images[0].url,
+            quantity,
+            price,
+            size,
+            topping,
+
+        }
+    })
+
+    localStorage.setItem('cartItem', JSON.stringify(getState().cart.cartItems))
+    // alert(JSON.stringify(getState().cart.cartItems))
+}
+
 export const removeItemFromCart = (id) => async (dispatch,getState) => {
 
     dispatch({

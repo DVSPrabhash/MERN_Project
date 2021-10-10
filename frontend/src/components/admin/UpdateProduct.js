@@ -302,7 +302,7 @@ const UpdateProduct = ({ match, history }) => {
                 </div>
 
                 </section>
-                <AdminFooter/>
+                {/* <AdminFooter/> */}
             </Fragment>
         </Fragment>
     )

@@ -35,7 +35,7 @@ const ProductDetails = ({ match }) => {
 
   useEffect(() => {
 
-    alert.success(totPrice);
+    alert.info("Please Select a Size");
 
     window.scrollTo(0, 0) //scroll top onPage load
 
