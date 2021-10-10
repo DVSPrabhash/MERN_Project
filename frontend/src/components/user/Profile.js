@@ -23,7 +23,7 @@ const Profile = () => {
                     <section className= "myProfile">
 
                         <div class="wrapperDV">
-                            <div class="left">
+                            <div class="leftPv">
 
                                 <img src={user.avatar.url}
                                 alt={user.first_name} 
