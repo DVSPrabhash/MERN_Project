@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
 *, ::after, ::before {
     /* box-sizing: unset !important;        */
     /* overide bootsrap sccs */
@@ -16,7 +17,7 @@
     
   }
   
-  .cartdiv456{
+.cartdiv456{
     position: relative;
     z-index: 10;
     background-color:rgb(255, 231, 231);
@@ -39,7 +40,9 @@
     margin-left:-25em;
   }
 
-
+.cart1122335522{
+    font-size:30px;
+}
 
 
 
@@ -47,14 +50,15 @@ header{
     top:0;
 }
 
-.container{
+.container5555{
     width: 100%;
     height: 100px;
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 5%;
+    padding-right: 5%;
     box-sizing: border-box;
-    padding-top: 3%;
+    margin-top: 2%;
     background-attachment: fixed;
+    margin-bottom:30px;
 
 }
 
@@ -99,6 +103,16 @@ nav ul li{
     
 
 }
+
+nav ul li a{
+    text-decoration: none;
+    color:white;
+    margin-left: -20px;
+    font-family: 'Cinzel Decorative', cursive;
+    margin-bottom: 5px;
+}
+
+
 nav img{
     margin-top: 75px;
 }
@@ -117,6 +131,7 @@ nav ul li a:hover{
 
 /*mama dapu tikak*/
 .avatar {
+    position: relative;
     vertical-align: middle;
     width: 50px;
     height: 50px;
@@ -148,6 +163,4 @@ nav ul li a:hover{
 
 .loginCon{
     margin-right: 10px;
-    margin-left: 96%;
-    margin-top: 0px;
 }

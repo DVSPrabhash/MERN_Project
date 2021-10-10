@@ -26,13 +26,17 @@ const products = require('./routes/product');
 const offers = require('./routes/offer');
 const auth = require('./routes/auth');
 const order = require('./routes/order');
+const feedback = require('./routes/feedbackroute');
+const count = require('./routes/adminDashRoute');
+
 const bodyParser = require('body-parser');
 
 app.use('/api/v1', products)
 app.use('/api/v1', offers)
 app.use('/api/v1', auth)
 app.use('/api/v1', order)
-
+app.use('/api/v1', feedback)
+app.use('/api/v1', count)
 
 //middleware 2 handling error
 app.use(errorMiddleware);

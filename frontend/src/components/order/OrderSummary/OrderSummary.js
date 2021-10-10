@@ -9,7 +9,9 @@ import { addItemToCart,removeItemFromCart,saveDeliveryInfo } from "../../../acti
 import { createOrder,clearErrors } from "../../../actions/orderActions";
 
 import './ordersummary.css'
-
+import Header from '../../layout/Header';
+import Footer from '../../layout/Footer';
+import AdminFooter from '../../layout/AdminFooter';
 
 const OrderSummary = ({history}) => {
 
@@ -42,7 +44,6 @@ const OrderSummary = ({history}) => {
         'orderStatus' : 'Pending'
 
     }
-    alert(JSON.stringify(order))
     dispatch(createOrder(order))
     history.push('/success')
   }
@@ -50,7 +51,7 @@ const OrderSummary = ({history}) => {
 
       return (
         <Fragment>
-
+          <Header/>
         <div>
           <div className="wrapper3330">
             <div className="scrollbar3430">
@@ -114,7 +115,7 @@ const OrderSummary = ({history}) => {
             </div>
           </div>
         </div>
-
+                  <Footer/>
         </Fragment>
         )
       }

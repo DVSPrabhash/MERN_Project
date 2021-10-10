@@ -3,6 +3,8 @@ import React, { Fragment, useState, useEffect} from 'react'
 
 
 import MetaData from '../layout/MetaData'
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -67,6 +69,7 @@ const UpdatePassword = ({ history }) => {
     return (
         <Fragment>
             <MetaData title = {'Change Password'}/>
+            <Header/>
             <section className ="myUpdatePwd">
             <div className = "body">
 
@@ -123,7 +126,7 @@ const UpdatePassword = ({ history }) => {
 
             </div>
             </section>
-            
+            <Footer/>
            
             
         </Fragment>

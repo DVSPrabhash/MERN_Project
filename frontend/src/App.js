@@ -40,8 +40,12 @@ import ProductDetails from './components/product/ProductDetails/ProductDetails';
 import AllOffers from './components/AllOffers'
 import OfferDetails from './components/offer/OfferDetails';
 
-
-
+//Yohan 
+import Admin_Feedback from "./components/admin/adminFeedbacks"; 
+import Review from "./components/customer/Review"
+import Add_Feedback from './components/customer/Add_Feedback'
+import Customer_Feedback from './components/customer/customerFeedbacks'
+import Update_Feedback from './components/customer/UpdateFeedback'
 
 //ankagen end
 
@@ -60,13 +64,23 @@ import UpdateOffer from './components/admin/UpdateOffer';
 
 //anukagen end
 
+//admin Dashboard
+import adminDash from './components/admin/adminDash/adminDash';
+import adminOrder from './components/admin/adminDash/adminDash';
 
+
+//reports
+import report from './components/admin/adminDash/report'
+import salesReport from './components/report/salesReport'
+import feedbackReport from './components/report/feedbackReport'
 
 
 
 import ProtectedRoute from './components/route/ProtectedRoute';
 import{ loadUser, updatePassword } from './actions/userActions'
 import store from './store'
+
+
 
 
 //import { Router } from 'express';
@@ -82,7 +96,6 @@ function App() {
     //header footer and the others component implement in here
     <Router>
       <div className="App">
-        <Header/>
 
           {/*<div className ="container2">*/}
         
@@ -127,11 +140,27 @@ function App() {
           <ProtectedRoute path="/admin/orders" isAdmin={true} component={AdminAllOrders} exact/>
           <Route path="/admin/order/:id" isAdmin={true} component={AdminSingleOrderView} exact/>
           <Route path="/admin/orders/search/:keyword" isAdmin={true} component={AdminAllOrders} exact/>
+          
+
+          {/*Yohan */}
+          <Route path = "/review" component={Review} exact/>
+          <Route path = "/add_feedback/:id" component={Add_Feedback} exact/>
+          <ProtectedRoute path = "/Admin_Feedback" isAdmin={true} component={Admin_Feedback} exact/>
+          <Route path = "/Customer_Feedback" component={Customer_Feedback} exact/>
+          <Route path = "/Update_Feedback/:id" component={Update_Feedback} exact/>
 
 
+
+          <ProtectedRoute path="/admin/Dashboard" isAdmin={true} component={adminDash} exact/>
+          <ProtectedRoute path="/admin/Admin_Order" isAdmin={true} component={adminOrder} exact/>
+
+
+          <Route path = "/admin/report" component={report} exact/>
+          <Route path = "/admin/report/salesReport" component={salesReport} exact/>
+          <Route path = "/admin/report/FeedbackReport" component={feedbackReport} exact/>
           
           </div>
-         <Footer/>
+
 
       {/*</div>*/}
       

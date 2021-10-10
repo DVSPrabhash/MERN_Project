@@ -6,10 +6,12 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from 'react-redux'
 import { useAlert } from 'react-alert'
 
-import { addItemToCart,removeItemFromCart,saveDeliveryInfo,addOfferItemToCart } from "../../../actions/cartActions";
+import { addItemToCart,removeItemFromCart,saveDeliveryInfo } from "../../../actions/cartActions";
 
 import './userCart.css'
-
+import Header from '../../layout/Header';
+import Footer from '../../layout/Footer';
+import AdminFooter from '../../layout/AdminFooter';
 
 const UserCartUI = ({history}) => {
 
@@ -46,23 +48,15 @@ const UserCartUI = ({history}) => {
   const incQty = (id,quantity,size,topping,price) =>{
     
     const newQty = quantity + 1;
-    if (size === "offer"){
-      dispatch(addOfferItemToCart(id,newQty,size,topping,price))
-    }else{
-      dispatch(addItemToCart(id,newQty,size,topping,price))
+    dispatch(addItemToCart(id,newQty,size,topping,price))
     }
-  }
 
  const descQty = (id,quantity,size,topping,price) =>{
   
     const newQty = quantity - 1;
     if (newQty <= 0) return;
-    if (size === "offer"){
-      dispatch(addOfferItemToCart(id,newQty,size,topping,price))
-    }else{
-      dispatch(addItemToCart(id,newQty,size,topping,price))
+    dispatch(addItemToCart(id,newQty,size,topping,price))
     }
-  }
 
     // const orderHandler =() => {
     //   history.push('/login?redirect=cart')
@@ -72,7 +66,7 @@ const UserCartUI = ({history}) => {
   
       return (
         <Fragment>
-
+          <Header/>
         <div>
           <div className="wrapper3330">
             <div className="scrollbar3430">
@@ -152,7 +146,7 @@ const UserCartUI = ({history}) => {
             </div>
           </div>
         </div>
-
+<Footer/>
         </Fragment>
         )
       }

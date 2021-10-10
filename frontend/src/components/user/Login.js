@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 
 import '../style/login.css'
 
+import Header from '../layout/Header'
+import Footer from '../layout/Footer'
 import Loader from '../layout/Loader'
 import MetaData from '../layout/MetaData'
 
@@ -51,7 +53,7 @@ const Login = ({ history,location }) => {
           {loading ? <Loader/> : (
               <Fragment>
                 <MetaData title = {'Login'}/>
-
+                <Header/>
                 <section className = "mylogin">
                 <div className ="body">
 
@@ -100,7 +102,7 @@ const Login = ({ history,location }) => {
                   
                 </div>
                 </section>
-              
+              <Footer/>
               </Fragment>
         )}
 

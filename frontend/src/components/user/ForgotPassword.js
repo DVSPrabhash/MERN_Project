@@ -2,7 +2,8 @@ import React, { Fragment, useState, useEffect} from 'react'
 
 import { Link } from 'react-router-dom'
 
-
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 import MetaData from '../layout/MetaData'
 
 import { useAlert } from 'react-alert'
@@ -61,6 +62,7 @@ const ForgotPassword = () => {
     return (
         <Fragment>
             <MetaData title = {'Forgot Password'}/>
+            <Header/>
             <section className = "forgotpwd">
                 <div className ="body">
 
@@ -96,7 +98,7 @@ const ForgotPassword = () => {
                 </div>
                 </section>
                     
-            
+            <Footer/>
         </Fragment>
     )
 }

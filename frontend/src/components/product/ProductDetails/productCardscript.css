@@ -1,5 +1,6 @@
 .productCardDiv{
   margin-bottom: 50%;
+  height: auto;
 }
 
 
@@ -139,12 +140,12 @@ input#number {
   margin: 10px;
 }
 /* Chrome, Safari, Edge, Opera */
-/* input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-} */
+}
 /* Firefox */
-input[name=QTYnumber] {
+input[type=number] {
   -moz-appearance: textfield;
   border-radius: 10px;
 }
@@ -155,16 +156,16 @@ input[name=QTYnumber] {
   margin: 0;
   padding: 0;
 }
-/* .rate {
+.rate {
   margin-left: 127px;
   float: left;
   height: 46px;
-} */
-/* .rate:not(:checked) > input {
+}
+.rate:not(:checked) > input {
   position:absolute;
   top:-9999px;
-} */
-/* .rate:not(:checked) > label {
+}
+.rate:not(:checked) > label {
   float:right;
   width:1em;
   overflow:hidden;
@@ -184,7 +185,7 @@ input[name=QTYnumber] {
 }
 .rate > input:checked + label:hover, .rate > input:checked + label:hover ~ label, .rate > input:checked ~ label:hover, .rate > input:checked ~ label:hover ~ label, .rate > label:hover ~ input:checked ~ label {
   color: #c59b08;
-} */
+}
 .productName {
   color: #322827;
   font-size: 35px;

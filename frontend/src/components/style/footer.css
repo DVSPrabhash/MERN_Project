@@ -10,21 +10,20 @@ body{
     padding: 0%;
 }
 
-
-
 .logo{
     width:100%;
-    height: 100%;
+
     margin-top: 80px;
-    margin-left:-50px;
+
 }
 
 footer{
     width: 100%;
-    position: relative;
-    left: 0%;
-    bottom: 0;
-    background: linear-gradient(to left,#e288da, #e17f7f, #a25cf3);
+    position:relative;
+    left: 0;
+    bottom: 0%;
+    background: rgb(93,94,167);
+background: linear-gradient(90deg, rgba(93,94,167,1) 0%, rgba(10,237,223,1) 54%, rgba(21,175,233,1) 100%);
     color: rgb(255, 255, 255);
     padding: 20px 0 1px;
     border-top-left-radius: 65px;
@@ -32,7 +31,7 @@ footer{
     line-height: 20px;
     
 }
-.row{
+.row10215{
     width: 85%;
     margin: auto;
     display: flex;
@@ -53,6 +52,7 @@ footer{
     flex-basis: 25%;
     padding:20px;
     margin-right: 10px;
+    height: auto;
 }
 
 .col:nth-child(2) .col:nth-child(3) .col:nth-child(4){
@@ -61,10 +61,12 @@ footer{
 .col h3{
     width:fit-content;
     margin-bottom: 40px;
+    
     position: relative;
     letter-spacing: 2px;
     font-family: 'ZCOOL XiaoWei', serif;
     font-size: 25px;
+    line-height: normal;
 }
 col p{
     font-family: 'Rancho', cursive;
@@ -77,21 +79,23 @@ col p{
     font-family: 'Antic Didone', serif;
     font-size: 15px;
 }
-ul li{
+.col ul li{
     list-style: none;
     margin-bottom: 12px;
     
 }
-ul li a{
+.col ul li a{
     text-decoration: none;
     color:white;
     margin-left: -20px;
     font-family: 'Cinzel Decorative', cursive;
+    margin-bottom: 5px;
 
 }
-ul h3{
+.col ul h3{
     align-self: center;
 }
+
 
 .social-icons .fab{
     width: 60px;
@@ -105,7 +109,7 @@ ul h3{
     margin-right: 15px;
     cursor: pointer;
 }
-hr{
+footer hr{
     width: 90%;
     border: 0;
     border-bottom: 1px solid #ccc;
@@ -129,6 +133,9 @@ hr{
     top: 25px;
     left: 0;
     overflow: hidden;
+    line-height: normal;
+    padding-top: 5px;
+    margin-top: 5px;
 }
 .underlineAnimation span{
     width: 15px;

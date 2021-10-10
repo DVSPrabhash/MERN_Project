@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux'
 
 import Loader from '../layout/Loader'
 import MetaData from '../layout/MetaData'
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 
 import '../style/login.css'
 
@@ -17,7 +19,7 @@ const Profile = () => {
             {loading ? <Loader/> : (
                  <Fragment>
                     <MetaData title = {'My Profile'}/>
-
+                    <Header/>
                     <section className= "myProfile">
 
                         <div class="wrapperDV">
@@ -36,35 +38,15 @@ const Profile = () => {
                                 )}
                                 <br/>
                                 {user.role !== 'admin' && (
-                                    <Link to="#" className="spd1 spd">My Feedback</Link>
+                                    <Link to="/Customer_Feedback" className="spd1 spd">My Feedback</Link>
                                 )}
                                 {user.role !== 'user' && (
-                                    <Link to="/admin/users" className="spd1 spd">Admin Dashboard</Link>
+                                    <Link to="/admin/Dashboard" className="spd1 spd">Admin Dashboard</Link>
                                 )}
-                                <br/><br/>
-                                {user.role !== 'user' && (
-                                    <Link to="/admin/product" className="spd1 spd">AddProducts</Link>
-                                )}
-                                <br/>
-                                 {user.role !== 'user' && (
-                                    <Link to="/admin/offer" className="spd1 spd">AddOfferes</Link>
-                                )}
-                                <br/><br/>
-                                 {user.role !== 'user' && (
-                                    <Link to="/admin/products" className="spd1 spd">ViewProducts</Link>
-                                )}
-                                <br/>
-                                 {user.role !== 'user' && (
-                                    <Link to="/admin/offers" className="spd1 spd">ViewOffers</Link>
-                                )}
-                                {/* Ishara OrderComponent */}
-                                <br/>
-                                 {user.role !== 'user' && (
-                                    <Link to="/admin/orders" className="spd1 spd">Orders</Link>
-                                )}
-
+                                
+                                
                         
-                                <br/><br/><br/><br/><br/><br/><br/><br/>
+                                <br/><br/>
                                 <h4>joined at {String(user.createdAt).substring(0, 10)}</h4>
                             
                             </div>
@@ -114,7 +96,7 @@ const Profile = () => {
                             </div>
                         </div>
                     </section>
-                    
+                    <Footer/>
                 </Fragment>
             )}
         </Fragment>

@@ -3,12 +3,12 @@ const mongoose = require('mongoose')
 const offerSchema = new mongoose.Schema({
     description: {
         type: String,
-        // required: [true, 'Please enter offer description']
+        required: [true, 'Please enter offer description']
     },
 
     endDate: {
         type: String,
-        // required: [true, 'Please enter offer ending date']
+        required: [true, 'Please enter offer ending date']
     },
 
     price: {

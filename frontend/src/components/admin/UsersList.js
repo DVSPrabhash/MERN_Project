@@ -8,6 +8,16 @@ import Swal from 'sweetalert2'
 
 import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
+
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+import AdminFooter from '../layout/AdminFooter';
+import Admin_nav from '../layout/AdminNav';
+
+import "react-datetime/css/react-datetime.css";
+import '../style/home.css';
+import '../style/adminFeedback.css'
+
 //side bar eka import krnna Rshinthagen aran
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -94,6 +104,7 @@ const UsersList = ({ history }) => {
                     field:'id',
                     sort:'asc',
                     
+                    
                 },
                 {
                     label:'First Name',
@@ -139,7 +150,7 @@ const UsersList = ({ history }) => {
                 {
                     label:'Action',
                     field:'actions',
-                    
+                    width: 15
                     
                    
                 },
@@ -163,10 +174,10 @@ const UsersList = ({ history }) => {
                     actions: <Fragment>
                         <Link to= {`/admin/user/${user._id}`} className = "btn btn-primary py-1 px-2 ml-1 mr-5" >
                             <i className =" fa fa-pencil" ></i>
-                        
-                         </Link>  
+                         </Link> 
+
                          <button className= "btn btn-danger py-1 px-2 ml-5 mb-1"  onClick = {() => deleteUserHandler(user._id)}>
-                             <i className = "fa fa-trash"></i>
+                         <i className="fas fa-trash-alt"></i>
                                                        
                          </button>
                          </Fragment> 
@@ -185,15 +196,9 @@ const UsersList = ({ history }) => {
     return (
         <Fragment>
             <MetaData title = {'All Users'}/>
-        <div className = "raw">
-            <div className = "col-12 col-md-2">
-                {/*navigation bar ekaclassName = "col-12 col-md-2"  */}
-            </div>    
         
-
-        {/*<div className = "col-12 col-md-10">*/}
-        <div className = "allUserContainer">
-
+        
+        <script src="https://kit.fontawesome.com/48ca456f8a.js" ></script>
         <link
       rel="stylesheet"
       type="text/css"
@@ -213,36 +218,32 @@ const UsersList = ({ history }) => {
 
 
             <Fragment>
-                <div className ="test">
-                <h1 className = "my-5" >ALL Users</h1>
-                </div>
-
-
-
-
-
+            <Header/>
+            <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+                <section className="container555424255">
                 
+                <h1 className = "my-5" >ALL Users</h1>
 
                 {loading ? <Loader /> : (
                             <MDBDataTable
                                 data={SetUsers()}
-                                className="px-3"
+                                //className="px-3"
                                 bordered
                                 striped
                                 hover
+                                fixed
+                                className='your-custom-styles'
+                                
                             />
                         )}
             
                     
                 
-                   
-                 
+                   </section>
+                
             </Fragment>
-
-</div>
-        {/*</div>*/}
-        </div> 
-            
         </Fragment>
     )
 }

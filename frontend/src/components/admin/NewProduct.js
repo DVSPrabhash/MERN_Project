@@ -1,6 +1,14 @@
 import React, { Fragment, useState, useEffect } from 'react'
 
 import MetaData from '../layout/MetaData'
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+import AdminFooter from '../layout/AdminFooter';
+import Admin_nav from '../layout/AdminNav';
+
+import "react-datetime/css/react-datetime.css";
+import '../style/home.css';
+import '../style/adminFeedback.css'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -100,6 +108,11 @@ const NewProduct = ({ history }) => {
             <MetaData title={'New Product'} />
 
             <Fragment>
+            <Header/>
+            <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+                <section className="container55555">
                 <div className="myForm">
                     <form onSubmit={submitHandler} encType='multipart/form-data'>
 
@@ -262,7 +275,8 @@ const NewProduct = ({ history }) => {
                     
                     </form>
                 </div>
-                    
+                  </section>
+                   
             </Fragment>
         </Fragment>
     )

@@ -4,6 +4,8 @@ import React, { Fragment, useState, useEffect} from 'react'
 
 import '../style/login.css'
 import MetaData from '../layout/MetaData'
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -111,9 +113,9 @@ const Register = ({ history}) => {
     return (
         <Fragment>
             <MetaData title = {'Register User'}/>
+            <Header/>
             <section className ="myRegister">
             <div className = "body">
-
 
             <div className="form-container2">
 
@@ -269,7 +271,7 @@ const Register = ({ history}) => {
 
             </div>
             </section>
-  
+        <Footer/>
         </Fragment>
     )
 }

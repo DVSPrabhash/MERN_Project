@@ -15,7 +15,7 @@ const Footer = () => {
             <br/> <br/> <br/> <br/>
             <footer>
             
-            <div className="row">
+            <div className="row10215">
                 <div className="col">
                     <img src="/images/cupcakes_(1).png" className="logo"></img>
                 </div>
@@ -28,10 +28,10 @@ const Footer = () => {
                 </div>
                 <div className="col">
                     <h3>Contact Us <div className="underlineAnimation"><span></span></div></h3>
-                    <p className="contact">No.20/C</p>
-                    <p className="contact">Malagoda Road,</p>
-                    <p className="contact">Unakuruwa,</p>
-                    <p className="contact">Colombo 05.</p>
+                    <p className="contact">No.98/A/4,</p>
+                    <p className="contact">Nagahamulla,</p>
+                    <p className="contact">Thalangama South,</p>
+                    <p className="contact">Battaramulla.</p>
                     <p className="email">cupcakesandcakery@gmail.com</p>
                     <h4 className="contact"><i className="fas fa-phone-alt"></i> +94 112 554 165</h4>
                 </div>
@@ -60,7 +60,7 @@ const Footer = () => {
                 </div>
             </div>
             <hr></hr>
-            <p className="copyright">The best Web Solutions <FontAwesomeIcon icon={faCopyright}/> 2021 - All Rights Reserved</p>
+            <p className="copyright">Nue Nimble Web Solutions <FontAwesomeIcon icon={faCopyright}/> 2021 - All Rights Reserved</p>
         </footer>
         </Fragment>
     )

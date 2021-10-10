@@ -3,14 +3,21 @@ import { Link } from 'react-router-dom'
 import { MDBDataTable } from 'mdbreact'
 
 
-
-
 //seweet alert ekta delete ekata adalawa
 import Swal from 'sweetalert2'
 
 
 import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
+
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+import AdminFooter from '../layout/AdminFooter';
+import Admin_nav from '../layout/AdminNav';
+
+import "react-datetime/css/react-datetime.css";
+import '../style/home.css';
+import '../style/adminFeedback.css'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -127,7 +134,7 @@ const ProductsList = ({ history }) => {
                         <i className="fa fa-pencil"></i>
                     </Link>
                     <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteProductHandler(product._id)}>
-                        <i className="fa fa-trash"></i>
+                    <i className="fas fa-trash-alt"></i>
                     </button>
                 </Fragment>
             })
@@ -160,10 +167,10 @@ const ProductsList = ({ history }) => {
     }
 
     return (
-        <div className="containerList" style={{margin:"100px"}}>
+        
             <Fragment>
                 <MetaData title={'All Products'} />
-
+                <script src="https://kit.fontawesome.com/48ca456f8a.js" ></script>
                                             <link
                                         rel="stylesheet"
                                         type="text/css"
@@ -181,7 +188,26 @@ const ProductsList = ({ history }) => {
                                     /> 
 
                 <Fragment>
-                    <h1>All Products</h1>
+                <Header/>
+            <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+                <section className="container55555">
+                    
+
+                <h1 className="h12">Products</h1><br/><br/>
+                    <Link to="/admin/product">
+                        <button className="button565465847655654">
+                            <div className ="learn-more">
+                            <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Add Product</span>
+                            </div>
+
+                        </button>
+                    </Link>
+                    <br/><br/>
 
                     {loading ? <Loader /> :(
                         <MDBDataTable
@@ -191,9 +217,11 @@ const ProductsList = ({ history }) => {
                             hover
                         />
                     )}
+                    </section>
+                    
                 </Fragment>
             </Fragment>
-        </div>
+        
     )
 }
 

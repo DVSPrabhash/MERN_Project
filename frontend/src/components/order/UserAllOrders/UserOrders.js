@@ -9,7 +9,8 @@ import { myOrders, clearErrors } from '../../../actions/orderActions'
 
 import  USOCard from "../UserSingleOrder/UserSingleOrder"
 
-
+import Header from '../../layout/Header';
+import Footer from '../../layout/Footer';
 import './userOrders.css'
   
 
@@ -40,6 +41,7 @@ const MyOrders = () => {
 
     return (
         <Fragment>
+          <Header/>
           <br/><br/><br/><br/><br/><br/><br/><br/>
         <div className="bgimage201">
           <center><img src="/images/bg206.png"></img></center>
@@ -94,8 +96,8 @@ const MyOrders = () => {
 
             {/* --------------------------------------------------------------------------------------- */}
             </div>
-       
-            </Fragment>
+       <Footer/>
+       </Fragment>
   )
 }
 

@@ -36,7 +36,6 @@ const orderSchema = mongoose.Schema({
             // required: true,
             enum: {
                 values:[
-                    'offer',
                     '500g',
                     '1Kg',
                     '2Kg'

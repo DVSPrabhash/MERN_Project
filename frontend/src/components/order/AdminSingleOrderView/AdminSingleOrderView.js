@@ -10,6 +10,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import AdminAllOrders from '../AdminAllOrders/AdminOrdersUI'
 
+import Header from '../../layout/Header';
+import Footer from '../../layout/Footer';
+import AdminFooter from '../../layout/AdminFooter';
 
 import './adminSingleOrderView.css'
 
@@ -64,6 +67,7 @@ const AdminSingleOrderView = ({match}) => {
 
     return (
         <Fragment>
+          <Header/>
           <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <div>
           <div className="sopCon">
@@ -183,7 +187,7 @@ const AdminSingleOrderView = ({match}) => {
         
         <br/><br/><br/>
         
-        
+        <AdminFooter/>
         </Fragment>
         )
       }

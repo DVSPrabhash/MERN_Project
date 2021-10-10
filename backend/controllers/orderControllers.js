@@ -40,7 +40,6 @@ exports.newOrder = catchAsyncErrors( async (req, res, next) => {
         success: true,
         order
     })
-
 })
 
 

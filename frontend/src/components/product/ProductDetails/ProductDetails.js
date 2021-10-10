@@ -9,6 +9,9 @@ import NumberFormat from 'react-number-format';
 import Loader from '../../layout/Loader'
 import MetaData from '../../layout/MetaData'
 import Product from '../Product';
+import Header from '../../layout/Header';
+import Footer from '../../layout/Footer';
+import AdminFooter from '../../layout/AdminFooter';
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -32,7 +35,7 @@ const ProductDetails = ({ match }) => {
 
   useEffect(() => {
 
-
+    alert.success(totPrice);
 
     window.scrollTo(0, 0) //scroll top onPage load
 
@@ -105,6 +108,7 @@ const ProductDetails = ({ match }) => {
 
       {loading ? <Loader /> : (
         <Fragment>
+          <Header/>
           <div className="productCardDiv">
             <meta charSet="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -195,7 +199,7 @@ const ProductDetails = ({ match }) => {
                     <div className="qtyBtnDiv">
                       <p className="p2Size">Select a quantity</p>
                       <div className="value-button" id="decrease" value="Decrease Value" onClick={descQty} >{'<<'}</div>
-                      <input className="count" name="QTYnumber" type="number" id="number" value={quantity} />
+                      <input className="count" type="number" id="number" value={quantity} />
                       <div className="value-button" id="increase" value="Increase Value" onClick={incQty} >{'>>'}</div>
                     </div>
                     <br />
@@ -236,7 +240,7 @@ const ProductDetails = ({ match }) => {
 
           </div>
 
-
+                  <Footer/>
         </Fragment>
       )
       }

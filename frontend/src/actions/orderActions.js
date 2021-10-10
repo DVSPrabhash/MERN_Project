@@ -74,6 +74,30 @@ export const getAllorders = (keyword ='' , pStatus, oStatus, dStatus) => async (
 
 }
 
+export const getorders = () => async (dispatch) => {
+    try{
+        dispatch({type:ALL_ORDERS_REQUEST})
+
+        const {data} = await axios.get(`/admin/orders/`)
+        
+        dispatch({
+            type:ALL_ORDERS_SUCCESS,
+            payload: data
+        })
+
+
+    }
+    catch(error){
+        dispatch({
+            type: ALL_ORDERS_FAIL,
+            payload: error.response.data.message
+        })
+
+    }
+
+
+}
+
 
 
 
@@ -116,8 +140,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
     try{
         
         dispatch({type:CREATE_ORDER_REQUEST})
-
-        alert("Actoon Callde")
+        
 
         const config = {
             headers:{
@@ -125,11 +148,7 @@ export const createOrder = (order) => async (dispatch, getState) => {
             }
         }
 
-        alert(config+"config called")
-
         const {data} = await axios.post(`/api/v1/order/new`,order,config)
-
-        alert(JSON.stringify(data))
 
 
         dispatch({
@@ -139,7 +158,6 @@ export const createOrder = (order) => async (dispatch, getState) => {
 
       
     }catch(error){
-        // alert(error.response.data)
 
     }
 }

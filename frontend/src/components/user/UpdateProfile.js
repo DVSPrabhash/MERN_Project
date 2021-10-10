@@ -1,7 +1,8 @@
 import React, { Fragment, useState, useEffect} from 'react'
 
 
-
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 import MetaData from '../layout/MetaData'
 
 import '../style/login.css'
@@ -124,7 +125,7 @@ const UpdateProfile = ( { history }) => {
     return (
         <Fragment>
             <MetaData title = {'Update My Profile'}/>
-
+            <Header/>
             <section className ="myRegister">
             <div className = "body">
 
@@ -283,16 +284,8 @@ const UpdateProfile = ( { history }) => {
 
             </div>
             </section>
+<Footer/>
 
-
-
-
-
-
-
-     
-
-          
         </Fragment>
     )
 }

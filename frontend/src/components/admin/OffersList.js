@@ -2,12 +2,21 @@ import React, { Fragment, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { MDBDataTable } from 'mdbreact'
 
+
 import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
 
 //seweet alert ekta delete ekata adalawa
 import Swal from 'sweetalert2'
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+import AdminFooter from '../layout/AdminFooter';
+import Admin_nav from '../layout/AdminNav';
 
+
+import "react-datetime/css/react-datetime.css";
+import '../style/home.css';
+import '../style/adminFeedback.css'
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -86,7 +95,7 @@ const OffersList = ({ history }) => {
                         <i className="fa fa-pencil"></i>
                     </Link>
                     <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteOfferHandler(offer._id)}>
-                        <i className="fa fa-trash"></i>
+                    <i className="fas fa-trash-alt"></i>
                     </button>
                 </Fragment>
             })
@@ -117,10 +126,12 @@ const OffersList = ({ history }) => {
           })
     }
     return (
-        <div className="containerList" style={{margin:"100px"}}>
+        
             <Fragment>
                 <MetaData title={'All Offers'} />
-
+                                
+                                    
+                                        <script src="https://kit.fontawesome.com/48ca456f8a.js" ></script>
                                             <link
                                         rel="stylesheet"
                                         type="text/css"
@@ -138,19 +149,46 @@ const OffersList = ({ history }) => {
                                     /> 
 
                 <Fragment>
-                    <h1>All Offers</h1>
+                <Header/>
+            <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+                <section className="container55555">
+                    <h1 className="h12">Offers</h1><br/><br/>
+                    <Link to="/admin/offer">
+                        <button className="button565465847655654">
+                            <div className ="learn-more">
+                            <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Add Offers</span>
+                            </div>
 
+                        </button>
+                    </Link>
+                    <br/><br/>
+
+                    
+                    
                     {loading ? <Loader /> :(
                         <MDBDataTable
                             data={setOffers()}
                             bordered
                             striped
                             hover
+                            fixed
+
                         />
                     )}
+
+                    
+                    
+                    </section>
+                    
                 </Fragment>
+
             </Fragment>
-        </div>
+        
     )
 }
 

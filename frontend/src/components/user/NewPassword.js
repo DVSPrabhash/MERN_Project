@@ -3,6 +3,8 @@ import React, { Fragment, useState, useEffect} from 'react'
 
 
 import MetaData from '../layout/MetaData'
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -65,6 +67,7 @@ const NewPassword = ({ history, match }) => {//match use to get the ID or TOKEN 
         <Fragment>
 
              <MetaData title = {'New password Reset'}/>
+             <Header/>
                 <section className = "forgotpwd">
                     <div className ="body">
 
@@ -108,7 +111,7 @@ const NewPassword = ({ history, match }) => {//match use to get the ID or TOKEN 
                     </div>
                 </section>
                 
-
+<Footer/>
 
         </Fragment>
     )

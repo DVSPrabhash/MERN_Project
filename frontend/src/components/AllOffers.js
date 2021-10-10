@@ -5,6 +5,10 @@ import MetaData from './layout/MetaData'
 import Offer from './offer/Offer'
 import Loader from './layout/Loader'
 
+import Header from './layout/Header';
+import Footer from './layout/Footer';
+import AdminFooter from './layout/AdminFooter';
+
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert';
 import { getOffers } from '../actions/offerActions'
@@ -26,12 +30,12 @@ const AllOffers = () => {
 
     }, [dispatch, alert, error])
     return (
-        <div className="containerMenu" style={{margin:"100px"}}><Fragment></Fragment>
+        
         <Fragment>
             {loading ? <Loader /> : (
                 <Fragment>
                     <MetaData title={'Best Offers from us'}/>
-
+                    <Header />
                     <link
                                 rel="stylesheet"
                                 type="text/css"
@@ -47,9 +51,9 @@ const AllOffers = () => {
                                 rel="stylesheet"
                                 type="text/css"
                                 />
-
+<div className="containerMenu" style={{margin:"100px"}}>
                     <h1>Our Offers</h1>
-
+                    
                     <section id="offers">
                         <div style={{display:"flex", flexDirection:"row", justifyContent:'space-between'}}>
                             {offers && offers.map(offer => (
@@ -58,10 +62,11 @@ const AllOffers = () => {
                             ))}
                         </div>
                     </section>
-
+                    </div>
                 </Fragment>
             )}
-        </Fragment></div>
+            <Footer/>
+        </Fragment>
     )
 }
 

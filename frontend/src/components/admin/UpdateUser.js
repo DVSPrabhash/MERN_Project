@@ -5,6 +5,15 @@ import React, { Fragment, useState, useEffect} from 'react'
 import MetaData from '../layout/MetaData'
 
 import '../style/login.css'
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+import AdminFooter from '../layout/AdminFooter';
+import Admin_nav from '../layout/AdminNav';
+
+import "react-datetime/css/react-datetime.css";
+import '../style/home.css';
+import '../style/adminFeedback.css'
+
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -89,6 +98,11 @@ const UpdateUser = ({history, match}) => {
     return (
         <Fragment>
             <MetaData title = {'Update User'}/>
+            <Header/>
+            <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+                <section className="container55555">
             <div className = "raw">
                 <div className = "sdsdd">
                     {/*sidebar*/}
@@ -284,8 +298,8 @@ const UpdateUser = ({history, match}) => {
                 </div>
             </div>
 
-
-
+        </section>
+        <AdminFooter/>
         </Fragment>
     )
 }

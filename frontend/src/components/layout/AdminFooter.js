@@ -14,7 +14,8 @@ const AdminFooter = () => {
         <Fragment>
             <br/> <br/> <br/> <br/>
             <footer>
-            <p className="copyright">The best Web Solutions <FontAwesomeIcon icon={faCopyright}/> 2021 - All Rights Reserved</p>
+                <hr/>
+            <p className="copyright">Nue Nimble Web Solutions <FontAwesomeIcon icon={faCopyright}/> 2021 - All Rights Reserved</p>
         </footer>
         </Fragment>
     )

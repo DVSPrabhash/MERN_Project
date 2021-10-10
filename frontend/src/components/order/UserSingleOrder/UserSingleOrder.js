@@ -6,6 +6,9 @@ import PhoneInput from 'react-phone-number-input'
 import {Modal} from 'react-bootstrap';
 import { useAlert } from 'react-alert'
 
+import Header from '../../layout/Header';
+import Footer from '../../layout/Footer';
+
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import MyOrders from '../UserAllOrders/UserOrders'
@@ -107,12 +110,15 @@ const USOCard = ({ match, history }) => {
     }
 
     
+
   }
+
 
 
 
   return (
     <Fragment>
+      <Header/>
       <br/> <br/> <br/> <br/> <br/> <br/>
       <div className="USOCCont211">
         <h1 className="orderIDtxt">Order Id</h1>
@@ -137,7 +143,6 @@ const USOCard = ({ match, history }) => {
             <div className="statustxtdiv211">
               <p className="ststxt">Delivery Status</p><br />
               <p className={String(deliveryInfo && deliveryInfo.deliveryStatus).includes('Delivered') ? " statustxt211 green211" : String(deliveryInfo && deliveryInfo.deliveryStatus).includes('Delivering') ? " statustxt211 orange211" : "statustxt211 red211"}>{deliveryInfo && deliveryInfo.deliveryStatus}</p><br />
-              <button className="btn211">Feedback</button>
             </div>
             <div className="stsimgcont211"><img className="stsimg211" src="../images/uovDeliver.png" /></div>
           </div>
@@ -165,13 +170,18 @@ const USOCard = ({ match, history }) => {
                   </tr>
                 </tbody></table><br /><br />
               <button disabled={String(orderStatus).includes('Baked') ? true : false} type="submit" className={String(orderStatus).includes('Baked') ? "btn212 disabled" : "btn212"} onClick={(e) => updateOrderHandler(order._id)}>Update Details</button>
+              
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <Link to={`/add_feedback/${order._id}`}>
+              <button  type="submit" className={String(orderStatus).includes('Baked') ? "btn212 disabled" : "btn212"} >Give Feedback</button>
+              </Link>
             </form></center>
         </div>
         <div className="ordcaktxt211">
           <p>Ordered Cakies </p>
         </div>
         <div>
-          <div className="tableContainer">
+                    <div className="tableContainer">
             <ul className="responsive-table">
               <li className="table-header">
                 <div className="col col-1">Product Name</div>
@@ -201,6 +211,7 @@ const USOCard = ({ match, history }) => {
         </div>
       </div>
       <br /><br />
+      <Footer/>
     </Fragment>
   )
 

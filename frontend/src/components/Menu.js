@@ -10,6 +10,9 @@ import MetaData from './layout/MetaData'
 import Product from './product/Product'
 import Loader from './layout/Loader'
 import Search from './layout/Search'
+import Header from './layout/Header';
+import Footer from './layout/Footer';
+import AdminFooter from './layout/AdminFooter';
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert';
@@ -59,12 +62,14 @@ const Menu = ({ match }) => {
     }
 
     return (
-        <div className="containerMenu" style={{margin:"100px"}}><Fragment>
+        <Fragment>
             
             {loading ? <Loader /> : (
                 <Fragment>
                     
                     <MetaData title={'Our Menu'} />
+                    <Header/>
+                    <div className="containerMenu" style={{margin:"100px"}}>
 
                                                 <link
                                 rel="stylesheet"
@@ -90,7 +95,7 @@ const Menu = ({ match }) => {
 
                         
                                 <Fragment>
-                                
+                               
                                     <div >
                                         <div >
                                             {/* <Range
@@ -166,11 +171,12 @@ const Menu = ({ match }) => {
                         </div>
 
                     )}
-                    
+                    </div>
+                    <Footer/>
                 </Fragment>
             )}
 
-        </Fragment></div>
+        </Fragment>
     )
 }
 
