@@ -12,6 +12,7 @@ import { faCopyright } from '@fortawesome/free-solid-svg-icons'
 const Footer = () => {
     return (
         <Fragment>
+            <br/> <br/> <br/> <br/>
             <footer>
             
             <div className="row">

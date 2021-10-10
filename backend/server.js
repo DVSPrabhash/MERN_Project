@@ -14,10 +14,6 @@ process.on('uncaughtException', err => {
 })
 
 
-
-
-
-
 //setup config 
 dotenv.config({path:'backend/config/config.env'})
 

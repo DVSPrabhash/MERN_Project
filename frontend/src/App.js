@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
+import AdminFooter from './components/layout/AdminFooter';
 
 
 import Login from './components/user/Login';
@@ -20,9 +21,22 @@ import UpdatePassword from './components/user/UpdatePassword';
 import ForgotPassword from './components/user/ForgotPassword';
 import NewPassword from './components/user/NewPassword';
 
+
+//Ishara OrderComponent
+import MyOrders from './components/order/UserAllOrders/UserOrders'
+import USOCard from './components/order/UserSingleOrder/UserSingleOrder'
+import AdminAllOrders from './components/order/AdminAllOrders/AdminOrdersUI';
+import AdminOrderSearch from './components/order/AdminAllOrders/AdminOrderSearch';
+import AdminSingleOrderView from './components/order/AdminSingleOrderView/AdminSingleOrderView';
+import UserCartUI from './components/order/UserCart/UserCart';
+import OrderSummary from './components/order/OrderSummary/OrderSummary';
+import orderSuccessUI from './components/order/UserOrderSuccess/orderSuccessPage';
+
+
+
 //ankagen start
 import Menu from "./components/Menu";
-import ProductDetails from './components/product/ProductDetails';
+import ProductDetails from './components/product/ProductDetails/ProductDetails';
 import AllOffers from './components/AllOffers'
 import OfferDetails from './components/offer/OfferDetails';
 
@@ -98,13 +112,27 @@ function App() {
           <ProtectedRoute path="/admin/offers" isAdmin={true} component={OffersList} exact/>
           <ProtectedRoute path="/admin/offer" isAdmin={true} component={NewOffer} exact/>
           <ProtectedRoute path="/admin/offer/:id" isAdmin={true} component={UpdateOffer} exact/>
+          {/* ankagen end */}
+
+
+          {/* Ishara OrderComponent */}
+          {/* user */}
+          <ProtectedRoute path="/orders/me" component={MyOrders} exact/>
+          <ProtectedRoute path="/order/:id" component={USOCard} exact/>
+          <Route path="/cart" component={UserCartUI} exact/>
+          <ProtectedRoute path="/confirm_order" component={OrderSummary} />
+          <ProtectedRoute path = "/success" component={orderSuccessUI}/>
+
+          {/* admin */}
+          <ProtectedRoute path="/admin/orders" isAdmin={true} component={AdminAllOrders} exact/>
+          <Route path="/admin/order/:id" isAdmin={true} component={AdminSingleOrderView} exact/>
+          <Route path="/admin/orders/search/:keyword" isAdmin={true} component={AdminAllOrders} exact/>
+
+
+          
           </div>
-            {/* ankagen end */}
+         <Footer/>
 
-
-
-
-       <Footer/>
       {/*</div>*/}
       
     </Router>

@@ -63,6 +63,7 @@ const Menu = ({ match }) => {
             
             {loading ? <Loader /> : (
                 <Fragment>
+                    
                     <MetaData title={'Our Menu'} />
 
                                                 <link
@@ -89,6 +90,7 @@ const Menu = ({ match }) => {
 
                         
                                 <Fragment>
+                                
                                     <div >
                                         <div >
                                             {/* <Range

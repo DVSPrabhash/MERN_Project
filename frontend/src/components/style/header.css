@@ -1,5 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+*, ::after, ::before {
+    /* box-sizing: unset !important;        */
+    /* overide bootsrap sccs */
+}
+
+.svg457896k{
+    vertical-align:unset
+}
+
+.cart456logo{
+    fill:#ff4c4c;
+    float:left;
+    display:inline;
+    
+  }
+  
+  .cartdiv456{
+    position: relative;
+    z-index: 10;
+    background-color:rgb(255, 231, 231);
+    height:60px;
+    padding:0 20px 0 20px;
+    border-radius:30px;
+    width:100px;
+    margin-top: 2em;
+    margin-bottom: -6em;
+ 
+}
+  
+  .cartnumber654{
+    float:right;
+    display:inline-block;
+    font-weight:bold;
+    font-size:30px;
+    color:rgb(92, 27, 27);
+    margin-top:-4.8em;
+    margin-left:-25em;
+  }
+
+
+
 
 
 header{

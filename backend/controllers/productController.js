@@ -62,7 +62,6 @@ exports.getProducts = catchAsyncErrors ( async (req, res, next) => {
 })
 
 
-
 exports.getAdminProducts = catchAsyncErrors ( async (req, res, next) => {
 
     const products = await Product.find();
@@ -75,7 +74,6 @@ exports.getAdminProducts = catchAsyncErrors ( async (req, res, next) => {
     })
 
 })
-
 
 
 exports.getSingleProduct = catchAsyncErrors ( async (req, res, next) => {

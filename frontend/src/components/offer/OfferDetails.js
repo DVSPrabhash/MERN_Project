@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect} from 'react'
+// import React, { Fragment, useEffect} from 'react'
 import { Carousel } from 'react-bootstrap'
 import '../style/anuka.css'
 
@@ -9,12 +9,29 @@ import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
 import { getOfferDetails, clearErrors } from '../../actions/offerActions' 
 
+//Addede By Ishara----------------------------------------------------
+import React, { Fragment, useEffect, useState } from 'react'
+
+import offer from './Offer';
+
+import { addOfferItemToCart } from '../../actions/cartActions';
+//--------------------------------------------------------------------
+
+
 const OfferDetails = ({ match }) => {
 
     const dispatch = useDispatch();
     const alert = useAlert();
 
     const { loading, error, offer } = useSelector(state => state.offerDetails)
+
+    //Addede By Ishara----------------------------------------------------
+    const [quantity, setQuentity] = useState(1)
+    const [size, setSize] = useState('offer')
+    const [sizePrice, setSizePrice] = useState(offer.price)
+    const [topping, setTopping] = useState('None')
+    const [toppingPrice, setToppingPrice] = useState(0)
+    const [name, setNAme] = useState("Limited Offer")
 
     useEffect(() => {
         dispatch(getOfferDetails(match.params.id))
@@ -27,6 +44,14 @@ const OfferDetails = ({ match }) => {
 
     }, [dispatch, alert, error, match.params.id])
 
+    const price = offer.price
+
+    const addToCart = () => {
+        dispatch(addOfferItemToCart(match.params.id, quantity,size,topping,price))
+        alert.success("Item Addded to your CakeBox");
+        }
+
+    
 
     return (
         <Fragment>
@@ -56,7 +81,7 @@ const OfferDetails = ({ match }) => {
                         {/* <h3>Created At : {offer.createdAt}</h3> */}
 
                         <br/><br/>
-                        <button className="buttonAddToCart">Add To Cart</button>
+                        <button className="buttonAddToCart" onClick={addToCart} >Add To Cart</button>
                     </div>
 
                 

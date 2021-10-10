@@ -25,11 +25,13 @@ app.use(fileUpload());
 const products = require('./routes/product');
 const offers = require('./routes/offer');
 const auth = require('./routes/auth');
+const order = require('./routes/order');
 const bodyParser = require('body-parser');
 
 app.use('/api/v1', products)
 app.use('/api/v1', offers)
 app.use('/api/v1', auth)
+app.use('/api/v1', order)
 
 
 //middleware 2 handling error

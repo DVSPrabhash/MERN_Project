@@ -32,7 +32,7 @@ const Profile = () => {
                                 <p>Cup Cakes & Cackery</p><br/>
 
                                 {user.role !== 'admin' && (
-                                    <Link to="#" className="spd1 spd">My Orders</Link>
+                                    <Link to="/orders/me" className="spd1 spd">My Orders</Link>
                                 )}
                                 <br/>
                                 {user.role !== 'admin' && (
@@ -56,6 +56,11 @@ const Profile = () => {
                                 <br/>
                                  {user.role !== 'user' && (
                                     <Link to="/admin/offers" className="spd1 spd">ViewOffers</Link>
+                                )}
+                                {/* Ishara OrderComponent */}
+                                <br/>
+                                 {user.role !== 'user' && (
+                                    <Link to="/admin/orders" className="spd1 spd">Orders</Link>
                                 )}
 
                         

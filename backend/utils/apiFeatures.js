@@ -8,10 +8,23 @@ class APIFeatures {
         const keyword = this.queryStr.keyword ? {
             name: {
                 $regex: this.queryStr.keyword,
-                $options: 'i'
+                $options: 'i'           //desabaling case sensitivity
             }
         } : {}
 
+        this.query = this.query.find({ ...keyword });
+        return this;
+    }
+
+    admin_order_search(){
+        const keyword = this.queryStr.keyword ? {
+            customerName: {
+                $regex: this.queryStr.keyword,
+                $options: 'i'           //desabaling case sensitivity
+            }
+        } : {}
+
+        console.log(keyword);
         this.query = this.query.find({ ...keyword });
         return this;
     }
