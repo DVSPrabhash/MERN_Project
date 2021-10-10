@@ -176,9 +176,9 @@ function App() {
 
           {/*tharusha*/}
           <Route path ="/new"  component = {NewEmployee} exact/>
-          <div className = "container_emplist">  
+            
             <Route path ="/emplist"  component = {EmployeesList} exact/>
-          </div> 
+           
 
           <Route path ="/admin/employee/:id"  component = {UpdateEmployee} exact/>
           <Route path ="/main_emp_page"  component = {maintrtk} exact/>
@@ -188,10 +188,10 @@ function App() {
 
 
           {/* Thiran */}
-          <div className="App">
+          
             {/* <Header /> */}
 
-            <br /><br />
+            
 
             {/* Routes */}
             <Route path = "/inventory_manager_home" component={Home} exact />
@@ -212,7 +212,7 @@ function App() {
             <Route path = "/all_suppliers/after_deletion" component={AllSuppliers} exact />
 
             {/* <Footer /> */}
-          </div>
+          
           {/* Thiran */}
 
 

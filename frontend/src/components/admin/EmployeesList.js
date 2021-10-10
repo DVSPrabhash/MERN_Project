@@ -178,7 +178,7 @@ const EmployeesList = ( {history} ) => {
       
         }
     return (
-        <div>
+        <div className = "container_emplist">
             <MetaData title = {'All Employees'}/>
 
             <link
