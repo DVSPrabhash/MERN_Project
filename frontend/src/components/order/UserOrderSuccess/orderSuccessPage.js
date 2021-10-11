@@ -27,8 +27,10 @@ const orderSuccessUI = ({ match }) => {
           </div>
         </div>
         <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>   <br/>  <br/>  <br/>  <br/>  <br/>  <br/>  <br/>   <br/>  <br/>  <br/>  <br/>  <br/>   <br/>  <br/>  <br/>  <br/>  <br/>   <br/>  <br/>  <br/>  
+        <Footer/>
         </Fragment>
+        
       )
     }
   
-export default orderSuccessUI
+export default orderSuccessUI 

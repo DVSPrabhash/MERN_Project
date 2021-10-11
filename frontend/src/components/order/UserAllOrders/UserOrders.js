@@ -84,7 +84,7 @@ const MyOrders = () => {
                   <div className="col col-5" data-label="Total Price">{order.totPrice}</div>
                   <div className={String(order.paymentInfo.paymentStatus).includes('Paid') ? " col col-6 green" : "col col-6 red" } data-label="Payment Status" >{order.paymentInfo.paymentStatus}</div>
                   <div className={String(order.orderStatus).includes('Baked') ? " col col-7 green" : String(order.orderStatus).includes('Baking') ? " col col-7 orange" : "col col-7 red" } data-label="Order Status">{order.orderStatus}</div>
-                  <div className={String(order.deliveryInfo.deliveryStatus).includes('Delivered') ? " col col-8 green" : String(order.deliveryInfo.deliveryStatus).includes('Delivering') ? " col col-7 orange" : "col col-7 red" } data-label="Deliver Status">{order.deliveryInfo.deliveryStatus}</div>
+                  <div className={String(order.deliveryInfo.deliveryStatus).includes('Delivered') ? " col col-8 green" : String(order.deliveryInfo.deliveryStatus).includes('Delivering') ? " col col-8 orange" : "col col-8 red" } data-label="Deliver Status">{order.deliveryInfo.deliveryStatus}</div>
                 </li>
                 </Link>
                  ))}

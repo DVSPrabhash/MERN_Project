@@ -144,7 +144,7 @@ const USOCard = ({ match, history }) => {
               <p className="ststxt">Delivery Status</p><br />
               <p className={String(deliveryInfo && deliveryInfo.deliveryStatus).includes('Delivered') ? " statustxt211 green211" : String(deliveryInfo && deliveryInfo.deliveryStatus).includes('Delivering') ? " statustxt211 orange211" : "statustxt211 red211"}>{deliveryInfo && deliveryInfo.deliveryStatus}</p><br />
             </div>
-            <div className="stsimgcont211"><img className="stsimg211" src="../images/uovDeliver.png" /></div>
+            <div className="stsimgcont211xx"><img className="stsimg211xx" src="../images/uovDeliver.png" /></div>
           </div>
         </div>
         <div className="DeliveryInfoUpdate211">

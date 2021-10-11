@@ -34,6 +34,8 @@ import orderSuccessUI from './components/order/UserOrderSuccess/orderSuccessPage
 
 
 
+
+
 //ankagen start
 import Menu from "./components/Menu";
 import ProductDetails from './components/product/ProductDetails/ProductDetails';
@@ -105,6 +107,7 @@ import { AllSupplies } from './components/inventory_manager/AllSupplies'
 import report from './components/admin/adminDash/report'
 import salesReport from './components/report/salesReport'
 import feedbackReport from './components/report/feedbackReport'
+import AdminAllOrdersReport from './components/report/AdminOrdersReport';
 
 //import { Router } from 'express';
 
@@ -167,6 +170,7 @@ function App() {
           <Route path="/admin/order/:id" isAdmin={true} component={AdminSingleOrderView} exact/>
           <Route path="/admin/orders/search/:keyword" isAdmin={true} component={AdminAllOrders} exact/>
           
+          
 
           {/*Yohan */}
           <Route path = "/review" component={Review} exact/>
@@ -227,6 +231,7 @@ function App() {
           <Route path = "/admin/report" component={report} exact/>
           <Route path = "/admin/report/salesReport" component={salesReport} exact/>
           <Route path = "/admin/report/FeedbackReport" component={feedbackReport} exact/>
+          <Route path="/admin/orders/orderReport" isAdmin={true} component={AdminAllOrdersReport} exact/>
 
 
 

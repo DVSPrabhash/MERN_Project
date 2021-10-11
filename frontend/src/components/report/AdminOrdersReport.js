@@ -3,21 +3,24 @@ import { Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 
 import { useDispatch , useSelector } from 'react-redux'
-import { getAllorders } from '../../../actions/orderActions'
+import { getAllorders } from '../../actions/orderActions'
+import { getOdersCount } from '../../actions/adminDashAction'
 
-import AdminOrderSearch from './AdminOrderSearch'
-import Header from '../../layout/Header';
-import Footer from '../../layout/Footer';
-import AdminFooter from '../../layout/AdminFooter';
-import Admin_nav from '../../layout/AdminNav';
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
+import Admin_nav from '../layout/AdminNav';
 
-import './adminAllOrders.css'
+import '../style/adminAllOrdersReport.css'
 import "react-datetime/css/react-datetime.css";
-import '../../style/home.css';
-import '../../style/adminFeedback.css'
+import '../style/home.css';
+import '../style/adminFeedback.css'
+
+//For Report Generation
+import jsPdf from 'jspdf';
+import 'jspdf-autotable';
   
 
-const AdminAllOrders = ({match}) => {
+const AdminAllOrdersReport = ({match}) => {
 
   const disptach = useDispatch();
 
@@ -39,6 +42,39 @@ const AdminAllOrders = ({match}) => {
   },[disptach, error, keyword, pStatus,oStatus,dStatus])
 
 
+  const mystyleOrderReport = {
+    color: "white",
+    backgroundColor: "#02074f",
+    fontFamily: "Arial",
+    height:"40px",
+  };
+
+  const mystyleOrderReportRow = {
+    color: "black",
+    padding: "60px",
+    fontFamily: "Arial",
+    height:"40px",
+  };
+
+  
+
+  //import report
+  function jsPdfGenerator  ()  {
+    //alert("Done!", "Your Report is Downloding!", "success")    
+    //new document in jspdf
+    const doc = new jsPdf('l', 'pt', 'a3');
+    doc.text(600, 20, 'Order Details Report', { align: 'center' },);
+    doc.autoTable({ html: '#Order-table' })
+    doc.autoTable({
+      columnStyles: { europe: { halign: 'OrderDetailsPdf' } },
+      margin: { top: 10 },
+    })
+    //save the pdf
+    doc.save("Order Details.pdf");
+  }
+//end report
+
+
     return (
         <Fragment>
           <Header/>
@@ -48,21 +84,22 @@ const AdminAllOrders = ({match}) => {
   
           <section className="container55555">
                 <div>
+
                   <meta charSet="UTF-8" />
                   <link href="https://fonts.googleapis.com/css?family=Ek+Mukta:300,400,600|Open+Sans:400,800" rel="stylesheet" />
                   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
                   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" />
                   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+
+                  <button className="buttonOrderReport" onClick ={jsPdfGenerator}><span> Generate Report PDF</span></button>
+
                   <div className="pdiv">
-                    <p className="p201">Payment Status </p>
-                    <p className="p201">Order Status</p>
-                    <p className="p201">Delivery Status</p>                    
+                    <p className="p201report">Payment Status </p>
+                    <p className="p201report">Order Status</p>
+                    <p className="p201report">Delivery Status</p>                    
                   </div>
-                  <h2 className="h201">Orders Dashboard </h2>
-                  <div className="bodyCont">
-                    {/*-----------------------------search button---------------------------------------------------------*/}
-                      <Route render ={({ history }) => <AdminOrderSearch history = {history}/>}/>
-                  </div>
+                  <h2 className="h201report">Orders Dashboard </h2>
+                  
                   
                   <div>
                     {/*------------------------------------------------------------------------------------------*/}
@@ -110,7 +147,7 @@ const AdminAllOrders = ({match}) => {
                         </div>
                       </form>
                       <div>
-                        <div className="wrapper">
+                        <div className="wrapper1111">
                           <input type="radio" name="select" id="option-8" onClick={dStatus => setDStatus('')} defaultChecked />
                           <input type="radio" name="select" id="option-9" onClick={dStatus => setDStatus('Pending')} />
                           <input type="radio" name="select" id="option-10" onClick={dStatus => setDStatus('Delivering')} />
@@ -132,36 +169,38 @@ const AdminAllOrders = ({match}) => {
                     </div>
                     {/*----------------------------------------------------------------------------------------------*/}
 
-                    <div className="tableContainer">
-                      <ul className="responsive1-table">
-                        <li className="table-header">
-                          <div className="col col-1">Order Id</div>
-                          <div className="col col-2">Date</div>
-                          <div className="col col-3">Customer Name</div>
-                          <div className="col col-4">No of Items</div>
-                          <div className="col col-5">Total Price</div>
-                          <div className="col col-6">Payment Status</div>
-                          <div className="col col-7">Order Status</div>
-                          <div className="col col-8">Deliver Status</div>
-                        </li>
+                   
 
+                     <table id = 'Order-table' className = "tableOrderReport">
+                        <tr style={mystyleOrderReport}>
+                          <td  >Order Id</td>
+                          <td >Date</td>
+                          <td >Customer Name</td>
+                          <td >No of Items</td>
+                          <td >Total Price</td>
+                          <td >Payment Status</td>
+                          <td >Order Status</td>
+                          <td >Deliver Status</td>
+                        </tr>
+                        <br/>
                         {orders && orders.map(order => (      
-                        <Link to={`/admin/order/${order._id}`} style={{ textDecoration: 'none', color: 'black' }}>            
-                        <li key={order._id} className="table-row">
-                          <div className="col col-1" data-label="Order Id">{order._id}</div>
-                          <div className="col col-2" data-label="Date">{String(order.createdAt).substring(0,10)}</div>
-                          <div className="col col-3" data-label="Customer Name">{order.customerName}</div>
-                          <div className="col col-4" data-label="No of Items">{order.orderItems.length}</div>
-                          <div className="col col-5" data-label="Total Price">{order.totPrice}</div>
-                          <div className={String(order.paymentInfo.paymentStatus).includes('Paid') ? " col col-6 green" : "col col-6 red" } data-label="Payment Status" >{order.paymentInfo.paymentStatus}</div>
-                          <div className={String(order.orderStatus).includes('Baked') ? " col col-7 green" : String(order.orderStatus).includes('Baking') ? " col col-7 orange" : "col col-7 red" } data-label="Order Status">{order.orderStatus}</div>
-                          <div className={String(order.deliveryInfo.deliveryStatus).includes('Delivered') ? " col col-8 green" : String(order.deliveryInfo.deliveryStatus).includes('Delivering') ? " col col-8 orange" : "col col-8 red" } data-label="Deliver Status">{order.deliveryInfo.deliveryStatus}</div>
-                        </li>
-                        </Link>
+                                    
+                        <tr key={order._id} style={mystyleOrderReportRow}>
+                          <td  data-label="Order Id">{order._id}</td>
+                          <td  data-label="Date">{String(order.createdAt).substring(0,10)}</td>
+                          <td  data-label="Customer Name">{order.customerName}</td>
+                          <td  data-label="No of Items">{order.orderItems.length}</td>
+                          <td  data-label="Total Price">{order.totPrice}</td>
+                          <td  data-label="Payment Status" >{order.paymentInfo.paymentStatus}</td>
+                          <td  data-label="Order Status">{order.orderStatus}</td>
+                          <td  data-label="Deliver Status">{order.deliveryInfo.deliveryStatus}</td>
+                        </tr>
+                        
                         ))}
+                        </table>
 
-                      </ul>
-                    </div>
+                      
+                    
                     {/* --------------------------------------------------------------------------------------- */}
                     <div>
                     </div></div></div>
@@ -172,4 +211,4 @@ const AdminAllOrders = ({match}) => {
   )
 }
 
-  export default AdminAllOrders
+  export default AdminAllOrdersReport

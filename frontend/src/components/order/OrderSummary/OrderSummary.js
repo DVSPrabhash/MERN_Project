@@ -85,21 +85,21 @@ const OrderSummary = ({history}) => {
                 <table className="tablecont3330xx">
                   <tbody>
                   <tr>
-                      <td style={{textAlign: 'right'}}>Customer Name: </td>
-                      <td style={{textAlign: 'left'}}> {user && user.first_name} {user && user.last_name}</td>
+                      <td style={{textAlign: 'right',fontSize :'15px'}}>Customer Name: </td>
+                      <td style={{textAlign: 'left',fontSize :'15px'}}> {user && user.first_name} {user && user.last_name}</td>
                     </tr>
                     <tr>
-                      <td style={{textAlign: 'right'}}>TelePhone Number: </td>
-                      <td style={{textAlign: 'left'}}> {deliveryInfo.phone_no} </td>
+                      <td style={{textAlign: 'right',fontSize :'15px'}}>TelePhone Number: </td>
+                      <td style={{textAlign: 'left',fontSize :'15px'}}> {deliveryInfo.phone_no} </td>
                     </tr>
                     <tr>
-                      <td style={{textAlign: 'right'}}>Delivery Address: </td>
-                      <td style={{textAlign: 'left'}}> {deliveryInfo.deliveryAddress}</td>
+                      <td style={{textAlign: 'right',fontSize :'15px'}}>Delivery Address: </td>
+                      <td style={{textAlign: 'left',fontSize :'15px'}}> {deliveryInfo.deliveryAddress}</td>
                     </tr>
                     <br/>
                     <tr>
-                      <td style={{textAlign: 'right'}}>Delivery Price: </td>
-                      <td style={{textAlign: 'left'}}> Rs.200.00</td>
+                      <td style={{textAlign: 'right',fontSize :'15px'}}>Delivery Price: </td>
+                      <td style={{textAlign: 'left',fontSize :'15px'}}> Rs.200.00</td>
                     </tr>
                     <tr>
                       <td style={{textAlign: 'right',fontSize :'30px',fontWeight:'bolder'}}>Total Amount: </td>

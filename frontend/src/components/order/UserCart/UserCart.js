@@ -72,7 +72,7 @@ const UserCartUI = ({history}) => {
             <div className="scrollbar3430">
               <p className="cake_box3330">Your Cake-box</p>
               <div className="force-overflow3330">
-                <div className="scrollbar3330">
+                <div className="scrollbar3330cart">
                   {/* item-------------------------------------------------------------------------------------- */}
                   <br />  
                   {cartItems.map(item => (
@@ -81,7 +81,7 @@ const UserCartUI = ({history}) => {
                     <label className="itemName3330">{item.name}-{item.size}</label>
                     <label className="itemTopping3330">{item.topping}</label>
 
-                    <div className="qtyBtnDiv1456">
+                    <div className="qtyBtnDiv1456cart">
                   <div className="value-button" id="decrease" onClick={() => descQty(item.product,item.quantity,item.size,item.topping,item.price)} value="Decrease Value"><label >{"<<"}</label></div>
                   <input type="number" id="numberQty" value={item.quantity} />
                   <div className="value-button" id="increase" onClick={() => incQty(item.product,item.quantity,item.size,item.topping,item.price)} value="Increase Value"><label>{">>"}</label></div>
@@ -126,7 +126,7 @@ const UserCartUI = ({history}) => {
                 <label className="inputLable3330" htmlFor="dAddress">Delivery Address</label><br />
                 <input className="input3330" type="text" placeholder="Enter Delivery Address" defaultValue={deliveryAddress} onChange={(e) => setAddress(e.target.value)} required/><br />
                 <label className="inputLable3330" htmlFor="tpnum">Telephone Number</label><br />
-                <PhoneInput  className="input3330" 
+                <PhoneInput name="phoneNumberValidator105" className="input3330" 
                         international
                         defaultCountry="LK"
                         maxLength={15} 
@@ -137,9 +137,8 @@ const UserCartUI = ({history}) => {
 
                 <br /> <br /> <br />
                
-                  <button className="btnac23330" id="back">Clear Cake Box</button>
                   {/* delete this button <Link to={`/confirm_order`} style={{ textDecoration: 'none', color: 'black' }}>*/}
-                  <button type="submit"  className="btnac3330" id="addtocart"  onClick={submitHandler} >Order Cake Box</button>
+                  <button type="submit"  className="btnac3330back" id="addtocart"  onClick={submitHandler} >Order Cake Box</button>
                 </form>
 
               </div>
