@@ -85,6 +85,20 @@ const report = () => {
 
                         </button>
                     </Link>
+                    <br/><br/><br/>
+                    <Link to="/admin/orders/orderReport">
+                        <button className="button565465847655654">
+                            <div className ="learn-more2">
+                            <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Order Report</span>
+                            </div>
+
+                        </button>
+                    </Link>
+
+
                     </section>
                     
                 </Fragment>
