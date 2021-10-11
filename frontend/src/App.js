@@ -39,6 +39,7 @@ import Menu from "./components/Menu";
 import ProductDetails from './components/product/ProductDetails/ProductDetails';
 import AllOffers from './components/AllOffers'
 import OfferDetails from './components/offer/OfferDetails';
+import OfferReport from './components/admin/OfferReport';
 
 //Yohan 
 import Admin_Feedback from "./components/admin/adminFeedbacks"; 
@@ -145,6 +146,7 @@ function App() {
           <ProtectedRoute path="/admin/offers" isAdmin={true} component={OffersList} exact/>
           <ProtectedRoute path="/admin/offer" isAdmin={true} component={NewOffer} exact/>
           <ProtectedRoute path="/admin/offer/:id" isAdmin={true} component={UpdateOffer} exact/>
+          <Route path="/admin/report/offerReport" component={OfferReport} exact/>
           {/* ankagen end */}
 
 

@@ -38,13 +38,13 @@ const report = () => {
                     
 
                 <h1 className="h12">Reports</h1><br/><br/>
-                    <Link to="/admin/report/salesReport">
+                    <Link to="/admin/report/offerReport">
                         <button className="button565465847655654">
                             <div className ="learn-more">
                             <span class="circle" aria-hidden="true">
                             <span class="icon arrow"></span>
                             </span>
-                            <span class="button-text">Sales Report</span>
+                            <span class="button-text">Offer Report</span>
                             </div>
 
                         </button>
