@@ -98,7 +98,10 @@ import { AllSuppliers } from './components/inventory_manager/AllSuppliers'
 import { AllSupplies } from './components/inventory_manager/AllSupplies'
 
 
-
+//reports
+import report from './components/admin/adminDash/report'
+import salesReport from './components/report/salesReport'
+import feedbackReport from './components/report/feedbackReport'
 
 //import { Router } from 'express';
 
@@ -215,6 +218,10 @@ function App() {
           
           {/* Thiran */}
 
+          {/*Report*/}
+          <Route path = "/admin/report" component={report} exact/>
+          <Route path = "/admin/report/salesReport" component={salesReport} exact/>
+          <Route path = "/admin/report/FeedbackReport" component={feedbackReport} exact/>
 
 
 

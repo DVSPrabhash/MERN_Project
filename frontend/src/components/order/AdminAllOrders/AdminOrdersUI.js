@@ -29,6 +29,7 @@ const AdminAllOrders = ({match}) => {
   const [oStatus, setOStatus] = useState('')
   const [dStatus, setDStatus] = useState('')
 
+
   
   
   useEffect(() => {
@@ -132,7 +133,7 @@ const AdminAllOrders = ({match}) => {
                     {/*----------------------------------------------------------------------------------------------*/}
 
                     <div className="tableContainer">
-                      <ul className="responsive-table">
+                      <ul className="responsive1-table">
                         <li className="table-header">
                           <div className="col col-1">Order Id</div>
                           <div className="col col-2">Date</div>

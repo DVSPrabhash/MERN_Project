@@ -20,22 +20,26 @@ import {
     PRODUCT_COUNT_REQUEST,
     PRODUCT_COUNT_SUCCESS ,
     PRODUCT_COUNT_FAIL,
+
+    COUNT_REQUEST,
+    COUNT_SUCCESS,
+    COUNT_FAIL,
     CLEAR_ERRORS
     
 
 } from '../constants/adminDashCountConstant'
 
 
-export const getFeedbacksCount = () => async (dispatch) => {
+export const getCount = () => async (dispatch) => {
     try{
 
         dispatch({ type: FEEDBACK_COUNT_REQUEST})
 
-        const { data } = await axios.get(`/api/v1/feedbackCount`)
+        const { data } = await axios.get(`/api/v1/count`)
 
         dispatch({
             type: FEEDBACK_COUNT_SUCCESS,
-            payload: data.feedbacksCount
+            payload: data
         })
 
     } catch (error) {
@@ -46,6 +50,25 @@ export const getFeedbacksCount = () => async (dispatch) => {
     }
 }
 
+export const getFeedbacksCount = () => async (dispatch) => {
+    try{
+
+        dispatch({ type: FEEDBACK_COUNT_REQUEST})
+
+        const { data } = await axios.get(`/api/v1/feedbackCount`)
+
+        dispatch({
+            type: FEEDBACK_COUNT_SUCCESS,
+            payload: data
+        })
+
+    } catch (error) {
+        dispatch({
+            type: FEEDBACK_COUNT_FAIL,
+            payload: error.response.data.message
+        })
+    }
+}
 export const getUsersCount = () => async (dispatch) => {
     try{
 
@@ -55,7 +78,7 @@ export const getUsersCount = () => async (dispatch) => {
 
         dispatch({
             type: USER_COUNT_SUCCESS,
-            payload: data.usersCount
+            payload: data
         })
 
     } catch (error) {
