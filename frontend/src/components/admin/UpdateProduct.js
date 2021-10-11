@@ -99,7 +99,29 @@ const UpdateProduct = ({ match, history }) => {
             formData.append('images', image)
         })
 
-        dispatch(updateProduct(product._id, formData))
+        if (smallPrice < 100 || smallPrice > 20000){
+            alert.error("Small Price should be between Rs.100.00 and Rs. 20,000.00 ");
+        }
+
+        else if (mediumPrice < 100 || mediumPrice > 20000){
+            alert.error("Medium Price should be between Rs.100.00 and Rs. 20,000.00 ");
+        }
+        else if (largePrice < 100 || largePrice > 20000){
+            alert.error("Large Price should be between Rs.100.00 and Rs. 20,000.00 ");
+        }
+        else if (freshFruitToppingPrice < 100 || freshFruitToppingPrice > 20000){
+            alert.error("Fresh Fruit Topping Price should be between Rs.100.00 and Rs. 20,000.00 ");
+        }
+        else if (chocolateCandiesAndCashewNutToppingPrice < 100 || chocolateCandiesAndCashewNutToppingPrice > 20000){
+            alert.error("Chocolate Candies And Cashew Nut Topping Price should be between Rs.100.00 and Rs. 20,000.00 ");
+        }
+        else if (moldableFondanToppingPrice < 100 || moldableFondanToppingPrice > 20000){
+            alert.error("Moldable Fondan Topping Price should be between Rs.100.00 and Rs. 20,000.00 ");
+        }
+        
+        else {
+            dispatch(updateProduct(product._id, formData))
+        }
     }
 
     const onChange = e => {
@@ -156,8 +178,6 @@ const UpdateProduct = ({ match, history }) => {
                             <label htmlFor="smallPrice_field" className="formLabel">Small Price (Rs.)</label>
                             <input
                                 type="number"
-                                min="100"
-                                max="20000"
                                 id="smallPrice_field"
                                 className="formInput"
                                 value={smallPrice}
@@ -169,8 +189,6 @@ const UpdateProduct = ({ match, history }) => {
                             <label htmlFor="mediumPrice_field" className="formLabel">Medium Price (Rs.)</label>
                             <input
                                 type="number"
-                                min="100"
-                                max="20000"
                                 id="mediumPrice_field"
                                 className="formInput"
                                 value={mediumPrice}
@@ -182,8 +200,6 @@ const UpdateProduct = ({ match, history }) => {
                             <label htmlFor="largePrice_field" className="formLabel">Large Price (Rs.)</label>
                             <input
                                 type="number"
-                                min="100"
-                                max="20000"
                                 id="largePrice_field"
                                 className="formInput"
                                 value={largePrice}
@@ -195,8 +211,6 @@ const UpdateProduct = ({ match, history }) => {
                             <label htmlFor="freshFruitToppingPrice_field" className="formLabel">Fresh Fruit Topping Price (Rs.)</label>
                             <input
                                 type="number"
-                                min="100"
-                                max="20000"
                                 id="freshFruitToppingPrice_field"
                                 className="formInput"
                                 value={freshFruitToppingPrice}
@@ -208,8 +222,6 @@ const UpdateProduct = ({ match, history }) => {
                             <label htmlFor="chocolateCandiesAndCashewNutToppingPrice_field" className="formLabel">Chocolate Candies And Cashew Nut Topping Price (Rs.)</label>
                             <input
                                 type="number"
-                                min="100"
-                                max="20000"
                                 id="chocolateCandiesAndCashewNutToppingPrice_field"
                                 className="formInput"
                                 value={chocolateCandiesAndCashewNutToppingPrice}
@@ -221,8 +233,6 @@ const UpdateProduct = ({ match, history }) => {
                             <label htmlFor="moldableFondanToppingPrice_field" className="formLabel">Moldable Fondan Topping Price (Rs.)</label>
                             <input
                                 type="number"
-                                min="100"
-                                max="20000"
                                 id="moldableFondanToppingPrice_field"
                                 className="formInput"
                                 value={moldableFondanToppingPrice}
