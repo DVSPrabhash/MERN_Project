@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react'
 import '../../App.css'
 import '../style/Pages_thiran.css'
 
+import Header from '../layout/Header';
 import MetaData from './MetaData';
 import Swal from 'sweetalert2'
 
@@ -70,6 +71,7 @@ export const RegisterSuppliedItem = ({ history }) => {
         <Fragment className="container-fluid">
             <MetaData title={'Register Supplied Item'} />
             <div className="container_body">
+                <Header/>
                 
             
                 <div className="left">

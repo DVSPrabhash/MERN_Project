@@ -3,26 +3,28 @@ import '../../App.css'
 import '../style/Pages_thiran.css'
 import { Link } from 'react-router-dom';
 
-import MetaData from './MetaData';
+import Header from '../layout/Header';
+import MetaData from '../inventory_manager/MetaData';
 import Loader from '../layout/Loader';
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert';
-import { getSuppliers, deleteSupplier } from '../../actions/supplierActions'
+import { getSuppliers } from '../../actions/supplierActions'
 
 import { Router, Route } from 'react-router-dom' //search
-import Search2 from './Search2';         //search
 
-import Swal from 'sweetalert2'
-import { DELETE_SUPPLIERS_RESET } from '../../constants/supplierConstants';
-import Header from '../layout/Header';
 
-export const AllSuppliers = ({match, history}) => {
+//For Report Generation
+import jsPdf from 'jspdf';
+import 'jspdf-autotable';
+
+
+export const SupplierReport = ({match, history}) => {
 
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, suppliers, error, totSuppliers, isDeleted } = useSelector(state => state.suppliers )
+    const { loading, suppliers, error, totSuppliers } = useSelector(state => state.suppliers )
 
     const keyword2 = match.params.keyword2 //search
 
@@ -31,47 +33,40 @@ export const AllSuppliers = ({match, history}) => {
             return alert.error(error)
         }
 
-        if(isDeleted) {
-            history.push("/all_suppliers");
-            dispatch({type: DELETE_SUPPLIERS_RESET })
-        }
-
         dispatch(getSuppliers(keyword2)); //from supplierActions //search
             
-    }, [dispatch, alert, error, keyword2, isDeleted, history])
-
-
-    const deleteSupplierHandler = (id) => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "This operation cannot be undone",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            showConfirmButton: true,
-            // confirmButtonText: 'Yes, Delete it!',
-            // imageUrl: '../images/uovBaking.png',
-            imageWidth: 300,
-            imageHeight: 300,
-        }).then((result) => {
-            if (result.isConfirmed) {
-            dispatch(deleteSupplier(id))
-            Swal.fire(
-                'Cancelled!',
-                'Your Order has been Cancelled.',
-                'success',
-                
-            )
-            }
-        })
-
-    }
+    }, [dispatch, alert, error, keyword2, history])
 
     function topFunction() {
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
+
+
+    //import report 
+    function jsPdfGenerator  ()  {
+    
+        const doc = new jsPdf('l', 'pt', 'a3');
+    
+        doc.text(600, 20, 'Supplier Details Report', { align: 'center' },);
+    
+        doc.autoTable({ html: '#Supplier-table' })
+    
+        doc.autoTable({
+    
+          columnStyles: { europe: { halign: 'SupplierDetailsPdf' } },
+    
+          margin: { top: 10 },
+    
+        })
+    
+        //save the pdf
+        doc.save("Supplier Details.pdf");
+    
+      }
+
+    //end report
+
 
     return(
         <Fragment className="container-fluid">
@@ -79,11 +74,10 @@ export const AllSuppliers = ({match, history}) => {
                 
                 <Fragment>
                     <Header/>
-                    <MetaData title={'All Suppliers'} />
 
-                    <Route render={({history}) => <Search2 history={history} /> } />
-                    <table className="tableContainerThiran">
+                    <MetaData title={'Supplier Report'} />
                     
+                    <table id = 'Supplier-table' className="tableContainerThiran">
                         <tr className="responsive-table ulThiran" >
                             <td className="col col-1">Supplier ID</td>
                             <td className="col col-2">Supplier Name</td>
@@ -92,7 +86,6 @@ export const AllSuppliers = ({match, history}) => {
                             <td className="col col-5">Supplier Gender</td>
                             <td className="col col-6">Supplier Contact No:</td>
                             <td className="col col-7">Supplier Email Address:</td>
-                            <td className="col col-8">Actions</td>
                         </tr>
 
                         {suppliers && suppliers.map(suppliers => (                  
@@ -104,23 +97,17 @@ export const AllSuppliers = ({match, history}) => {
                             <td className="col col-5" data-label="Supplier Gender">{suppliers.supp_gender}</td>
                             <td className="col col-6" data-label="Supplier Contact No:">{suppliers.supp_contact_no}</td>
                             <td className="col col-7" data-label="Supplier Email Address:">{suppliers.supp_email} </td>
-                            <td className="col col-8">
-                                    
-                            <button className="deleteButtonThiran" onClick={() => deleteSupplierHandler(suppliers._id)}>DELETE</button>
-
-                            <button className="updateButtonThiran">UPDATE</button>
-                            </td>
                         </tr>
                         ))}
 
                     </table>
-
+                    
+                    <button className="profileBtn" onClick ={jsPdfGenerator}> Generate Report PDF</button>
                     <button onClick={ ()=> topFunction() } className="toTheTop" style={{marginLeft:"92%"}}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 24"><path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 24"><path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg>
                         <br/>
-                            
-                    </button>
-
+                        
+                        </button>
 
                 </Fragment>
             )}
@@ -128,7 +115,3 @@ export const AllSuppliers = ({match, history}) => {
     )
 
 }
-
-<Router>
-  <Route path="all_suppliers/after_deletion" component={AllSuppliers} exact />
-</Router>

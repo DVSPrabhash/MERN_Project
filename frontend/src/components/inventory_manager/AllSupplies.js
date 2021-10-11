@@ -12,6 +12,7 @@ import { getSupplies, deleteSupply } from '../../actions/supplyActions'
 
 import { Route } from 'react-router-dom' //search
 import Search3 from './Search3';          //search
+import Header from '../layout/Header';
 
 export const AllSupplies = ({match, history}) => {
 
@@ -37,41 +38,49 @@ export const AllSupplies = ({match, history}) => {
         dispatch(deleteSupply(id))
     }
 
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+
     return(
         <Fragment className="container-fluid">
             {loading? <Loader /> : (
                 //below code goes up when needed
                 // <h1 style={{margin:"100px"}}> Loading Supplied Items </h1>
                 <Fragment>
-
+                    <Header/>
                     <MetaData title={'All Supplies'} />
                     <Admin_nav> </Admin_nav>
-                    <div className="tableContainerThiran" style={{marginBottom:"500px"}}>
-                        <ul className="responsive-table ulThiran">
-                            {/* <input type="search" placeholder="input keyword" style={{marginLeft:'85%'}} /> */}
-                            <Route render={({history}) => <Search3 history={history} /> } />
-                            <li className="table-header liThiran" >
-                                <div className="col col-1">Supply ID</div>
-                                <div className="col col-2">Supplier ID</div>
-                                <div className="col col-3">Supplied Item ID</div>
-                                <div className="col col-4">Action</div>
-                            </li>
+                    <Route render={({history}) => <Search3 history={history} /> } />
 
-                            {supplies && supplies.map(supplies => (                  
-                            <li key={supplies._id} className="table-row liThiran">
-                                <div className="col col-1" data-label="Supply ID">{supplies._id}</div>
-                                <div className="col col-2" data-label="Supplier ID">{supplies.supplier_id}</div>
-                                <div className="col col-2" data-label="Supplied Item ID">{supplies.supply_item_id}</div>
-                                <div className="col col-3" data-label="Supplier Account No:">{supplies.acct_no}
-                                    <button className="deleteButtonThiran" onClick={() => deleteSupplyHandler(supplies._id)}>DELETE</button>
-                                    <button className="updateButtonThiran">UPDATE</button>
-                                </div>
-                            </li>
-                            ))}
+                    <table className="tableContainerThiran">
+                        <tr className="responsive-table ulThiran">
+                            <td className="col col-1">Supply ID</td>
+                            <td className="col col-2">Supplier ID</td>
+                            <td className="col col-3">Supplied Item ID</td>
+                            <td className="col col-4">Action</td>
+                        </tr>
 
-                        </ul>
-                    </div>
+                        {supplies && supplies.map(supplies => (
+                        <tr key={supplies._id} className="table-row liThiran">
+                            <td className="col col-1" data-label="Supply ID">{supplies._id}</td>
+                            <td className="col col-2" data-label="Supplier ID">{supplies.supplier_id}</td>
+                            <td className="col col-2" data-label="Supplied Item ID">{supplies.supply_item_id}</td>
+                            <td className="col col-3" data-label="Supplier Account No:">{supplies.acct_no}
+                                <button className="deleteButtonThiran" onClick={() => deleteSupplyHandler(supplies._id)}>DELETE</button>
+                                <button className="updateButtonThiran">UPDATE</button>
+                            </td>
+                        </tr>
+                        ))}
 
+                        
+                    </table>
+                    <button onClick={ ()=> topFunction() } className="toTheTop" style={{marginLeft:"92%"}}>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 24"><path d="M0 16.67l2.829 2.83 9.175-9.339 9.167 9.339 2.829-2.83-11.996-12.17z"/></svg>
+                        <br/>
+                        
+                        </button>
 
 
                 </Fragment>

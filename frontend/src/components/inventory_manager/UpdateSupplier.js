@@ -2,6 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react'
 import '../../App.css'
 import '../style/Pages_thiran.css'
 
+import Header from '../layout/Header'
 import MetaData from './MetaData'
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -22,12 +23,6 @@ export const UpdateSupplier = ({ match, history }) => {
     const dispatch = useDispatch();
 
     
-    // const [supplier_name, setSName] = useState('');
-    // const [supp_nic, setSNIC] = useState('');
-    // const [supp_contact_no, setSContact] = useState('');
-    // const [supp_email, setSEmail] = useState('');
-    // const [supp_gender, setSGender] = useState('');
-    // const [acct_no, setSAcct] = useState('');
     
     const { error, Ssupplier } = useSelector(state => state.supplierDetails );
     
@@ -120,6 +115,7 @@ export const UpdateSupplier = ({ match, history }) => {
         <Fragment>
             <MetaData title={`Update Supplier`} />
             <div className="container_body">
+            <Header/>
                 <div className="left">
                     <div class="header">
                         <h2 className="animation a1">Update Supplier</h2>

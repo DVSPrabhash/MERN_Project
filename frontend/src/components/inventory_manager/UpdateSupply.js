@@ -2,12 +2,14 @@ import React, { Fragment } from 'react'
 import '../../App.css'
 import '../style/Pages_thiran.css'
 import MetaData from './MetaData';
+import Header from '../layout/Header';
 
 
 export const UpdateSupply = () => {
     return (
         <Fragment>
             <MetaData title={'Update Supply'} />
+            <Header/>
             <div className="container_body">
                 <div className="left">
                     <div class="header">

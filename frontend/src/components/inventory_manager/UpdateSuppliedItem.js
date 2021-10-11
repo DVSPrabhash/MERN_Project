@@ -3,6 +3,7 @@ import '../../App.css'
 import '../style/Pages_thiran.css'
 
 import MetaData from './MetaData';
+import Header from '../layout/Header';
 import { useDispatch, useSelector } from 'react-redux'
 import { updateSuppliedItems, getSingleSuppliedItem, clearErros } from '../../actions/suppliedItemActions'
 import { useAlert } from 'react-alert';
@@ -58,21 +59,6 @@ export const UpdateSuppliedItem = ( { match, history }) => {
         }
 
 
-        // if(suppItem) {
-        //     setSItemName(suppItem.s_item_name);
-        //     setSItemPrice(suppItem.s_item_price);
-        //     setSItemDescription(suppItem.s_item_description);
-        //     setSuppID(suppItem.supplier_id);
-        //     setSItemID(suppItem.supply_items_id);
-        //     setQuantity(suppItem.s_qty);
-        //     setDate(suppItem.sup_date);
-        //     // alert("Data set");
-        //     alert("Data set")
-        // }
-        // else {
-        //     alert('Data not set')
-        // }
-
         if(error) {
             alert.error(error)
             dispatch(clearErros())
@@ -99,15 +85,6 @@ export const UpdateSuppliedItem = ( { match, history }) => {
     const submitHandler = (e) => {
         e.preventDefault();
 
-        // const formData = new FormData();
-        // formData.set('s_item_name', name);
-        // formData.set('s_item_price', price);
-        // formData.set('s_item_description', description);
-        // formData.set('supplier_id', suppID);
-        // formData.set('supply_items_id', suppItemID);
-        // formData.set('s_qty', quantity);
-        // formData.set('sup_date', date);
-
         const formData = {
             's_item_name': name,
             's_item_price': price,
@@ -126,6 +103,7 @@ export const UpdateSuppliedItem = ( { match, history }) => {
     return (
         <Fragment className="container-fluid">
             <MetaData title={'Update Supplied Item'} />
+            <Header/>
             <div className="container_body">
                 <div className="left">
                     <div class="header">
@@ -151,24 +129,7 @@ export const UpdateSuppliedItem = ( { match, history }) => {
                         </button>
                     </div>
 
-                    {/* <form onSubmit={submitHandler} >
-                    <div className="form">
-                        <input type="text" className="form-field animation a3" value={setSItemName} placeholder="Item Name" />
-                        <input type="text" className="form-field animation a3" value={setSItemPrice} placeholder="Item Price" />
-                        <input type="text" className="form-field animation a3" value={setSItemDescription} placeholder="Item Description" />
-                        <input type="text" className="form-field animation a3" value={setSuppID} placeholder="Supplier ID" />
-                        <input type="text" className="form-field animation a3" value={setSItemID} placeholder="Supplied Items ID" />
-                        <input type="number" className="form-field animation a3" value={setQuantity} placeholder="Quantity" />
-                        <input type="date" className="form-field animation a3" value={setDate}  />
-                        <button
-                            id="update_button"
-                            type="submit"
-                            disabled={loading ? true : false}
-                        >
-                            UPDATE
-                        </button>
-                    </div>
-                    </form> */}
+                   
                 </div>
                 <div className="right_suppItemReg"></div>
             </div>
