@@ -161,7 +161,7 @@ const UpdateProduct = ({ match, history }) => {
                 <div className="myForm">
                     <form onSubmit={submitHandler} encType='multipart/form-data'>
 
-                        <center><h1>Update Product Details</h1></center><br/>
+                        <center><h1 className="h1addad">Update Product Details</h1></center><br/>
 
                         <div className="labelInput">
                             <label htmlFor="name_field" className="formLabel">Name</label>

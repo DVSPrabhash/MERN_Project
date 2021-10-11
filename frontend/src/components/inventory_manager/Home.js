@@ -1,7 +1,8 @@
 import React, { Fragment } from 'react'
 import '../../App.css'
 import '../style/Pages_thiran.css'
-
+import { Link } from "react-router-dom"
+import '../style/mainrtk.css'
 
 import MetaData from '../layout/MetaData';
 import Admin_nav from '../layout/AdminNav';
@@ -105,6 +106,62 @@ export const Home = () => {
   
                 <section className="container55555">
                 <h1>Inventory Management</h1>
+                <br/><br/><br/><br/>
+
+                <Link to = {"/register_supplied_item"} > <div className =  "a_rtk" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Register Supplied Item<br/>
+
+                </div>
+            </Link>
+            <Link to = {"all_supplied_items"} > <div className =  "a_rtk" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                View Supplied Item<br/>
+
+                </div>
+            </Link><br/><br/><br/><br/>
+            <Link to = {"/register_supplier"} > <div className =  "a_rtk" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Register Supplier<br/>
+
+                </div>
+            </Link>
+            <Link to = {"/all_suppliers"} > <div className =  "a_rtk" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                View Supplier<br/>
+
+                </div>
+            </Link><br/><br/><br/><br/>
+            <Link to = {"/register_supply"} > <div className =  "a_rtk" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Register Supply<br/>
+
+                </div>
+            </Link>
+            <Link to = {"/all_supplies"} > <div className =  "a_rtk" >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                View Supply<br/>
+
+                </div>
+            </Link><br/><br/>
                
 
                 </section>

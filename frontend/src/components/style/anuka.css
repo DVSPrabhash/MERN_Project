@@ -2,7 +2,9 @@
 
 .myForm{
     width: 800px;
-    background-color:#9da2af;
+    background:url('./slashio-photography-XxWxPGXwDU0-unsplash.jpg');
+    background-size: cover;
+  background-position: center center;
     margin: auto;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -16,10 +18,13 @@
     margin-top: 0px;
     left: 1000px;
     width: 500px;
-    color: #ffffff;
+    color: #fefeff;
     font-size: 20px;
     font-weight: 700;
     align-self: center;
+}
+.container55555 .myForm .h1addad{
+  color:#fefeff
 }
 
 .formInput{
@@ -35,7 +40,7 @@
     margin-left: 80%; */
 
 
-    background-color: #303245;
+    background-color: #878ba8;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -72,7 +77,7 @@
     margin-left: 80%; */
 
 
-    background-color: #303245;
+    background-color: #8488ac;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -105,6 +110,13 @@
     font-weight: 700;
     text-align: center;
   }
+  .imageUpload .hghghhgf{
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+  }
+  
 
   .formInputOffer{
     /* position: relative;

@@ -61,11 +61,12 @@ export const AllSuppliedItems = ({match}) => {
     
     return(
         <Fragment className="container-fluid">
+            <MetaData title={'All Supplied Items'} />
             {loading? <Loader /> : (
                 
                 <Fragment>
                     <Admin_nav/>
-                    <MetaData title={'All Supplied Items'} />
+                    
                     <Header />
                     <Route render={({history}) => <Search1 history={history} /> } />
                     <table className="tableContainerThiran">

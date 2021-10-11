@@ -2,7 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react'
 import '../../App.css'
 import '../style/Pages_thiran.css'
 
-import Header from '../layout/Header';
+import Admin_nav from '../layout/AdminNav';
+import Header from "../layout/Header";
 import MetaData from './MetaData';
 import Swal from 'sweetalert2'
 
@@ -68,12 +69,17 @@ export const RegisterSuppliedItem = ({ history }) => {
     }
 
     return (
-        <Fragment className="container-fluid">
+        <Fragment >
             <MetaData title={'Register Supplied Item'} />
-            <div className="container_body">
-                <Header/>
-                
             
+            <Header/>
+                <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+  
+                <section className="container555424452345255">
+                <div className="container-fluid">
+                <div className="container_body">
                 <div className="left">
                     <div class="header">
                         <h2 className="animation a1">Supplied Item Registration</h2>
@@ -101,6 +107,8 @@ export const RegisterSuppliedItem = ({ history }) => {
                 </div>
                 <div className="right_suppItemReg"></div>
             </div>
+            </div>
+            </section>
         </Fragment>
     )
 }
