@@ -54,6 +54,7 @@ import Update_Feedback from './components/customer/UpdateFeedback'
 //adminge ewa
 import UsersList from './components/admin/UsersList';
 import UpdateUser from './components/admin/UpdateUser';
+import UserReport from './components/admin/UserReport';
 //ankagen start
 // Admin Imports
 import ProductsList from './components/admin/ProductsList'
@@ -132,6 +133,8 @@ function App() {
 
             <Route path = "/admin/users" component = {UsersList} exact  />
             <Route path = "/admin/user/:id" component = {UpdateUser} exact  />
+            <Route path = "/admin/report/userReport" component = {UserReport} exact  />
+            
 
             {/* ankagen  start*/}
            

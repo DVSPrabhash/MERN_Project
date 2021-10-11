@@ -102,6 +102,12 @@ const OffersList = ({ history }) => {
 
 
         //alert("Done!", "Your Report is Downloding!", "success")
+        Swal.fire({ 
+            position: 'top-center', 
+            icon: 'success', 
+            title: 'Report Dowloaded Successfully', 
+            showConfirmButton: false, 
+            timer: 1500 })
     
     
     
