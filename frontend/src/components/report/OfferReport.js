@@ -62,6 +62,11 @@ const OffersList = ({ history }) => {
                     sort: 'asc'
                 },
                 {
+                    label: 'End Date',
+                    field: 'endDate',
+                    sort: 'asc'
+                },
+                {
                     label: 'Price (Rs.)',
                     field: 'price',
                     sort: 'asc'
@@ -80,6 +85,7 @@ const OffersList = ({ history }) => {
             data.rows.push({
                 id: offer._id,
                 description: offer.description,
+                endDate: offer.endDate,
                 price: `${offer.price}`,
                 // actions:
                 // <Fragment>
