@@ -75,7 +75,13 @@ const UpdateOffer = ({ match, history }) => {
             formData.append('images', image)
         })
 
-        dispatch(updateOffer(offer._id, formData))
+        if (price < 100 || price > 40000){
+            alert.error("Offer Price should be between Rs.100.00 and Rs. 40,000.00 ");
+        }
+
+        else {
+            dispatch(updateOffer(offer._id, formData))
+        }
     }
 
     const onChange = e => {
@@ -203,7 +209,6 @@ const UpdateOffer = ({ match, history }) => {
                 </div>
 
                 </section>
-                <AdminFooter/>
             </Fragment>
         </Fragment>
     )

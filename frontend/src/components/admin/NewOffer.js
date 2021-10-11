@@ -56,7 +56,13 @@ const NewOffer = ({ history }) => {
             formData.append('images', image)
         })
 
-        dispatch(newOffer(formData))
+        if (price < 100 || price > 40000){
+            alert.error("Offer Price should be between Rs.100.00 and Rs. 40,000.00 ");
+        }
+
+        else {
+            dispatch(newOffer(formData))
+        }
     }
 
     const onChange = e => {
