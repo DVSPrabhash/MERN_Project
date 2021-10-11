@@ -87,7 +87,7 @@ export const RegisterSupplier = ({history}) => {
                         <input type="text"  className="form-field animation a3" placeholder="Supplier Name" onChange={(e) => setSName(e.target.value)} />
                         <input type="text" className="form-field animation a3" placeholder="NIC Number" onChange={(e) => setSNIC(e.target.value)} />
                         <input type="text" className="form-field animation a3" placeholder="Account Number" onChange={(e) => setSAcct(e.target.value)} />
-                        <input type="text" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"className="form-field animation a3" placeholder="Contact Number" onChange={(e) => setSContact(e.target.value)} />
+                        <input type="text" pattern="[0-9]{10}"className="form-field animation a3" placeholder="Contact Number" onChange={(e) => setSContact(e.target.value)} />
                         <input type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" className="form-field animation a3" placeholder="Email Address" onChange={(e) => setSEmail(e.target.value)} />
                         <div className="registerSuppDiv1">
                             <label> Gender </label>

@@ -16,19 +16,28 @@ import { getSupplies, deleteSupply } from '../../actions/supplyActions'
 import { Route } from 'react-router-dom' //search
 import Search3 from './Search3';          //search
 
+import { DELETE_SUPPLIES_RESET } from '../../constants/supplyConstants';
+
+import Swal from 'sweetalert2';
+
 
 export const AllSupplies = ({match, history}) => {
 
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, supplies, error, totSupplies } = useSelector(state => state.supplies )
+    const { loading, supplies, error, totSupplies, isDeleted } = useSelector(state => state.supplies )
 
     const keyword3 = match.params.keyword3 //search
 
     useEffect(() => {
         if(error) {
             return alert.error(error)
+        }
+
+        if(isDeleted) {
+            history.push("/all_supplies");
+            dispatch({type: DELETE_SUPPLIES_RESET })
         }
 
         dispatch(getSupplies(keyword3)); //from supplierActions //search
@@ -38,7 +47,30 @@ export const AllSupplies = ({match, history}) => {
 
 
     const deleteSupplyHandler = (id) => {
-        dispatch(deleteSupply(id))
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "This operation cannot be undone",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            showConfirmButton: true,
+            // confirmButtonText: 'Yes, Delete it!',
+            // imageUrl: '../images/uovBaking.png',
+            imageWidth: 300,
+            imageHeight: 300,
+        }).then((result) => {
+            if (result.isConfirmed) {
+            dispatch(deleteSupply(id))
+            Swal.fire(
+                'Cancelled!',
+                'Your Order has been Cancelled.',
+                'success',
+                
+            )
+            }
+        })
+
     }
 
     function topFunction() {

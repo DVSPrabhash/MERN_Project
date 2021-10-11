@@ -16,23 +16,31 @@ import { getSuppliedItems, deleteProduct, updateSuppliedItems } from '../../acti
 import { Route } from 'react-router-dom'
 import Search1 from './Search1'; //search function for supplied items
 
+import Swal from 'sweetalert2'
+import { DELETE_SUPPLIEDITEMS_RESET } from '../../constants/suppliedItemConstants';
+
 // const deleteSuppliedItemHandler = (id) => {
 //     dispatch(deleteProduct(id))
 // }
 
-export const AllSuppliedItems = ({match}) => {
+export const AllSuppliedItems = ({match, history}) => {
 
     const [currentPage, setCurrentPage] = useState(1)
     const alert = useAlert();
     const dispatch = useDispatch();
 
-    const { loading, supplied_items, error, totItemCount } = useSelector(state => state.supplied_items )
+    const { loading, supplied_items, error, totItemCount, isDeleted } = useSelector(state => state.supplied_items )
 
     const keyword = match.params.keyword //search
 
     useEffect(() => {
         if(error) {
             return alert.error(error)
+        }
+
+        if(isDeleted) {
+            history.push("/all_supplied_items");
+            dispatch({type: DELETE_SUPPLIEDITEMS_RESET })
         }
 
         dispatch(getSuppliedItems(keyword, currentPage)); //from suppliedItemActions
@@ -44,8 +52,35 @@ export const AllSuppliedItems = ({match}) => {
     }
 
     const deleteSuppliedItemHandler = (id) => {
-        dispatch(deleteProduct(id))
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "This operation cannot be undone",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            showConfirmButton: true,
+            // confirmButtonText: 'Yes, Delete it!',
+            // imageUrl: '../images/uovBaking.png',
+            imageWidth: 300,
+            imageHeight: 300,
+        }).then((result) => {
+            if (result.isConfirmed) {
+            dispatch(deleteProduct(id))
+            Swal.fire(
+                'Cancelled!',
+                'Your Order has been Cancelled.',
+                'success',
+                
+            )
+            }
+        })
+
     }
+
+    // const deleteSuppliedItemHandler = (id) => {
+    //     dispatch(deleteProduct(id))
+    // }
 
     const updateSuppliedItemHandler = (e) => {
         const sItemUpdate = {
