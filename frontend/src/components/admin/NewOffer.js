@@ -100,7 +100,7 @@ const NewOffer = ({ history }) => {
                 <div className="myForm">
                     <form onSubmit={submitHandler} encType='multipart/form-data'>
 
-                        <center><h1>Add New Offer</h1></center><br/>
+                        <center><h1 className="h1addad">Add New Offer</h1></center><br/>
 
                         <div className="labelInput" style={{height:"90px"}}>
 
@@ -143,7 +143,7 @@ const NewOffer = ({ history }) => {
                         <br/>
 
                         <div className="imageUpload">
-                            <label className="">Upload Images</label><br /><br />
+                            <label className="hghghhgf">Upload Images</label><br /><br />
 
                             <div>
                                 <input

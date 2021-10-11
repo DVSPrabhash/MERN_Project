@@ -10,6 +10,9 @@ import {
     CUSTOMER_DELETE_FEEDBACKS_SUCCESS,
     CUSTOMER_DELETE_FEEDBACKS_FAIL,
     CUSTOMER_DELETE_FEEDBACKS_RESET,
+    CUSTOMER_FEEDBACK_SINGLE_REQUEST,
+    CUSTOMER_FEEDBACK_SINGLE_SUCCESS,
+    CUSTOMER_FEEDBACK_SINGLE_FAIL,
     UPDATE_FEEDBACKS_REQUEST,
     UPDATE_FEEDBACKS_SUCCESS,
     UPDATE_FEEDBACKS_FAIL,
@@ -57,6 +60,7 @@ export const feedbackCreateReducers = (state= { newFeedbacks:{} },action) =>{
 }
 export const feedbackCustomerReducers = (state= { feedback:[] },action) =>{
     switch(action.type){
+
         case CUSTOMER_FEEDBACKS_REQUEST:
             return {
                 loading:true,
@@ -69,7 +73,39 @@ export const feedbackCustomerReducers = (state= { feedback:[] },action) =>{
                 feedback: action.payload
                 }
             }
+
         case CUSTOMER_FEEDBACKS_FAIL:
+            return {
+                loading: false,
+                error: action.payload
+            }
+
+        case CLEAR_ERRORS:
+            return{
+                ...state,
+                error:null
+            }
+            
+            default:
+            return state;
+        
+    }
+}
+export const SinglefeedbackCustomerReducers = (state= { feedback:{} },action) =>{
+    switch(action.type){
+        case CUSTOMER_FEEDBACK_SINGLE_REQUEST:
+
+            return {
+                ...state,
+                loading:true
+
+            }
+        case CUSTOMER_FEEDBACK_SINGLE_SUCCESS:
+            return {
+                loading: false,
+                feedback: action.payload
+                }     
+        case CUSTOMER_FEEDBACK_SINGLE_FAIL:
             return {
                 loading: false,
                 error: action.payload
@@ -146,7 +182,6 @@ export const feedbackCustomerUpdateReducer = (state = {}, action) => {
         case UPDATE_FEEDBACKS_FAIL:
             return {
                 ...state,
-                loading:false,
                 error: action.payload
             }
 

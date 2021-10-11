@@ -16,6 +16,9 @@ import {
     CUSTOMER_DELETE_FEEDBACKS_REQUEST,
     CUSTOMER_DELETE_FEEDBACKS_SUCCESS,
     CUSTOMER_DELETE_FEEDBACKS_FAIL,
+    CUSTOMER_FEEDBACK_SINGLE_REQUEST,
+    CUSTOMER_FEEDBACK_SINGLE_SUCCESS,
+    CUSTOMER_FEEDBACK_SINGLE_FAIL,
     UPDATE_FEEDBACKS_REQUEST,
     UPDATE_FEEDBACKS_SUCCESS,
     UPDATE_FEEDBACKS_FAIL,
@@ -105,18 +108,18 @@ export const getCustomerFeedbacks = () => async (dispatch) => {
 export const getCustomerSingleFeedbacks = (id) => async (dispatch) => {
     try{
 
-        dispatch({ type: CUSTOMER_FEEDBACKS_REQUEST})
+        dispatch({ type: CUSTOMER_FEEDBACK_SINGLE_REQUEST})
 
         const { data } = await axios.get(`/api/v1/feedbacks/${id}`)
 
         dispatch({
-            type: CUSTOMER_FEEDBACKS_SUCCESS,
-            payload: data.customerFeedback
+            type: CUSTOMER_FEEDBACK_SINGLE_SUCCESS,
+            payload: data.singlefeedback
         })
 
     } catch (error) {
         dispatch({
-            type: CUSTOMER_FEEDBACKS_FAIL,
+            type: CUSTOMER_FEEDBACK_SINGLE_FAIL,
             payload: error.response.data.message
         })
     }
@@ -130,7 +133,7 @@ export const updateFeedback = (id, feedbackData) => async (dispatch) => {
 
         const config = {
             headers: {
-                'Content-Type': 'multipart/form-data'
+                'Content-Type': 'application/json'
             }
         }
 

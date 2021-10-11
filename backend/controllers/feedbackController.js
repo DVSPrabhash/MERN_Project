@@ -91,13 +91,8 @@ exports.updateFeedback = catchAsyncErrors (async ( req, res, next) => {
     if(!update_feedback){
         return next(new ErrorHandler('Feedback not Found', 404));
     }
-    const newData = {
-        name: req.body.name,
-        description:req.body.description,
-        rating:re.body.rating
-    }
-
-    update_feedback = await feedback.findByIdAndUpdate(req.params.id, newData,{
+   
+    update_feedback = await feedback.findByIdAndUpdate(req.params.id, req.body,{
         new: true,
         runValidators: true,
         useFindAndModify: false

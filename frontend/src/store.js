@@ -6,10 +6,13 @@ import { authReducer, userReducer, forgotPasswordReducer, allUserReducer, userDe
 
 import { productsReducer, newProductReducer, productReducer, productDetailsReducer } from './reducers/productReducers';
 import { offersReducer, newOfferReducer, offerReducer, offerDetailsReducer } from './reducers/offerReducers';
-
 import {feedbackReducers,feedbackAdminDeleteReducer, } from './reducers/feedbackReducers';
-import {feedbackCreateReducers,feedbackCustomerReducers,feedbackCustomerDeleteReducer,feedbackCustomerUpdateReducer } from './reducers/feedbackCreateReducer';   
-
+import {
+    feedbackCreateReducers,
+    feedbackCustomerReducers,
+    feedbackCustomerDeleteReducer,
+    feedbackCustomerUpdateReducer,
+    SinglefeedbackCustomerReducers } from './reducers/feedbackCreateReducer'; 
 import {countReducers} from './reducers/adminDashReducer';
 
 import {
@@ -65,6 +68,7 @@ const reducer = combineReducers({
     customerDelete: feedbackCustomerDeleteReducer,
     customerFeedback: feedbackCustomerReducers,
     updateFeedback: feedbackCustomerUpdateReducer,
+    singlefeedback: SinglefeedbackCustomerReducers,
 
     count:countReducers,
 
