@@ -108,6 +108,8 @@ import report from './components/admin/adminDash/report'
 import salesReport from './components/report/salesReport'
 import feedbackReport from './components/report/feedbackReport'
 import AdminAllOrdersReport from './components/report/AdminOrdersReport';
+import { SupplierReport } from './components/report/SupplierReport'
+import { SuppliedItemReport } from './components/report/SuppliedItemReport'
 
 //import { Router } from 'express';
 
@@ -222,6 +224,10 @@ function App() {
             <Route path = "/all_suppliers/:keyword2" component={AllSuppliers} exact />
             <Route path = "/all_supplies/:keyword3" component={AllSupplies} exact />
             <Route path = "/all_suppliers/after_deletion" component={AllSuppliers} exact />
+            <Route path = "/supplier_report" component={SupplierReport} exact />
+            <Route path = "/supplied_item_report" component={SuppliedItemReport} exact />
+            
+            
 
             {/* <Footer /> */}
           
