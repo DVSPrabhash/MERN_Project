@@ -7,7 +7,7 @@
 .totPriceCont{
   position: relative;
   z-index: 150;
-  padding-top: -8em;
+  padding-top: -15em;
   margin-left: 1em;
 
 }
@@ -15,7 +15,7 @@
   position: relative;
   text-align: center;
   z-index: 150;
-  margin-top: -1em;
+  margin-top: -2em;
 }
 .btnac4444{
 float: right;
@@ -60,6 +60,8 @@ margin-top: -0.2%;
   box-shadow: 5px 10px 5px #ff9187;
 }
 .product_card{
+  border-radius: 10px;
+  background-color: #fff;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.1);
   height: 700px;
   position: absolute;
@@ -90,7 +92,7 @@ margin-top: -0.2%;
   text-align: center;
   font-weight: bold;
   vertical-align: middle;
-  padding: 10px 10px;
+  padding: 20px 10px;
   background: #362223;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -198,7 +200,8 @@ input[type=number] {
   font-family: "Montserrat", sans-serif;
 }
 .totPrice-text{
-  margin-top: -58%;
+  margin-top: -60%;
+  margin-bottom: -3.5%;
   margin-left: 47.5%;
   position: relative;
   z-index: 999;
@@ -207,7 +210,7 @@ input[type=number] {
   font-family: "Montserrat", sans-serif;
 }
 .totPrice{
-  margin-top: 0em;
+  margin-top: 1em;
   margin-left: 45%;
   position: relative;
   z-index: 999;
@@ -241,7 +244,7 @@ margin-top: -15em;
   text-align: center;
 }
 .productImgContainer{
-  margin-bottom: -31.5em;
+  margin-bottom: -33%;
   position: relative;
   margin-left: 35%;
   width: 500px;
@@ -253,15 +256,18 @@ margin-top: -15em;
   border-radius: 100%;
 }
 .custopic {
+  margin-top: 30%;
   color: #322827;
   font-size: 25px;
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
+  margin-left: 26%;
 
 }
 /*radio*/
 
 .radio-container {
+  color: #322827;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
@@ -276,9 +282,11 @@ margin-top: -15em;
   padding: 5px;
   width: 300px;
   margin-right: -1em;
+  color: #322827;
 }
 
 .radio-container label {
+  color: #322827;
   background: transparent;
   border: 1px solid transparent;
   border-radius: 2px;
@@ -300,6 +308,7 @@ margin-top: -15em;
 }
 
 .radio-container2 label {
+  color: #322827;
   background: transparent;
   border: 1px solid transparent;
   border-radius: 2px;

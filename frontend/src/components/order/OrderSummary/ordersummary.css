@@ -83,8 +83,8 @@
   
   .scrollbar3330
   {
-      height: 400px;
-      width: 60%;
+      height: 70%;
+      width: 70%;
       border-radius: 20px;
       overflow-y: scroll; 
       margin-top: -5em;
@@ -294,7 +294,7 @@
   
   .oSummeryCont3330xx{
     display: inline;
-    margin-top: -32%;
+    margin-top: -37%;
     margin-right: -10%;
     float: right;
     background: rgb(255, 231, 231);
@@ -347,7 +347,7 @@
     }
   
     .tablecont3330xx{
-      margin-left: 5%;
+      margin-left: 0%;
       margin-top: 2em;
       margin-bottom: 2em;
       font-size: 20px;

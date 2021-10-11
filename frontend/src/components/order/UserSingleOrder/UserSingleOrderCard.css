@@ -58,7 +58,7 @@
   border-radius: 20px 20px 0 0;
   font-family: "Montserrat", sans-serif;
   transition: 0.3s;
-  margin-top: 40%;
+  margin-top: 33%;
   margin-bottom: 5em;
 } 
 
@@ -133,6 +133,13 @@ color: green;
   opacity: 20%;  
 }
 
+.stsimg211xx{
+  height: 210px;
+  width: 210px;
+  opacity: 20%;  
+  margin-top: -50%;
+}
+
 
 .stsimg211545445{
 height: 210px;
@@ -147,8 +154,15 @@ opacity: 20%;
   z-index: 1;
 }
 
+
+.stsimgcont211xx{
+  margin-top: 0em;
+  position: relative;
+  z-index: 1;
+}
+
 .stsimgcont21155{
-margin-top: -5em;
+margin-top: -7.5em;
 position: relative;
 z-index: 1;
 }

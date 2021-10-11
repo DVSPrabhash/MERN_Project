@@ -11,9 +11,9 @@ import { getOfferDetails, clearErrors } from '../../actions/offerActions'
 
 //Addede By Ishara----------------------------------------------------
 import React, { Fragment, useEffect, useState } from 'react'
-
 import offer from './Offer';
-
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 import { addOfferItemToCart } from '../../actions/cartActions';
 //--------------------------------------------------------------------
 
@@ -62,6 +62,7 @@ const OfferDetails = ({ match }) => {
         {loading ? <Loader /> : (
             <Fragment>
                 <MetaData title={offer.description}/>
+                <Header/>
                 <div className="row f-flex justify-content-around">
                     <div className="col-12 col-lg-5 img-fluid" id="offer_image">
                         <Carousel pause='hover'>
@@ -86,6 +87,7 @@ const OfferDetails = ({ match }) => {
 
                 
                 </div>
+                <Footer/>
             </Fragment>
         )}
 

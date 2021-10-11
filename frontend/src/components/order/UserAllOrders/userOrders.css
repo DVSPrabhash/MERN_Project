@@ -126,6 +126,7 @@ h2 small {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  text-align: left !important;
 }
 .responsive-table .table-header {
  
@@ -134,17 +135,18 @@ h2 small {
   font-weight: bold;
   font-size: 11px;
   font-weight: bold;
-  text-align: left;
+  text-align: left !important;
   height: 5%;
   text-transform: uppercase;
   letter-spacing: 0.03em;
   font-family: "Montserrat", sans-serif;
 }
 .responsive-table .table-row {
-  font-size: 15px;
-  background-color: #ffffff;
-  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
-  transition: 0.3s;
+  text-align: left !important;
+  font-size: 15px !important;
+  background-color: #ffffff !important;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1) !important;
+  transition: 0.3s !important;
 }
 .responsive-table .table-row:hover {
   box-shadow: 0 8px 16px 0 rgba(255, 122, 122, 0.2);
@@ -155,27 +157,28 @@ h2 small {
   margin-right: -5em;
 }
 .responsive-table .col-2 {
-  flex-basis: 15%;
+  margin-left: -5em;
+  flex-basis: 15% !important;
 }
 .responsive-table .col-3 {
-  flex-basis: 18%;
+  flex-basis: 18% !important;
 }
 .responsive-table .col-4 {
-  flex-basis:15%;
+  flex-basis:15% !important;
 }
 .responsive-table .col-5 {
-  flex-basis:15%;
+  flex-basis:15% !important;
 }
 .responsive-table .col-6  {
-  flex-basis: 18%;
+  flex-basis: 18% !important;
   
 }
 .responsive-table .col-7  {
-  flex-basis: 15%;
+  flex-basis: 15% !important;
   
 }
 .responsive-table .col-8 {
-  flex-basis: 20%;
+  flex-basis: 20% !important;
   
 }
 
@@ -184,19 +187,19 @@ h2 small {
   
   color: red;
   font-weight: bold;
-  text-align: left;
+  text-align: left !important;
 }
 
 .green{
   color: green;
   font-weight: bold;
-  text-align: left;
+  text-align: left !important;
 }
 
 .orange{
   color:orange;
   font-weight: bold;
-  text-align: left;
+  text-align: left !important;
 }
 
 

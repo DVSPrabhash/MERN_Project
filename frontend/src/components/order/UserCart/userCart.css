@@ -12,10 +12,10 @@
 .PhoneInputCountryIconImg{
   position: relative;
   height: 30px;
-  margin-top: 4%;
-  margin-bottom: -12%;
-  margin-left: 85%;
-  border-radius: 10px;
+  margin-top: 5%;
+  margin-bottom: -13.5%;
+  margin-left: 40%;
+  border-radius: 20px;
 
 
 }
@@ -55,10 +55,10 @@
     
 }
 
-.scrollbar3330
+.scrollbar3330cart
 {
-	height: 400px;
-	width: 60%;
+	height: 70%;
+	width: 70%;
     border-radius: 20px;
 	overflow-y: scroll; 
     margin-top: -5em;
@@ -77,7 +77,7 @@
 
 .force-overflow3330
 {
-	min-height: 550px;
+	min-height: 50%;
     margin-top: 10%;
     color: red;
 }
@@ -284,15 +284,7 @@
 
 }
 
-.input3330 {
-  width: 83%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 20px;
-  box-sizing: border-box;
-}
+
 
 /* ::-webkit-input-placeholder {  */
   /* Edge */
@@ -340,19 +332,20 @@
   }
 
 
-  .btnac3330{
+  .btnac3330back{
 
     position: relative;
    
-    margin-left: 38%;
+    margin-left: 22%;
+    margin-bottom: -10%;
     size: 20px;
     font-weight: bold;
     color: #F7B1AB;
     background: #362223;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    height: 30px;
-    width: 150px;
-    border-radius: 20px 0px 0px 20px;
+    height: 50px;
+    width: 200px;
+    border-radius: 20px 20px 0px 0px;
     font-family: "Montserrat", sans-serif;
     transition: .3s;
   }
@@ -408,13 +401,39 @@
 
   }
 
+  .PhoneInputCountrySelect[name="phoneNumberValidator105"] {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: pink;
+    background-image: none;
+    flex: 1;
+    height:45px;
+    width:170px;
+    text-align:center;
+    padding: 0 .5em;
+    color:black;
+    cursor:pointer;
+    font-size: 1em;
+    border-radius:20px;
+    font-family: 'Open Sans', sans-serif;
+    }
+    select[name="phoneNumberValidator105"]:hover{
+    background-color: rgb(255, 169, 169);
+    transition: 0.4s;
+    }
+
 
   /* ------------------input spinner------------------------------ */
-  .qtyBtnDiv1456 {
+  .qtyBtnDiv1456cart {
    position: relative;
    display: inline-block;
    float: right;
-   margin-right: -3%;
+   margin-right: -2%;
    margin-bottom: -50em;
    margin-top: 2em;
 
@@ -425,12 +444,12 @@
     margin-top: -0.3em;
     width: 35px;
     font-size: 10px;
-    height: 10px;
+    
     color:#ff9187;
     text-align: center;
     font-weight:bolder;
     vertical-align: middle;
-    padding: 11px 0;
+    padding: 15px 5px;
     background: #362223;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -454,17 +473,17 @@
     color: white;
     box-shadow: 0 8px 16px 0 rgba(255, 155, 155, 0.377);
   }
-  .qtyBtnDiv1456 #decrease {
+  .qtyBtnDiv1456cart #decrease {
     width: 40px;
-    height: 20px;
+    height: 30px;
     margin-right: -4px;
     margin-bottom: 3px;
     border-radius: 63% 37% 38% 62% / 49% 49% 51% 51% ;
     padding: 10px 2px 7px 2px;
   }
-  .qtyBtnDiv1456 #increase {
+  .qtyBtnDiv1456cart #increase {
     width: 40px;
-    height: 20px;
+    height: 30px;
     border-radius: 35% 65% 63% 37% / 49% 49% 51% 51% ;
     margin-bottom: 3px;
     padding: 10px 2px 7px 2px;
