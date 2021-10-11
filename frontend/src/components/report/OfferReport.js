@@ -2,21 +2,13 @@ import React, { Fragment, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import { MDBDataTable } from 'mdbreact'
 
-
 import MetaData from '../layout/MetaData'
 import Loader from '../layout/Loader'
 
-//seweet alert ekta delete ekata adalawa
 import Swal from 'sweetalert2'
-import Header from '../layout/Header';
-import Footer from '../layout/Footer';
-import AdminFooter from '../layout/AdminFooter';
-import Admin_nav from '../layout/AdminNav';
 
-
-import "react-datetime/css/react-datetime.css";
-import '../style/home.css';
-import '../style/adminFeedback.css'
+import jsPdf from 'jspdf';
+import 'jspdf-autotable';
 
 import { useAlert } from 'react-alert'
 import { useDispatch, useSelector } from 'react-redux'
@@ -79,11 +71,11 @@ const OffersList = ({ history }) => {
                     field: 'price',
                     sort: 'asc'
                 },
-                {
-                    label: 'Actions',
-                    field: 'actions',
-                    sort: 'asc'
-                },
+                // {
+                //     label: 'Actions',
+                //     field: 'actions',
+                //     sort: 'asc'
+                // },
             ],
             rows: []
 
@@ -95,49 +87,95 @@ const OffersList = ({ history }) => {
                 description: offer.description,
                 endDate: offer.endDate,
                 price: `${offer.price}`,
-                actions:
-                <Fragment>
-                    <Link to={`/admin/offer/${offer._id}`} className="btn btn-primary py-1 px-2">
-                        <i className="fa fa-pencil"></i>
-                    </Link>
-                    <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteOfferHandler(offer._id)}>
-                    <i className="fas fa-trash-alt"></i>
-                    </button>
-                </Fragment>
+                // actions:
+                // <Fragment>
+                //     <Link to={`/admin/offer/${offer._id}`} className="btn btn-primary py-1 px-2">
+                //         <i className="fa fa-pencil"></i>
+                //     </Link>
+                //     <button className="btn btn-danger py-1 px-2 ml-2" onClick={() => deleteOfferHandler(offer._id)}>
+                //         <i className="fa fa-trash"></i>
+                //     </button>
+                // </Fragment>
             })
         })
 
         return data;
     }
 
-    const deleteOfferHandler = (id) => {
-        Swal.fire({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
-          }).then((result) => {
-            if (result.isConfirmed) {
-                dispatch(deleteOffer(id))
-              Swal.fire(
+    //import report 
+    function jsPdfGenerator  ()  {
+
+
+
+        //alert("Done!", "Your Report is Downloding!", "success")
+        Swal.fire({ 
+            position: 'top-center', 
+            icon: 'success', 
+            title: 'Report Dowloaded Successfully', 
+            showConfirmButton: false, 
+            timer: 1500 })
+    
+    
+    
+        //new document in jspdf
+    
+        const doc = new jsPdf('l', 'pt', 'a3');
+    
+    
+    
+        doc.text(600, 20, 'Offer Details Report', { align: 'center' },);
+    
+        doc.autoTable({ html: '#Offer-table' })
+    
+    
+    
+        doc.autoTable({
+    
+          columnStyles: { europe: { halign: 'offerDetailsPdf' } },
+    
+          margin: { top: 10 },
+    
+        })
+    
+    
+    
+        //save the pdf
+    
+        doc.save("Offer Details.pdf");
+    
+      }
+
+
+    //end report
+
+    // const deleteOfferHandler = (id) => {
+    //     Swal.fire({
+    //         title: 'Are you sure?',
+    //         text: "You won't be able to revert this!",
+    //         icon: 'warning',
+    //         showCancelButton: true,
+    //         confirmButtonColor: '#3085d6',
+    //         cancelButtonColor: '#d33',
+    //         confirmButtonText: 'Yes, delete it!'
+    //       }).then((result) => {
+    //         if (result.isConfirmed) {
+    //             dispatch(deleteOffer(id))
+    //           Swal.fire(
                   
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
-            }
-          })
-    }
+    //             'Deleted!',
+    //             'Offer has been deleted.',
+    //             'success'
+    //           )
+    //         }
+    //       })
+    // }
+
+
     return (
-        
+        <div className="containerList" style={{margin:"100px"}}>
             <Fragment>
                 <MetaData title={'All Offers'} />
-                                
-                                    
-                                        <script src="https://kit.fontawesome.com/48ca456f8a.js" ></script>
+
                                             <link
                                         rel="stylesheet"
                                         type="text/css"
@@ -155,46 +193,24 @@ const OffersList = ({ history }) => {
                                     /> 
 
                 <Fragment>
-                <Header/>
-            <section className="container_yo">
-                    <Admin_nav/>
-                </section>
-                <section className="container55555">
-                    <h1 className="h12">Offers</h1><br/><br/>
-                    <Link to="/admin/offer">
-                        <button className="button565465847655654">
-                            <div className ="learn-more">
-                            <span class="circle" aria-hidden="true">
-                            <span class="icon arrow"></span>
-                            </span>
-                            <span class="button-text">Add Offers</span>
-                            </div>
+                    <h1>All Offers</h1>
 
-                        </button>
-                    </Link>
-                    <br/><br/>
-
-                    
-                    
                     {loading ? <Loader /> :(
                         <MDBDataTable
                             data={setOffers()}
                             bordered
                             striped
                             hover
-                            fixed
-
+                            header = 'false'
+                            id = 'Offer-table'
+                            className = 'table'
                         />
                     )}
 
-                    
-                    
-                    </section>
-                    
+                    <button className="profileBtn" onClick ={jsPdfGenerator}> Generate Report PDF</button>
                 </Fragment>
-
             </Fragment>
-        
+        </div>
     )
 }
 

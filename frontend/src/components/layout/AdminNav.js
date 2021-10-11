@@ -148,7 +148,7 @@ const Admin_nav = () => {
                     <span className="tooltips">Quotations</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/admin/report">
                     <div className="i">
                     <FontAwesomeIcon icon={faPrint}></FontAwesomeIcon></div>
                

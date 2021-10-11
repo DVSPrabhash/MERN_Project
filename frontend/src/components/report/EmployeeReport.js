@@ -9,6 +9,10 @@ import MetaData from '../layout/MetaData'
 import Swal from 'sweetalert2'
 import '../style/emplist.css'
 
+//import from mn
+import jsPdf from 'jspdf';
+import 'jspdf-autotable';
+
 import { useAlert } from 'react-alert'
 import {  useDispatch , useSelector } from 'react-redux'
 import {  allEmployees, deleteEmployee,clearErrors } from '../../actions/employeeActions'
@@ -45,7 +49,7 @@ const EmployeesList = ( {history} ) => {
     }, [dispatch, error, isDeleted, history]
        /* [dispatch, error, isAuthenticated, history]*/)
 
-    const deleteEmployeeHandler   = (id) => {
+   /* const deleteEmployeeHandler   = (id) => {
         //dispatch(deleteEmployee(id))
         Swal.fire({
             title: 'Are you sure?',
@@ -66,12 +70,9 @@ const EmployeesList = ( {history} ) => {
             }
           })
 
-    }
+    }*/
 
   
-
-
-
     const SetEmployees = () => {
 
         const data = {
@@ -136,11 +137,11 @@ const EmployeesList = ( {history} ) => {
                     field:'Monthly_salary',
                     sort:'asc',
                 },
-                {
+                /*{
                     label:'Action',
                     field:'actions',
                     
-                }
+                }*/
             ],
 
             rows: []
@@ -160,7 +161,7 @@ const EmployeesList = ( {history} ) => {
                     Basic_Salary: employee.Basic_Salary,
                     Monthly_salary:employee.Monthly_salary,
 
-                    actions: <div>
+                   /* actions: <div>
                     <Link to= {`/admin/employee/${employee._id}`} className = "btn btn-primary py-1 px-2 ml-1 mr-5" >
                         <i className =" fa fa-pencil" ></i>
                     
@@ -170,13 +171,60 @@ const EmployeesList = ( {history} ) => {
                          <i className = "fa fa-trash"></i>
                                                    
                      </button>
-                     </div> 
+                     </div> */
 
                 })
             })
-            return data;
+            return data; }
+
+            //import report 
+        function jsPdfGenerator  ()  {
+
+
+
+            //alert("Done!", "Your Report is Downloding!", "success")
+            Swal.fire({ 
+                position: 'top-center', 
+                icon: 'success', 
+                title: 'Report Dowloaded Successfully', 
+                showConfirmButton: false, 
+                timer: 1500 })
+        
+        
+        
+            //new document in jspdf
+        
+            const doc = new jsPdf('l', 'pt', 'a3');
+        
+        
+        
+            doc.text(600, 20, 'Employee Details Report', { align: 'center' },);
+        
+            doc.autoTable({ html: '#Employee-table' })
+        
+        
+        
+            doc.autoTable({
+        
+              columnStyles: { europe: { halign: 'EmployeeDetailsPdf' } },
+        
+              margin: { top: 10 },
+        
+            })
+        
+        
+        
+            //save the pdf
+        
+            doc.save("Employee Details.pdf");
+        
+          }
+
+
+        //end report
+
       
-        }
+       
     return (
         <div className = "container_emplist">
             <MetaData title = {'All Employees'}/>
@@ -211,8 +259,14 @@ const EmployeesList = ( {history} ) => {
                                 bordered
                                 striped
                                 hover
+                                id = 'Employee-table'
+                                className = 'table'
                             />
                         )}
+
+                <button className="profileBtn" onClick ={jsPdfGenerator}> Generate Report PDF</button>
+
+
                   
             </div>
         </div>
