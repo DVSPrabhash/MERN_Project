@@ -2,8 +2,10 @@ import React, { Fragment, useState, useEffect } from 'react'
 import '../../App.css'
 import '../style/Pages_thiran.css'
 
+import Admin_nav from '../layout/AdminNav';
+import Header from "../layout/Header";
 import MetaData from './MetaData';
-import Header from '../layout/Header';
+import Swal from 'sweetalert2'
 
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux'
@@ -56,8 +58,14 @@ export const RegisterSupply = ({ history }) => {
     return (
         <Fragment>
             <MetaData title={'Register Supply'} />
-            <div className="container_body">
+            
             <Header/>
+                <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+  
+                <section className="container555424452345255">
+            <div className="container_body">
                 <div className="left">
                     <div class="header">
                         <h2 className="animation a1">Supply Registration</h2>
@@ -81,6 +89,7 @@ export const RegisterSupply = ({ history }) => {
                     </div>
                 <div className="right_supplyReg"></div>
             </div>
+            </section>
         </Fragment>
     )
 }

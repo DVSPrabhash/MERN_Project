@@ -14,7 +14,7 @@ import { NEW_SUPPLIEDITEMS_RESET } from '../../constants/suppliedItemConstants'
 
 
 export const RegisterSuppliedItem = ({ history }) => {
-
+    
     
         const [name, setSItemName] = useState('');
         const [price, setSItemPrice] = useState(0);

@@ -74,7 +74,6 @@ export const SupplierReport = ({match, history}) => {
                 
                 <Fragment>
                     <Header/>
-
                     <MetaData title={'Supplier Report'} />
                     
                     <table id = 'Supplier-table' className="tableContainerThiran">

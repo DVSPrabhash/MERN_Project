@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom';
 
 import MetaData from './MetaData';
 import Loader from '../layout/Loader';
+// import Admin_nav from './AdminNav';
+import Admin_nav from '../layout/AdminNav';
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert';
@@ -15,7 +19,7 @@ import Search2 from './Search2';         //search
 
 import Swal from 'sweetalert2'
 import { DELETE_SUPPLIERS_RESET } from '../../constants/supplierConstants';
-import Header from '../layout/Header';
+
 
 export const AllSuppliers = ({match, history}) => {
 
@@ -74,14 +78,19 @@ export const AllSuppliers = ({match, history}) => {
     }
 
     return(
-        <Fragment className="container-fluid">
+        <Fragment >
+            <MetaData title={'All Suppliers'} />
             {loading? <Loader /> : (
                 
                 <Fragment>
-                    <Header/>
-                    <MetaData title={'All Suppliers'} />
+                <Header/>
+            <section className="container_yo">
+                <Admin_nav/>
+            </section>
+            <section className="container555424452345255">
 
                     <Route render={({history}) => <Search2 history={history} /> } />
+                    <div className="container-fluid">
                     <table className="tableContainerThiran">
                     
                         <tr className="responsive-table ulThiran" >
@@ -120,8 +129,8 @@ export const AllSuppliers = ({match, history}) => {
                         <br/>
                             
                     </button>
-
-
+                </div>
+                </section>
                 </Fragment>
             )}
         </Fragment>

@@ -152,7 +152,7 @@ const CustomerFeedbacks = ({history}) => {
                 <Header/>
                 <section className="container_yo">
                     <h1 className="h12">My Feedbacks</h1><br/><br/> </section>
-                    <section className="container_yoyo">
+                    <section className="container_yo123yo">
                             {loading ? <Loader /> :(
                                 <MDBDataTable className="w-100 p-3"
                                     data={customerFeedback()}

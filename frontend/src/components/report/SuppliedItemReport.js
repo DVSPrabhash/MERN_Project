@@ -78,9 +78,9 @@ export const SuppliedItemReport = ({match}) => {
                 
                 <Fragment>
                     <Header/>
-                    <Admin_nav/>
+                    
                     <MetaData title={'All Supplied Items'} />
-                    <Header />
+                    
                     <table id = 'SuppliedItem-table' className="tableContainerThiran">
                         
                         <tr className="responsive-table ulThiran">

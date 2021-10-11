@@ -26,11 +26,7 @@ const Search1 = ({history}) => {
                     className="searchBox_Thiran"
                 />
             {/* </div> */}
-            <div style={{borderRight:"2px"}}>
-                <button id="search_button">
-                    <i aria-hidden="true"> Search </i>
-                </button>
-            </div>
+            
             </div>
         </form>
     )

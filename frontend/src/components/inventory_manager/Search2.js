@@ -25,7 +25,7 @@ const Search2 = ({history}) => {
                     onChange={(e) => setKeyword(e.target.value)}
                     className="searchBox_Thiran"
                 />
-                <button>Search</button>
+                
             </div>
         </form>
     )

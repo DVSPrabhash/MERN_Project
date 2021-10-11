@@ -97,6 +97,30 @@ const report = () => {
 
                         </button>
                     </Link>
+                    <br/><br/><br/>
+                    <Link to="/supplier_report">
+                        <button className="button565465847655654">
+                            <div className ="learn-more2">
+                            <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Supplier Report</span>
+                            </div>
+
+                        </button>
+                    </Link>
+                    <br/><br/><br/>
+                    <Link to="/supplied_item_report">
+                        <button className="button565465847655654">
+                            <div className ="learn-more3">
+                            <span class="circle" aria-hidden="true">
+                            <span class="icon arrow"></span>
+                            </span>
+                            <span class="button-text">Supplied Items Report</span>
+                            </div>
+
+                        </button>
+                    </Link>
 
 
                     </section>

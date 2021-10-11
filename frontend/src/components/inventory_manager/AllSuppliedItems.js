@@ -60,15 +60,19 @@ export const AllSuppliedItems = ({match}) => {
 
     
     return(
-        <Fragment className="container-fluid">
+        <Fragment >
             <MetaData title={'All Supplied Items'} />
             {loading? <Loader /> : (
                 
                 <Fragment>
+                    <Header/>
+                <section className="container_yo">
                     <Admin_nav/>
+                </section>
+                <section className="container555424452345255">
                     
-                    <Header />
                     <Route render={({history}) => <Search1 history={history} /> } />
+                    <div className="container-fluid">
                     <table className="tableContainerThiran">
                         <tr className="responsive-table ulThiran">
                             
@@ -109,8 +113,9 @@ export const AllSuppliedItems = ({match}) => {
                         <br/>
                         
                         </button>
+                        </div>
                     
-
+                    </section>
                 </Fragment>
             )}
             

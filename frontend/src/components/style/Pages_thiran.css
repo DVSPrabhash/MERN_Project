@@ -253,6 +253,9 @@ body {
   margin-left: 5px;
   margin-right: 5px;
 }
+.registerSuppDiv2 input[type="radio"]{
+  display:block;
+}
 
 label{
   font-family: 'Rubik', sans-serif;
@@ -556,8 +559,8 @@ label{
 
 /* BACK TO TOP BUTTON */
 .toTheTop{
-  width: 90px;
-	height: 90px;
+  width: 50px;
+	height: 50px;
 	cursor: pointer;
 	background-color: #5de6de;
 	background-image: linear-gradient(315deg, #e65dc8 0%, #b58ecc 74%);

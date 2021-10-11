@@ -3,7 +3,9 @@ import '../../App.css'
 import '../style/Pages_thiran.css'
 
 import MetaData from './MetaData';
-import Header from '../layout/Header';
+import Admin_nav from '../layout/AdminNav';
+import Header from "../layout/Header";
+
 
 import { useAlert } from 'react-alert';
 import { useDispatch, useSelector } from 'react-redux';
@@ -65,8 +67,14 @@ export const RegisterSupplier = ({history}) => {
     return (
         <Fragment>
             <MetaData title={'Register Supplier'} />
-            <div className="container_body">
+            
             <Header/>
+                <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+  
+                <section className="container555424452345255">
+            <div className="container_body">
                 <div className="left">
                     <div class="header">
                         <h2 className="animation a1">Supplier Registration</h2>
@@ -97,6 +105,7 @@ export const RegisterSupplier = ({history}) => {
                     </div>
                     <div className="right_suppReg"></div>
                 </div>
+                </section>
         </Fragment>
     )
 }

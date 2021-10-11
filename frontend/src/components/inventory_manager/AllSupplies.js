@@ -4,7 +4,10 @@ import '../style/Pages_thiran.css'
 
 import MetaData from './MetaData';
 import Loader from '../layout/Loader';
-import Admin_nav from './AdminNav';
+// import Admin_nav from './AdminNav';
+import Admin_nav from '../layout/AdminNav';
+import Header from '../layout/Header';
+import Footer from '../layout/Footer';
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useAlert } from 'react-alert';
@@ -12,7 +15,7 @@ import { getSupplies, deleteSupply } from '../../actions/supplyActions'
 
 import { Route } from 'react-router-dom' //search
 import Search3 from './Search3';          //search
-import Header from '../layout/Header';
+
 
 export const AllSupplies = ({match, history}) => {
 
@@ -44,16 +47,20 @@ export const AllSupplies = ({match, history}) => {
     }
 
     return(
-        <Fragment className="container-fluid">
+        <Fragment >
+            <MetaData title={'All Supplies'} />
             {loading? <Loader /> : (
                 //below code goes up when needed
                 // <h1 style={{margin:"100px"}}> Loading Supplied Items </h1>
                 <Fragment>
-                    <Header/>
-                    <MetaData title={'All Supplies'} />
-                    <Admin_nav> </Admin_nav>
-                    <Route render={({history}) => <Search3 history={history} /> } />
+                <Header/>
+            <section className="container_yo">
+                <Admin_nav/>
+            </section>
+            <section className="container55555">
 
+                    <Route render={({history}) => <Search3 history={history} /> } />
+                    <div className="container-fluid">
                     <table className="tableContainerThiran">
                         <tr className="responsive-table ulThiran">
                             <td className="col col-1">Supply ID</td>
@@ -81,8 +88,8 @@ export const AllSupplies = ({match, history}) => {
                         <br/>
                         
                         </button>
-
-
+                    </div>
+                    </section>
                 </Fragment>
             )}
         </Fragment>
