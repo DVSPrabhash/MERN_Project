@@ -3,8 +3,14 @@ import { Link } from "react-router-dom"
 import {MDBDataTable } from 'mdbreact'
 import Loader  from '../layout/Loader'
 
-import MetaData from '../layout/MetaData'
+import MetaData from '../layout/MetaData';
 
+import "react-datetime/css/react-datetime.css";
+import '../style/home.css';
+import '../style/adminFeedback.css'
+
+import Admin_nav from '../layout/AdminNav';
+import Header from "../layout/Header";
 
 import Swal from 'sweetalert2'
 import '../style/emplist.css'
@@ -13,6 +19,8 @@ import { useAlert } from 'react-alert'
 import {  useDispatch , useSelector } from 'react-redux'
 import {  allEmployees, deleteEmployee,clearErrors } from '../../actions/employeeActions'
 import { DELETE_EMPLOYEE_RESET } from '../../constants/employeeConstants'
+
+
 
 const EmployeesList = ( {history} ) => {
 
@@ -167,7 +175,7 @@ const EmployeesList = ( {history} ) => {
                      </Link>  
                      <button className= "btn btn-danger py-1 px-2 ml-5 mb-1" onClick = { () =>
                     deleteEmployeeHandler(employee._id)}>
-                         <i className = "fa fa-trash"></i>
+                         <i className="fas fa-trash-alt"></i>
                                                    
                      </button>
                      </div> 
@@ -178,24 +186,33 @@ const EmployeesList = ( {history} ) => {
       
         }
     return (
-        <div className = "container_emplist">
+        <Fragment>
+                            <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+                    />
+                    <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                />
+                    <link
+                    href="//db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember"
+                    rel="stylesheet"
+                    type="text/css"
+                    />
             <MetaData title = {'All Employees'}/>
-
-            <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    />
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-  />
-    <link
-      href="//db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember"
-      rel="stylesheet"
-      type="text/css"
-    />
+            <Fragment>
+            <Header/>
+                <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+  
+                <section className="container55542445234535255">
+                   
+       
+            
 
         <div className = "row">
       
@@ -217,8 +234,9 @@ const EmployeesList = ( {history} ) => {
             </div>
         </div>
         </div> 
-        </div>
-        
+        </section>
+        </Fragment>
+        </Fragment>
     )
 }
 

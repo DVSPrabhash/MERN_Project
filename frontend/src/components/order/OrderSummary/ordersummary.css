@@ -21,6 +21,115 @@
   color: #00b7cc;
   font-weight: bolder;
 }
+.scrollbar3430{
+  background-image: url('./md-mahdi-XeMb8hcCRrc-unsplash.jpg');
+  background-size: cover;
+
+}
+
+.oSummeryCont3330xx{
+  display: inline;
+  margin-top: -42%;
+  margin-right: -10%;
+  float: right;
+  background: rgb(255, 231, 231);
+  height: 0%;
+  width: 38%;
+  position:relative;
+  border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(255, 139, 139, 0.712);
+  text-align: justify;
+  padding: 20px;
+  overflow: hidden;
+
+}
+.buttonDiv4587{
+  padding: 20px;
+  height: 180px;
+  width: 50%;
+  margin-bottom: -33%;
+  margin-left: -15%;
+  border-radius: 20px;
+  background-color: rgb(212, 97, 97);
+
+}
+ 
+.itemCont3330{
+  
+  background: rgb(252, 252, 252);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(212, 212, 212, 0.377);
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+}
+
+
+
+.itemImg3330{
+  display:  inline-block;
+  height: 80px;
+  width: 80px;
+  border-radius: 10px;
+  text-align: center;
+
+
+}
+
+.itemName3330{
+  display:  inline-block;
+  font-size: 20px;
+  color: rgb(92, 27, 27);
+  font-weight: bolder;
+  text-align: center;
+  margin-left: 5%;
+  position: absolute;
+  top: 35%;
+}
+
+.itemPrice3330{
+  float: right;
+  margin-top:0.5em;
+  margin-right: 2em;
+  font-size: 30px;
+  color: rgb(92, 27, 27);
+  font-weight: bolder;
+}
+
+
+.itemTopping3330{
+  display:  inline-block;
+  font-size: 15px;
+  color: rgb(104, 104, 104);
+  font-weight: bolder;
+  text-align: center;
+  margin-left: 5%;
+  position: absolute;
+  top: 58%;
+}
+.itemQty3330{
+  display:  inline-block;
+  font-size: 15px;
+  color: rgb(104, 104, 104);
+  font-weight: bolder;
+  text-align: center;
+  margin-left: 30%;
+  position: absolute;
+  top: 58%;
+
+}
+
+.itemsPrice3330XXX{
+  display:  inline-block;
+  font-size: 20px;
+  color: rgb(92, 27, 27);
+  font-weight: bolder;
+  text-align: center;
+  margin-left: 70%;
+  position: absolute;
+  top: 35%;
+}
 
 /* .datpick{
   position:absolute;

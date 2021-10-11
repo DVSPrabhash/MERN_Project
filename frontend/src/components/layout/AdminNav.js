@@ -121,7 +121,7 @@ const Admin_nav = () => {
                     <span className="tooltips">Finance Handling</span>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="/inventory_manager_home">
                     <div className="i">
                     <FontAwesomeIcon icon={faWarehouse}></FontAwesomeIcon></div>
                
@@ -138,15 +138,7 @@ const Admin_nav = () => {
                     </a>
                     <span className="tooltips">Feedbacks</span>
                 </li>
-                <li>
-                    <a href="#">
-                    <div className="i">
-                    <FontAwesomeIcon icon={faStickyNote}></FontAwesomeIcon></div>
-              
-                    <span className="link_name">Quotations</span>
-                    </a>
-                    <span className="tooltips">Quotations</span>
-                </li>
+                
                 <li>
                     <a href="/admin/report">
                     <div className="i">

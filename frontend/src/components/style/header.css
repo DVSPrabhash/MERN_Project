@@ -104,11 +104,11 @@ nav ul li{
 
 }
 
-nav ul li a{
+.navbar nav ul li a{
     text-decoration: none;
-    color:white;
+    color:rgb(0, 0, 0);
     margin-left: -20px;
-    font-family: 'Cinzel Decorative', cursive;
+    font-family: el messiri;
     margin-bottom: 5px;
 }
 

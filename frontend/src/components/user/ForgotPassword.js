@@ -88,7 +88,7 @@ const ForgotPassword = () => {
                         disabled = {loading ? true: false}/>
                       </div>
                     </form>
-                      <div className="link">
+                      <div className="link6">
                         <Link to="/register">Create New Account?</Link>
                       </div>
                    

@@ -7,7 +7,9 @@
   overflow: hidden;
   margin-top: -10em;
   margin-left: 5em;
+  background-color: #F7B1AB;
 }
+
 .sopCon:hover {
   box-shadow: 0 8px 16px 0 rgba(255, 155, 155, 0.377);
 }

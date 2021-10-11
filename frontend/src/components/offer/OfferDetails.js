@@ -68,6 +68,7 @@ const OfferDetails = ({ match }) => {
                         <Carousel pause='hover'>
                             {offer.images && offer.images.map(image =>(
                                 <Carousel.Item key={image.public_id}>
+                                    
                                     <img src={image.url} alt={offer.title} width="400px" height="auto"/>
                                 </Carousel.Item>
                             ))}

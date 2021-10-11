@@ -5,6 +5,13 @@ import { Link } from "react-router-dom"
 import MetaData from '../layout/MetaData'
 
 import '../style/addemp.css'
+import "react-datetime/css/react-datetime.css";
+import '../style/home.css';
+import '../style/adminFeedback.css'
+import Admin_nav from '../layout/AdminNav';
+import Header from "../layout/Header";
+
+
 
 import { useAlert } from 'react-alert'
 import {  useDispatch , useSelector } from 'react-redux'
@@ -90,15 +97,37 @@ const NewEmployee   = ( {history} ) =>{
     return (
        
            
-        <Fragment>
-              
-        <MetaData title = { 'Buy Best Cacary Items' } />
-        <section className ="myRegister-rtk">
-<div className = "body_rtk">
-       
-<div className = "container_1rtk">
-            <div class="title-rtk">Add New Employee</div>
-                <div className = "content_rtk">
+                        <Fragment>
+                        <link
+                rel="stylesheet"
+                type="text/css"
+                href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+                />
+                <link
+                rel="stylesheet"
+                type="text/css"
+                href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                />
+                <link
+                href="//db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember"
+                rel="stylesheet"
+                type="text/css"
+                />
+                <MetaData title = {'Add Employees'}/>
+                <Fragment>
+                <Header/>
+                <section className="container_yo">
+                <Admin_nav/>
+                </section>
+
+                <section className="container555424452345255">
+
+                        
+                <div className = "body_rtk">
+                    
+                <div className = "container_1rtk">
+                            <div class="title-rtk">Add New Employee</div>
+                                <div className = "content_rtk">
                     <form  onSubmit = {submitHandler} encType='multipart/form-data'>
                             <div class = "user-details-rtk">
 
@@ -108,7 +137,7 @@ const NewEmployee   = ( {history} ) =>{
                                      type = "text" 
                                      className= "form-control-rtk" 
                                      id="name"
-                                     placeholder = "kasun"
+                                     placeholder = "First name"
                                      required
                                      name = 'First_Name'
                                      value= {First_Name}
@@ -123,7 +152,7 @@ const NewEmployee   = ( {history} ) =>{
                                     type = "text" 
                                     className= "form-control-rtk" 
                                     id="name" 
-                                    placeholder = "De Silva" 
+                                    placeholder = "Last Name" 
                                     name = 'Last_Name'
                                     value= {Last_Name}
                                     onChange = {onChange}
@@ -137,7 +166,7 @@ const NewEmployee   = ( {history} ) =>{
                                     type = "text" 
                                     className= "form-control-rtk" 
                                     id="name" 
-                                    placeholder = "address" 
+                                    placeholder = "Address" 
                                     required
                                     name = 'Address'
                                     value= {Address}
@@ -165,7 +194,7 @@ const NewEmployee   = ( {history} ) =>{
                                     className= "form-control-rtk" 
                                     id="name" 
                                     pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                                    placeholder = "sljev@gmail.com"
+                                    placeholder = "abc@gmail.com"
                                     name = 'Email_Address'
                                     value= {Email_Address}
                                      onChange = {onChange}
@@ -180,7 +209,7 @@ const NewEmployee   = ( {history} ) =>{
                                     className= "form-control-rtk" 
                                     id="name" 
                                     pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
-                                    placeholder= "072-654-7654"
+                                    placeholder= "07x-xxx-xxxx"
                                     required
                                     name = 'Phone_Number'
                                     value= {Phone_Number}
@@ -195,7 +224,7 @@ const NewEmployee   = ( {history} ) =>{
                                     type = "text" 
                                     className= "form-control-rtk" 
                                     id="name"
-                                    placeholder = "xxxx.xx"  
+                                    placeholder = "0000.00"  
                                     required
                                     name = 'Basic_Salary'
                                      value= {Basic_Salary}
@@ -255,8 +284,9 @@ const NewEmployee   = ( {history} ) =>{
                 </div>
                 </div>
                 </div>
-    </section>
-                
+    
+             </section>   
+        </Fragment>
         </Fragment>
         
 

@@ -59,7 +59,7 @@ const Login = ({ history,location }) => {
 
                   <div className = "form-container">
                     <h1 className = "h1">Sign In</h1>
-                    <form onSubmit = {submitHandler}>
+                    <form className="prabhashform" onSubmit = {submitHandler}>
                       <div className = "control">
                         <label htmlFor = "email_field">Email</label>
                         <input type= "email"

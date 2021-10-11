@@ -138,6 +138,18 @@ body {
   font-weight: bold;
   text-align: left;
 }
+.wrapper1111{
+  margin-left: 3em;
+  display: inline-flex;
+  background: #fff;
+  height: 20px;
+  width: 290px;
+  align-items: left;
+  justify-content: space-evenly;
+  border-radius: 5px;
+  padding: 5px 5px;
+  box-shadow: 0px 0px 9px 5px #ffaeae, 0 0 0px 5px #ffe6e6eb;
+}
 
 
 @media all and (max-width: 767px) {

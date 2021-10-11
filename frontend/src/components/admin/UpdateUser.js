@@ -110,13 +110,13 @@ const UpdateUser = ({history, match}) => {
 
                 <div className = "mddsfa-10">
 
-                <section className ="myRegister">
+                <section className ="myRegister1">
             <div className = "body">
 
 
-            <div className="form-container2">
+            <div className="form-containerss2">
 
-                <div className="h1">Update User Role</div>
+                <div className="h1123werwrwer">Update User Role</div>
 
                 <div className="content">
 
@@ -299,7 +299,7 @@ const UpdateUser = ({history, match}) => {
             </div>
 
         </section>
-        <AdminFooter/>
+      
         </Fragment>
     )
 }

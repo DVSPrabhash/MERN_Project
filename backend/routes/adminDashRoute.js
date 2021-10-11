@@ -7,7 +7,8 @@ const {
     offerCount,
     orderCount,
     productCount,
-    count
+    count,
+    employeeCount
 
     
 
@@ -20,6 +21,7 @@ router.route('/feedbackCount').get(feedbackCount);
 router.route('/offerCount').get(offerCount);
 router.route('/orderCount').get(orderCount);
 router.route('/productCount').get(productCount);
+router.route('/employeeCount').get(employeeCount);
 router.route('/count').get(count);
 
 module.exports = router;

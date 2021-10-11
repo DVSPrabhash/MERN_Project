@@ -8,7 +8,7 @@ import Admin_nav from '../layout/AdminNav';
 import Header from "../layout/Header";
 import Loader from '../layout/Loader'
 
-import AdminFooter from '../layout/AdminFooter';
+
 
 import "react-datetime/css/react-datetime.css";
 import '../style/home.css';

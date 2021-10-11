@@ -41,8 +41,8 @@
 }
 
   .container_1rtk{
-    margin-top:130px ;
-    margin-left: 550px;
+    margin-top:80px ;
+    margin-left: 350px;
     max-width: 700px;
     width: 100%;
     background-color: rgb(221, 221, 221);
@@ -78,6 +78,9 @@
     margin: 20px 0 12px 0;  
    
     
+  }
+  .user-details-rtk .input-box-rtk label{
+    color:#000;
   }
 
   .user-details-rtk .input-box-rtk{

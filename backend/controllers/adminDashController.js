@@ -74,6 +74,17 @@ exports.productCount = catchAsyncErrors ( async (req, res, next) => {
     })
 
 })
+exports.employeeCount = catchAsyncErrors ( async (req, res, next) => {
+
+    const employeesCount = await Employee.countDocuments();
+
+
+    res.status(200).json({
+        success: true,
+        employeesCount
+    })
+
+})
 
 
 exports.count = catchAsyncErrors ( async (req, res, next) => {

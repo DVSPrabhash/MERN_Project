@@ -1,6 +1,13 @@
 import React, { Fragment,useState, useEffect } from 'react'
 
-import MetaData from '../layout/MetaData'
+import MetaData from '../layout/MetaData';
+
+import "react-datetime/css/react-datetime.css";
+import '../style/home.css';
+import '../style/adminFeedback.css'
+
+import Admin_nav from '../layout/AdminNav';
+import Header from "../layout/Header";
 
 import { useAlert } from 'react-alert'
 import {  useDispatch , useSelector } from 'react-redux'
@@ -92,9 +99,29 @@ const UpdateEmployee = ( {history, match}) => {
 
     return (
         <Fragment>
-                    <MetaData title = { 'update employee' } />
-
-                    <section className ="myupdate-rtk">
+                            <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+                    />
+                    <link
+                    rel="stylesheet"
+                    type="text/css"
+                    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                />
+                    <link
+                    href="//db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember"
+                    rel="stylesheet"
+                    type="text/css"
+                    />
+            <MetaData title = {'All Employees'}/>
+            <Fragment>
+            <Header/>
+                <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+  
+                <section className="container555424452345255">
             <div className = "container_1rtk">
                         <div className="title-rtk">Update Employee</div>
                             <div className = "content_rtkt">
@@ -268,6 +295,7 @@ const UpdateEmployee = ( {history, match}) => {
                         </div>
             </div>
             </section>
+        </Fragment>
         </Fragment>
              )
         }

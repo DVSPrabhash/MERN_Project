@@ -146,7 +146,7 @@ const Register = ({ history}) => {
                             </div>
 
                             <div className="input-box">
-                                <span className="details">Last Name</span>
+                                <span className="details1">Last Name</span>
                                 <input type="text"
                                     name = 'last_name' 
                                     placeholder="Last Name"
@@ -165,7 +165,7 @@ const Register = ({ history}) => {
                             </div>
 
                             <div className="input-box">
-                                <span className="details">Address</span>
+                                <span className="details1">Address</span>
                                 <input type="text"
                                     name = 'address'
                                     placeholder = " Address"
@@ -187,7 +187,7 @@ const Register = ({ history}) => {
                             </div>
 
                             <div className="input-box">
-                                <span className="details">Email</span>
+                                <span className="details1">Email</span>
                                 <input type="email"
                                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
                                 name = 'email'
@@ -208,9 +208,9 @@ const Register = ({ history}) => {
                             </div>
 
                             <div className="input-box">
-                                <span className="details">Gender</span>
+                                <span className="details1">Gender</span>
                                 <select type="text"
-                                    className = "selectDV"
+                                    className = "selectDV1"
                                     name = 'gender'
                                     placeholder = " Male/Female"
                                     default = "male"

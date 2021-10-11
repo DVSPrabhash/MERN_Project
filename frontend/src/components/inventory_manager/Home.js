@@ -2,6 +2,20 @@ import React, { Fragment } from 'react'
 import '../../App.css'
 import '../style/Pages_thiran.css'
 
+
+import MetaData from '../layout/MetaData';
+import Admin_nav from '../layout/AdminNav';
+import Header from "../layout/Header";
+import Loader from '../layout/Loader'
+
+import all_suppliers from "./AllSuppliers"
+import all_supplies from "./AllSupplies"
+
+import "react-datetime/css/react-datetime.css";
+import '../style/home.css';
+import '../style/adminFeedback.css'
+
+
 export const Home = () => {
     return (
         <Fragment>
@@ -21,7 +35,7 @@ export const Home = () => {
                 <button> Register User </button>
             </div>
 
-            </sector> */}
+            </sector> 
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             <span>
             <div class="supplier_home_container">
@@ -66,8 +80,35 @@ export const Home = () => {
                 <div class="suppliedItem_home_flap"></div>
             </div>
             </span>
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-            
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>*/}
+            <MetaData title ={'Admin Feedbacks'}/>
+            <link
+                                    rel="stylesheet"
+                                    type="text/css"
+                                    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+                                    />
+                                    <link
+                                    rel="stylesheet"
+                                    type="text/css"
+                                    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+                                />
+                                    <link
+                                    href="//db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember"
+                                    rel="stylesheet"
+                                    type="text/css"
+                                   /> 
+            <Fragment>
+                <Header/>
+                <section className="container_yo">
+                    <Admin_nav/>
+                </section>
+  
+                <section className="container55555">
+                <h1>Inventory Management</h1>
+               
+
+                </section>
+                </Fragment>
         </Fragment>
     )
 }

@@ -132,7 +132,7 @@ select.indent {
 	  color: #fff; 
 }
 
-input:focus, textarea:focus { 
+.wpcf7 input:focus, .wpcf7 textarea:focus { 
 	  background-color: rgba(216, 117, 117, 0.2);
     -moz-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);
     -webkit-box-shadow: 0 0 5px 1px rgba(255,255,255,.5);

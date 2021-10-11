@@ -9,7 +9,7 @@ const AdminOrderSearch = ({history}) => {
             e.preventDefault()
 
             if(keyword.trim()){
-                alert(`${keyword}`)
+                
                 history.push(`/admin/orders/search/${keyword}`)
             }
             else{
