@@ -39,7 +39,7 @@ import Menu from "./components/Menu";
 import ProductDetails from './components/product/ProductDetails/ProductDetails';
 import AllOffers from './components/AllOffers'
 import OfferDetails from './components/offer/OfferDetails';
-import OfferReport from './components/admin/OfferReport';
+import OfferReport from './components/report/OfferReport';
 
 //Yohan 
 import Admin_Feedback from "./components/admin/adminFeedbacks"; 
@@ -54,7 +54,7 @@ import Update_Feedback from './components/customer/UpdateFeedback'
 //adminge ewa
 import UsersList from './components/admin/UsersList';
 import UpdateUser from './components/admin/UpdateUser';
-import UserReport from './components/admin/UserReport';
+import UserReport from './components/report/UserReport';
 //ankagen start
 // Admin Imports
 import ProductsList from './components/admin/ProductsList'
@@ -76,6 +76,7 @@ import NewEmployee from './components/admin/addemp';
 import EmployeesList from './components/admin/EmployeesList';
 import UpdateEmployee from './components/admin/UpdateEmployee';
 import maintrtk from './components/admin/maintrtk';
+import EmployeeReport from './components/report/EmployeeReport';
 
 
 import ProtectedRoute from './components/route/ProtectedRoute';
@@ -185,11 +186,10 @@ function App() {
           {/*tharusha*/}
           <Route path ="/new"  component = {NewEmployee} exact/>
             
-            <Route path ="/emplist"  component = {EmployeesList} exact/>
-           
-
+          <Route path ="/emplist"  component = {EmployeesList} exact/>
           <Route path ="/admin/employee/:id"  component = {UpdateEmployee} exact/>
           <Route path ="/main_emp_page"  component = {maintrtk} exact/>
+          <Route path="/admin/report/employeeReport" component={EmployeeReport} exact/>
 
 
 

@@ -74,7 +74,7 @@ const report = () => {
                         </button>
                     </Link>
                     <br/><br/><br/>
-                    <Link to="/admin/report/FeedbackReport">
+                    <Link to="/admin/report/employeeReport">
                         <button className="button565465847655654">
                             <div className ="learn-more2">
                             <span class="circle" aria-hidden="true">

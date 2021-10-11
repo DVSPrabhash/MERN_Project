@@ -90,174 +90,174 @@ const NewEmployee   = ( {history} ) =>{
     return (
        
            
-                <Fragment>
+        <Fragment>
               
-                    <MetaData title = { 'Buy Best Cacary Items' } />
-                    <section className ="myRegister">
-        <div className = "body">
-                   
-            <div className = "container_1rtk">
-                        <div class="title">Add New Employee</div>
-                            <div className = "content">
-                                <form  onSubmit = {submitHandler} encType='multipart/form-data'>
-                                        <div class = "user-details">
+        <MetaData title = { 'Buy Best Cacary Items' } />
+        <section className ="myRegister-rtk">
+<div className = "body_rtk">
+       
+<div className = "container_1rtk">
+            <div class="title-rtk">Add New Employee</div>
+                <div className = "content_rtk">
+                    <form  onSubmit = {submitHandler} encType='multipart/form-data'>
+                            <div class = "user-details-rtk">
 
-                                            <div className = "input-box">
-                                                <label for = "name"> First name</label>
-                                                <input
-                                                 type = "text" 
-                                                 className= "form-control" 
-                                                 id="name"
-                                                 placeholder = "kasun"
-                                                 required
-                                                 name = 'First_Name'
-                                                 value= {First_Name}
-                                                 onChange = {onChange}
-                                                
-                                                />
-                                            </div>
-
-                                            <div className = "input-box">
-                                                <label for = "name"> Last Name</label>
-                                                <input 
-                                                type = "text" 
-                                                className= "form-control" 
-                                                id="name" 
-                                                placeholder = "De Silva" 
-                                                name = 'Last_Name'
-                                                value= {Last_Name}
-                                                onChange = {onChange}
-                                               
-                                                />
-                                            </div>
-
-                                            <div className = "input-box">
-                                                <label for = "name"> Address</label>
-                                                <input 
-                                                type = "text" 
-                                                className= "form-control" 
-                                                id="name" 
-                                                placeholder = "address" 
-                                                required
-                                                name = 'Address'
-                                                value= {Address}
-                                                onChange = {onChange}
-                                                />
-                                            </div>
-
-                                            <div className = "input-box">
-                                                <label for = "name">Birthday</label>
-                                                <input 
-                                                type = "date" 
-                                                className= "form-control" 
-                                                id="name"  
-                                                required
-                                                name = 'BirthDay'
-                                                value= {BirthDay}
-                                                onChange = {onChange}
-                                                />
-                                            </div>
-
-                                            <div className = "input-box">
-                                                <label for = "name">Email</label>
-                                                <input 
-                                                type = "text" 
-                                                className= "form-control" 
-                                                id="name" 
-                                                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-                                                placeholder = "sljev@gmail.com"
-                                                name = 'Email_Address'
-                                                value= {Email_Address}
-                                                 onChange = {onChange}
-                                                
-                                                />
-                                            </div>
-
-                                            <div className = "input-box">
-                                                <label for = "name">Phone Number</label>
-                                                <input 
-                                                type = "text" 
-                                                className= "form-control" 
-                                                id="name" 
-                                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
-                                                placeholder= "072-654-7654"
-                                                required
-                                                name = 'Phone_Number'
-                                                value= {Phone_Number}
-                                                onChange = {onChange}
-                                              
-                                                />
-                                            </div>
-
-                                            <div className = "input-box">
-                                                <label for = "name">Basic Salary</label>
-                                                <input 
-                                                type = "text" 
-                                                className= "form-control" 
-                                                id="name"
-                                                placeholder = "xxxx.xx"  
-                                                required
-                                                name = 'Basic_Salary'
-                                                 value= {Basic_Salary}
-                                                 onChange = {onChange}
-                                                
-                                                />
-                                            </div>
-
-                                            <div className = "input-box">
-                                                <label for = "name">OT Rates (%)</label>
-                                                <input 
-                                                type = "text" 
-                                                className= "form-control" 
-                                                id="name"
-                                                placeholder = "0.0"  
-                                                required
-                                                name = 'OT_Rates'
-                                                value= {OT_Rates}
-                                                onChange = {onChange}
-                                                
-                                                />
-                                            </div>
-                                            <div className = "input-box">
-                                                <label for = "name">Gender</label>
-                                                <select type="text"
-                                                        className = "selectRTK"
-                                                        name = 'Gender'
-                                                        placeholder = " Male/Female"
-                                                        value= {Gender}
-                                                        onChange = {onChange} 
-                                                        >
-
-                                                        <option value="male">Male</option>
-                                                        <option value="female">Female</option>
-                                                        
-                                                 </select>
-                                                
-                                                
-                                            </div>
-                                        </div>
-
-
+                                <div className = "input-box-rtk">
+                                    <label for = "name"> First name</label>
+                                    <input
+                                     type = "text" 
+                                     className= "form-control-rtk" 
+                                     id="name"
+                                     placeholder = "kasun"
+                                     required
+                                     name = 'First_Name'
+                                     value= {First_Name}
+                                     onChange = {onChange}
                                     
-                                        <div className = "button">
-                                           
-                                                <input 
-                                                type = "submit"  
-                                                value = "Submit"
-                                                disabled = {loading ? true : false}
-                                               
-                                                />
-                                               
-                                              
-                                        </div>
+                                    />
+                                </div>
 
-                                </form>
+                                <div className = "input-box-rtk">
+                                    <label for = "name"> Last Name</label>
+                                    <input 
+                                    type = "text" 
+                                    className= "form-control-rtk" 
+                                    id="name" 
+                                    placeholder = "De Silva" 
+                                    name = 'Last_Name'
+                                    value= {Last_Name}
+                                    onChange = {onChange}
+                                   
+                                    />
+                                </div>
+
+                                <div className = "input-box-rtk">
+                                    <label for = "name"> Address</label>
+                                    <input 
+                                    type = "text" 
+                                    className= "form-control-rtk" 
+                                    id="name" 
+                                    placeholder = "address" 
+                                    required
+                                    name = 'Address'
+                                    value= {Address}
+                                    onChange = {onChange}
+                                    />
+                                </div>
+
+                                <div className = "input-box-rtk">
+                                    <label for = "name">Birthday</label>
+                                    <input 
+                                    type = "date" 
+                                    className= "form-control-rtk" 
+                                    id="name"  
+                                    required
+                                    name = 'BirthDay'
+                                    value= {BirthDay}
+                                    onChange = {onChange}
+                                    />
+                                </div>
+
+                                <div className = "input-box-rtk">
+                                    <label for = "name">Email</label>
+                                    <input 
+                                    type = "text" 
+                                    className= "form-control-rtk" 
+                                    id="name" 
+                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                                    placeholder = "sljev@gmail.com"
+                                    name = 'Email_Address'
+                                    value= {Email_Address}
+                                     onChange = {onChange}
+                                    
+                                    />
+                                </div>
+
+                                <div className = "input-box-rtk">
+                                    <label for = "name">Phone Number</label>
+                                    <input 
+                                    type = "text" 
+                                    className= "form-control-rtk" 
+                                    id="name" 
+                                    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" 
+                                    placeholder= "072-654-7654"
+                                    required
+                                    name = 'Phone_Number'
+                                    value= {Phone_Number}
+                                    onChange = {onChange}
+                                  
+                                    />
+                                </div>
+
+                                <div className = "input-box-rtk">
+                                    <label for = "name">Basic Salary</label>
+                                    <input 
+                                    type = "text" 
+                                    className= "form-control-rtk" 
+                                    id="name"
+                                    placeholder = "xxxx.xx"  
+                                    required
+                                    name = 'Basic_Salary'
+                                     value= {Basic_Salary}
+                                     onChange = {onChange}
+                                    
+                                    />
+                                </div>
+
+                                <div className = "input-box-rtk">
+                                    <label for = "name">OT Rates (%)</label>
+                                    <input 
+                                    type = "text" 
+                                    className= "form-control-rtk" 
+                                    id="name"
+                                    placeholder = "0.0"  
+                                    required
+                                    name = 'OT_Rates'
+                                    value= {OT_Rates}
+                                    onChange = {onChange}
+                                    
+                                    />
+                                </div>
+                                <div className = "input-box-rtk">
+                                    <label for = "name">Gender</label>
+                                    <select type="text"
+                                            className = "selectRTK"
+                                            name = 'Gender'
+                                            placeholder = " Male/Female"
+                                            value= {Gender}
+                                            onChange = {onChange} 
+                                            >
+
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            
+                                     </select>
+                                    
+                                    
+                                </div>
                             </div>
+
+
+                        
+                            <div className = "button-rtk">
+                               
+                                    <input 
+                                    type = "submit"  
+                                    value = "Submit"
+                                    disabled = {loading ? true : false}
+                                   
+                                    />
+                                   
+                                  
                             </div>
-                            </div>
-                </section>
-                            
-                    </Fragment>
+
+                    </form>
+                </div>
+                </div>
+                </div>
+    </section>
+                
+        </Fragment>
         
 
     )

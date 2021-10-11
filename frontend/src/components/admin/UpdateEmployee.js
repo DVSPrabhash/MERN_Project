@@ -94,14 +94,14 @@ const UpdateEmployee = ( {history, match}) => {
         <Fragment>
                     <MetaData title = { 'update employee' } />
 
-                    <section className ="myupdate">
+                    <section className ="myupdate-rtk">
             <div className = "container_1rtk">
-                        <div className="title">Update Employee</div>
-                            <div className = "content">
+                        <div className="title-rtk">Update Employee</div>
+                            <div className = "content_rtkt">
                                 <form  onSubmit = {submitHandler} >
-                                    <div className = "user-details">
+                                    <div className = "user-details-rtk">
 
-                                        <div className = "input-box">
+                                        <div className = "input-box-rtk">
 
                                                 <label for = "name"> First name</label>
                                                 <input
@@ -116,7 +116,7 @@ const UpdateEmployee = ( {history, match}) => {
                                                 />
                                             </div>
 
-                                            <div className = "input-box">
+                                            <div className = "input-box-rtk">
                                                 <label for = "name"> Last Name</label>
                                                 <input 
                                                 type = "text" 
@@ -129,7 +129,7 @@ const UpdateEmployee = ( {history, match}) => {
                                                 />
                                             </div>
 
-                                            <div className = "input-box">
+                                            <div className = "input-box-rtk">
                                                 <label for = "name"> Address</label>
                                                 <input 
                                                 type = "text" 
@@ -142,7 +142,7 @@ const UpdateEmployee = ( {history, match}) => {
                                                 />
                                             </div>
 
-                                            <div className = "input-box">
+                                            <div className = "input-box-rtk">
                                                 <label for = "name">Birthday</label>
                                                 <input 
                                                 type = "text" 
@@ -155,7 +155,7 @@ const UpdateEmployee = ( {history, match}) => {
                                                 />
                                             </div>
 
-                                            <div className = "input-box">
+                                            <div className = "input-box-rtk">
                                                 <label for = "name">Gender</label>
                                                 <input 
                                                 type = "text" 
@@ -169,7 +169,7 @@ const UpdateEmployee = ( {history, match}) => {
                                                 />
                                             </div>
 
-                                            <div className = "input-box">
+                                            <div className = "input-box-rtk">
                                                 <label for = "name">Email</label>
                                                 <input 
                                                 type = "text" 
@@ -182,7 +182,7 @@ const UpdateEmployee = ( {history, match}) => {
                                                 />
                                             </div>
 
-                                            <div className = "input-box">
+                                            <div className = "input-box-rtk">
                                                 <label for = "name">Phone Number</label>
                                                 <input 
                                                 type = "text" 
@@ -196,7 +196,7 @@ const UpdateEmployee = ( {history, match}) => {
                                                 />
                                             </div>
 
-                                            <div className = "input-box">
+                                            <div className = "input-box-rtk">
                                                 <label for = "name">OT Rates</label>
                                                 <input 
                                                 type = "text" 
@@ -210,7 +210,7 @@ const UpdateEmployee = ( {history, match}) => {
                                                 />
                                             </div>
 
-                                            <div className = "input-box">
+                                            <div className = "input-box-rtk">
                                                 <label for = "name">Basic Salary</label>
                                                 <input 
                                                 type = "text" 
@@ -224,7 +224,7 @@ const UpdateEmployee = ( {history, match}) => {
                                                 />
                                             </div>
 
-                                            <div className = "input-box">
+                                            <div className = "input-box-rtk">
                                                 <label for = "name">OT Hours</label>
                                                 <input 
                                                 type = "text" 
@@ -238,7 +238,7 @@ const UpdateEmployee = ( {history, match}) => {
                                                 />
                                             </div>
 
-                                            <div className = "input-box">
+                                            <div className = "input-box-rtk">
                                                 <label for = "name">Monthly Salary</label>
                                                 <input 
                                                 type = "text" 
@@ -254,7 +254,7 @@ const UpdateEmployee = ( {history, match}) => {
 
                                         </div>
 
-                                            <div className = "button">
+                                            <div className = "button-rtk">
 
                                                 <input 
                                                 type = "submit"  
