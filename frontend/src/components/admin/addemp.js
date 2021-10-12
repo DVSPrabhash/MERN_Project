@@ -219,7 +219,7 @@ const NewEmployee   = ( {history} ) =>{
                                 </div>
 
                                 <div className = "input-box-rtk">
-                                    <label for = "name">Basic Salary</label>
+                                    <label for = "name">Basic Salary(Rs)</label>
                                     <input 
                                     type = "text" 
                                     className= "form-control-rtk" 

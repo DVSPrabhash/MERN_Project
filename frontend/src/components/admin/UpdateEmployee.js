@@ -224,7 +224,7 @@ const UpdateEmployee = ( {history, match}) => {
                                             </div>
 
                                             <div className = "input-box-rtk">
-                                                <label for = "name">OT Rates</label>
+                                                <label for = "name">OT Rates(%)</label>
                                                 <input 
                                                 type = "text" 
                                                 className= "form-control" 
@@ -238,7 +238,7 @@ const UpdateEmployee = ( {history, match}) => {
                                             </div>
 
                                             <div className = "input-box-rtk">
-                                                <label for = "name">Basic Salary</label>
+                                                <label for = "name">Basic Salary(Rs)</label>
                                                 <input 
                                                 type = "text" 
                                                 className= "form-control" 
@@ -266,7 +266,7 @@ const UpdateEmployee = ( {history, match}) => {
                                             </div>
 
                                             <div className = "input-box-rtk">
-                                                <label for = "name">Monthly Salary</label>
+                                                <label for = "name">Monthly Salary(Rs)</label>
                                                 <input 
                                                 type = "text" 
                                                 className= "form-control" 
