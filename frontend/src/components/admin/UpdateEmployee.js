@@ -252,7 +252,7 @@ const UpdateEmployee = ( {history, match}) => {
                                             </div>
 
                                             <div className = "input-box-rtk">
-                                                <label for = "name">OT Hours</label>
+                                                <label for = "name">OT Hours(per month)</label>
                                                 <input 
                                                 type = "text" 
                                                 className= "form-control" 
