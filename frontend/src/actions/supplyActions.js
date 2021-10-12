@@ -98,7 +98,7 @@ export const deleteSupply = (id) => async (dispatch) => {
 
 //Create Supply Data
 export const newSupply = (supplyData) => async (dispatch) => {
-    alert(JSON.stringify(supplyData));
+    // alert(JSON.stringify(supplyData));
     try {
         dispatch({ type: NEW_SUPPLIES_REQUEST })
 

@@ -131,7 +131,7 @@ export const deleteProduct = (id) => async (dispatch) => {
 }
 
 export const newSuppliedItems = (suppliedItemData) => async (dispatch) => {
-    alert(JSON.stringify(suppliedItemData));
+    // alert(JSON.stringify(suppliedItemData));
     try{
         dispatch({type: NEW_SUPPLIEDITEMS_REQUEST})
 
