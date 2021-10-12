@@ -8,7 +8,7 @@ const Search3 = ({history}) => {
         e.preventDefault()
 
         if(keyword.trim()) {
-            history.push(`/search3/${keyword}`)
+            history.push(`/all_supplies/${keyword}`)
         } else {
             history.push('/')
         }
