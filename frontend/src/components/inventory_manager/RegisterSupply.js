@@ -77,8 +77,8 @@ export const RegisterSupply = ({ history }) => {
                     <div className="form">
                         {/* <input type="date" className="form-field animation a3" placeholder="Date" onChange={(e) => setSuppItemID(e.target.value)} /> */}
 
-                        <input type="text" className="form-field animation a3" placeholder="Items Code" onChange={(e) => setSuppItemID(e.target.value)} />
-                        <input type="text" className="form-field animation a3" placeholder="Supplier ID" onChange={(e) => setSupplierID(e.target.value)} />
+                        <input type="text" className="form-field animation a3" placeholder="Items Code" onChange={(e) => setSuppItemID(e.target.value)} pattern="[S-S]{1}[0-9]{4}" required/>
+                        <input type="text" className="form-field animation a3" placeholder="Supplier ID" onChange={(e) => setSupplierID(e.target.value)} pattern="[T-T]{1}[0-9]{4}" required />
 
                         {/* <input type="number" className="form-field animation a3" placeholder="Quantity" onChange={(e) => setSItemName(e.target.value)} /> */}
 

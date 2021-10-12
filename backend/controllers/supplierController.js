@@ -18,7 +18,7 @@ exports.newSuppliers = catchAsyncErrors (async (req, res, next) => {
 //This will show the total number of documents, and all the documents
 exports.getSuppliers = catchAsyncErrors (async(req, res, next) => {
     
-    const resPerPage = 5; //number of results to be shown on a page
+    const resPerPage = 15; //number of results to be shown on a page
     const totSuppliers = await supplier.countDocuments();//count all the documents in suppliers
 
     const apiFeatures = new APIFeatures(supplier.find(), req.query).search2().filter().pagination(resPerPage)

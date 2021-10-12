@@ -19,7 +19,7 @@ exports.newS_Items = catchAsyncErrors( async (req, res, next) => {
 //This will show the total number of documents, and all the documents
 exports.getS_Items = catchAsyncErrors( async(req, res, next) => {
 
-    const resPerPage = 2; //number of results to be shown on a page
+    const resPerPage = 15; //number of results to be shown on a page
     const totItemCount = await suppliedItem.countDocuments(); //count all the documents in suppliedItem
 
     const apiFeatures = new APIFeatures(suppliedItem.find(), req.query).search1().filter().pagination(resPerPage)
