@@ -70,22 +70,6 @@ const Register = ({ history}) => {
         dispatch(register(formData))
     }
 
-        /*avater nethuwa data ywnanm meka hri guya gooleekn 
-        const payload = {
-            first_name,
-            last_name,
-            gender,
-            birthday,
-            address,
-            phone_no,
-            email,
-            password
-        }
-
-        dispatch(register(payload))
-    }
-        */
-
 
     const onChange = e =>{
 
@@ -225,11 +209,7 @@ const Register = ({ history}) => {
                             
                             <div className="input-box">
                                 <span className="details">Avatar</span>
-                                {/*<img
-                                            src={avatarPreview}
-                                            class="avatar1"
-                                            alt='Avatar Priview'
-                                />*/}
+                               
                                 <input
                                     type='file'
                                     name='avatar'
@@ -240,26 +220,7 @@ const Register = ({ history}) => {
                             </div>
 
                         </div>
-                        {/*<div className="gender-details">
-                                <input type="radio" name="gender" id="dot-1"
-                                value= {gender}
-                                onChange = {onChange} />
-                                <input type="radio" name="gender" id="dot-2"
-                                value= {gender}
-                                onChange = {onChange} />
-                                <span className="gender-title">Gender</span>
-                            <div className="category">
-                                <label for="dot-1">
-                                <span className="dot one"></span>
-                                <span className="gender">Male</span>
-                                </label>
-                                <label for="dot-2">
-                                <span className="dot two"></span>
-                                <span className="gender">Female</span>
-                                </label>
-                    
-                            </div>
-                            </div>*/}
+                       
                         <div className="button">
                         <input type="submit" 
                         disabled = {loading ? true : false}  

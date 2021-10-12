@@ -187,49 +187,6 @@ const UpdateUser = ({history, match}) => {
                               
                                 required/>
         </div>
-                            {/*
-                            <div className="input-box">
-                                <span className="details">Password</span>
-                                <input type="password"
-                                    name = 'password'
-                                    placeholder = " Password"
-                                    id="password_field"
-                                    value= {password}
-                                    onChange = {onChange}   
-                                required/>
-                            </div>
-                            */}
-            {/*
-                            <div className="input-box">
-                                <span className="details">Gender</span>
-                                <select type="text"
-                                    className = "selectDV"
-                                    name = 'gender'
-                                    value= {gender}
-                                    onChange = {(e) => setGender(e.target.value)} 
-                                required>
-                                     <option value="male">Male</option>
-                                     <option value="female">Female</option>
-                                    
-                                </select>
-                            </div>
-
-            */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                             <div className="input-box">
                             <span className="details">Role</span>
@@ -245,36 +202,9 @@ const UpdateUser = ({history, match}) => {
                                     
                                 </select>
                             </div>
-
-
-
-
-
-
-
-
-                            
+                
                         </div>
-                        {/*<div className="gender-details">
-                                <input type="radio" name="gender" id="dot-1"
-                                value= {gender}
-                                onChange = {onChange} />
-                                <input type="radio" name="gender" id="dot-2"
-                                value= {gender}
-                                onChange = {onChange} />
-                                <span className="gender-title">Gender</span>
-                            <div className="category">
-                                <label for="dot-1">
-                                <span className="dot one"></span>
-                                <span className="gender">Male</span>
-                                </label>
-                                <label for="dot-2">
-                                <span className="dot two"></span>
-                                <span className="gender">Female</span>
-                                </label>
-                    
-                            </div>
-                            </div>*/}
+                       
                         <div className="button">
                         <input type="submit" 
                         
@@ -286,14 +216,6 @@ const UpdateUser = ({history, match}) => {
 
             </div>
             </section>
-
-            
-
-
-
-
-
-
 
                 </div>
             </div>
